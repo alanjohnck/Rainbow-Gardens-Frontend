@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  font-family: 'Lufga','Lufga Black','Lufga Bold','Lufga Italic','Lufga Medium','Lufga Semibold'
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family:'Lufga' ;
+  src: url('../src/app/font/LufgaRegular.ttf');
+}
+
+@font-face {
+  font-family:'Lufga Black' ;
+  src: url('../src/app/font/LufgaBlack.ttf');
+}
+
+
+@font-face {
+  font-family: 'Lufga Bold';
+  src: url('../src/app/font/LufgaBold.ttf');
+}
+
+@font-face {
+  font-family: 'Lufga Italic';
+  src: url('../src/app/font/LufgaItalic.ttf');
+}
+
+@font-face {
+  font-family: 'Lufga Light';
+  src: url('../src/app/font/LufgaLight.ttf');
+}
+
+@font-face {
+  font-family: 'Lufga Medium';
+  src: url('../src/app/font/LufgaMedium.ttf');
+}
+
+@font-face {
+  font-family: 'Lufga Semibold';
+  src: url('../src/app/font/LufgaSemiBold.ttf');
+}
+

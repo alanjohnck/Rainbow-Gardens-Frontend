@@ -1,0 +1,124 @@
+.footer{
+    width: 100%;
+    height: 85.306vh;
+    background: #003912;
+    border-top-left-radius: 2.604vw;
+    border-top-right-radius: 2.604vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerTopDiv{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8vw;
+}
+
+.footerTopTitle{
+    font-family: 'Lufga Bold';
+    font-size: 5.183rem;
+    color: #ffffff;
+    margin-left: 7.747vw;
+    margin-top: 12.381vh;
+    width: auto;
+    line-height: 1;
+}
+
+.footerBottomTitle{
+    font-family: 'Lufga Light';
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-left: 27.539vw;
+    max-width: 45.05vw;
+    text-align: center;
+}
+
+.footerBottomDiv{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 8vh;
+    gap: 1vw;
+}
+
+.footerBottomTopDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerBottomLeftDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1.5vw;
+    width: auto;
+    padding-left: 2.214vw;
+    margin-top: 10vh;
+}
+
+.footerBottomLeftDiv>span{
+    font-family: 'Lufga Medium';
+    font-size: 1rem;
+    color: #ffffff;
+    max-width: 17.643vw;
+}
+
+.footerLogoDiv{
+    display: flex;
+    gap: 1vw;
+}
+
+.footerBottomRightDiv{
+    display: flex;
+    gap: 5vw;
+    margin-right: 2vw;
+}
+
+.linkDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.linkTitle{
+    font-family: 'Lufga Semibold';
+    font-size: 1.625rem;
+    color: #ffffff;
+}
+
+.linkContents{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.linkContent{
+    font-family: 'Lufga Medium';
+    font-size: 1rem;
+    color: #ffffff;
+    display: flex;
+    gap: 0.5vw;
+}
+
+.contactDiv{
+    max-width: 17.839vw;
+}
+
+.footerBottomBottomDiv{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.lineDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.ccSpan{
+    font-family: 'Lufga Medium';
+    font-size: 1rem;
+    color: #ffffff;
+    padding-left: 1.888vw;
+    padding-top: 1vw;
+}
