@@ -1,0 +1,37 @@
+.searchBarContainer{
+    display: flex;
+    gap: 1.5vw;
+    justify-content: center;
+    margin-top: 2.177vh;
+    position: relative;
+}
+
+.searchBar{
+    border: 3px solid #003912;
+    height: 6.803vh;
+    width: 69.857vw;
+    border-radius: 2.607vw;
+    display: flex;
+    align-items: center;
+    padding-left: 3.5vw;
+}
+
+.searchIcon{
+    position: absolute;
+    left: 4vw;
+    top: 0.5vw;
+}
+
+.searchButton{
+    min-width: 10.417vw;
+    min-height: 6.803vh;
+    background: #003912;
+    font-family: 'Lufga Semibold';
+    color: #ffffff;
+    font-size:1.625rem ;
+    border-radius: 2.607vw;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
