@@ -4,6 +4,7 @@ import navbarDivider from '../images/NavbarDivider.svg';
 import cartIcon from '../images/CartIcon.svg';
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
+import rainbowGardens from '../images/RainbowLogo.svg';
 
 function Navbar() {
    
@@ -14,7 +15,7 @@ function Navbar() {
         <div className='navbarLeftDiv'>
           <img src={rainbowLogo} alt='rainbow-logo'/>
           <img src={navbarDivider} alt='navbar-divider'/>
-          <span className='navbarTitle'>Rainbow Gardens</span>
+          <img src={rainbowGardens} alt='rainbowLogo'/>
         </div>
        
         <div className='navbarRightDiv'>

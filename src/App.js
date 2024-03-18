@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './app/Navbar/Navbar';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Home from './app/Home/Home';
+import Category from './app/Category/Category';
 
 
 function App() {
@@ -11,6 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path='/' element={<Home/>}></Route>
+          <Route path='/category' element={<Category/>}/>
         </Routes>
       </Router>
       

@@ -11,7 +11,7 @@
     background-image: url('../images/HomeImage.svg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0 10%;
+    background-position: 0 15%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -23,7 +23,7 @@
     flex-direction: column;
     color: #ffffff;
     margin-left: 11.068vw;
-    margin-top: 16.146vh;
+    margin-top: 14.146vh;
     width: 76.302vw;
 }
 
@@ -72,7 +72,7 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 2.5vw;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
 
 }
 
