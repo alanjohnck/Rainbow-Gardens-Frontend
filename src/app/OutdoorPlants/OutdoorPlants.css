@@ -1,0 +1,61 @@
+.outdoorPlantsContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.outdoorPlantsTopContainer{
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/OutdoorBackground.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.outdoorTitle{
+    font-family: 'Lufga Bold';
+    color: #ffffff;
+    font-size: 6.25rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 29.701vh;
+}
+
+.whatsappIconContainer{
+    margin-top: 15vh;
+    margin-bottom: 7.55vh;
+    margin-left: 89.974vw;;
+}
+
+.outdoorPlantsMiddleContainer{
+    position: relative;
+    z-index: 2;
+    margin-top: -2vw;
+    background: #ffffff;
+    border-radius: 2.604vw;
+}
+
+.outdoorPlantsGridContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vw;
+    margin-bottom: 5vw;
+}
+
+.outPlantsGrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap: 3vw;
+}
+
+.outdoorPlantsBottomContainer{
+    position: relative;
+    z-index: 3;
+    margin-top: -2vw;
+}
