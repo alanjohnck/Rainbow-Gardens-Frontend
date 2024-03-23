@@ -1,0 +1,239 @@
+.cartContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.CartBottomDiv{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    margin-bottom: 12.381vh;
+}
+
+.cartBottomLeftDiv{
+    width: 50%;
+}
+
+.cartBottomRightDiv{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12.381vh;
+}
+
+.cartDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-top: 5vh;
+    margin-left: 3.799vw;
+}
+
+.cartCardDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+.cartTitle>span{
+    font-family: 'Lufga Bold';
+    color: #063C17;
+    font-size: 2.5rem;
+}
+
+.cartCard{
+    width: 40.951vw;
+    min-height: 37.959vh;
+    display: flex;
+    border: 1px solid #BFBFBF;
+    border-radius: 2.604vw;
+}
+
+.cartCardLeftDiv{
+ padding: 1.172vw;
+}
+
+.cartCardRightDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    padding: 2.313vh;
+    flex: 1;
+}
+
+.cardCardButtonDiv{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cartCardButton{
+    width: 5.99vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 2.604vw;
+    background: #003912;
+    font-family: 'Lufga Bold';
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.2rem;
+    min-height: 3.537vh;
+}
+
+.cartCardTitle{
+    margin-top: 1vw;
+}
+
+.cartCardTitle>span{
+    font-family: 'Lufga Bold';
+    font-size: 1.625rem;
+    color: #000000;
+}
+
+.cartCardPriceDiv{
+    font-family: 'Lufga Bold';
+    font-size: 2rem;
+    color: #003912;
+}
+
+.cardCounterDiv{
+    display: flex;
+    gap: 1.5vw;
+}
+
+.cardCounterDiv>span{
+    display: flex;
+    align-items: center;
+    font-family: 'Lufga Semibold';
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+.amountDiv{
+    width: 38.607vw;
+    min-height: 23.265vh;
+    background: #063C17;
+    border-radius: 2.604vw;
+    margin-top: 16vh;
+    margin-right: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    padding: 2.313vh 2.148vw;
+}
+
+.detailsDiv{
+    width: 38.607vw;
+    min-height: 60.272vh;
+    background: #063C17;
+    border-radius: 2.604vw;
+    margin-right: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    padding:4.218vh 1.953vw;
+}
+
+.amountTitle{
+    padding-bottom: 0.3vw;
+}
+
+.amountTitle>span{
+    font-family: 'Lufga Bold';
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.amountDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vw;
+}
+
+.amountDetailsDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+.amountDetailsDiv>span{
+    font-family: 'Lufga Bold';
+    font-size: 1rem;
+    color: #B1B1B1;
+}
+
+.amountFooter>img{
+    width: 100%;
+}
+
+.totalDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.totalDiv>span:nth-child(1){
+    font-family: 'Lufga Bold';
+    font-size: 1.5rem;
+}
+
+.totalDiv>span:nth-child(2){
+    font-family: 'Lufga Bold';
+    font-size: 1rem;
+}
+
+.detailsDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.detailsTitle{
+  margin-bottom: 0.5vw;
+}
+
+.detailsTitle>span{
+    font-family: 'Lufga Bold';
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.detailsContent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vw;
+    margin-bottom: 1.5vw;
+}
+
+.detailsContent>span{
+    font-family: 'Lufga Bold';
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.detailsContent>input{
+    background: none;
+    border: none;
+    border-bottom: 3px solid #ffffff;
+    font-family: 'Lufga Bold';
+    font-size: 1rem;
+    outline: none;
+    color: #ffffff;
+}
+
+.detailsSubmitButton{
+    width: 8.138vw;
+    min-height: 4.898vh;
+    border: none;
+    background: #ffffff;
+    border-radius: 1.953vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.02vh;
+    font-family: 'Lufga Bold';
+    font-size: 1rem;
+    color: #000000;
+}

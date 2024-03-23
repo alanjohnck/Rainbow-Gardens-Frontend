@@ -23,7 +23,7 @@ function Navbar() {
            <span>Home</span>
         </NavLink>
 
-        <NavLink to='/shop' className={({isActive})=> isActive ? 'active':'navbarContent'}>
+        <NavLink to='/category' className={({isActive})=> isActive ? 'active':'navbarContent'}>
            <span>Shop</span>
         </NavLink>
 

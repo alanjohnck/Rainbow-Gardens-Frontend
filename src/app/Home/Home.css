@@ -72,8 +72,11 @@
     display: flex;
     justify-content: flex-end;
     padding-right: 2.5vw;
-    margin-bottom: 10vh;
+    margin-bottom: 11.5vh;
+}
 
+.whatsappIconDiv>img{
+    position: sticky;
 }
 
 .homeMiddleDiv{

@@ -1,0 +1,10 @@
+.navbarWithBorder{
+    width: 95vw;
+    height: 7vh;
+    background: #ffffff;
+    margin-top: 3vh;
+    border-radius: 3vw;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid  #000000;
+}

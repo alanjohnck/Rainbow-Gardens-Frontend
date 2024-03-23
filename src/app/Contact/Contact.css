@@ -1,0 +1,189 @@
+.contactContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactTopDiv{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-image: url('../images//ContactBackground.svg'),linear-gradient(rgb(18, 56, 39),rgb(18, 56, 39));
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 20%;
+}
+
+.contactCardContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactCard{
+    width: 77.865vw;
+    min-height: 69.524vh;
+    display: flex;
+    border-radius: 2.604vw;
+    background: #ffffff;
+    margin-bottom: 7vh;
+}
+
+.contactLeftDiv{
+    padding: 0.75vw;
+}
+
+.contactRightDiv{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2vw;
+    gap:7.483vh;
+}
+
+.contactInfoDiv{
+    width: 31.966vw;
+    min-height: 67.075vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #063C17;
+    border-radius: 1.953vw;
+    padding: 5.442vh 2.604vw;
+}
+
+.contactTitleDiv{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    gap: 0.3vw;
+}
+
+.contactTitleDiv>span:nth-child(1){
+    font-family: 'Lufga Semibold';
+    font-size: 1.75rem;
+    color: #ffffff;
+}
+
+.contactTitleDiv>span:nth-child(2){
+    font-family: 'Lufga';
+    font-size: 1rem;
+    color: #C9C9C9;
+}
+
+.contactContentDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 3.5vw;
+    width: 21.94vw;
+    min-height: 26.667vh;
+    /* margin: 5.844vh 0; */
+}
+
+.contactContent{
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.contactContent>span{
+    font-family: 'Lufga';
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+.contactIconsDiv{
+    display: flex;
+    gap: 1vw;
+}
+
+.contactRightTopDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 7.483vh;
+}
+
+.contactUpperDiv{
+    display: flex;
+    gap: 2.5vw;
+}
+
+.contactDetailsDiv{
+    display: flex;
+    flex-direction: column;
+    width: 17.969vw;
+    gap: 0.5vw;
+}
+
+.contactDetailsDiv>span{
+    font-family: 'Lufga Bold';
+    font-size: 1.625rem;
+    color: #063C17;
+}
+
+.contactDetailsDiv>input{
+    background: none;
+    border: none;
+    border-bottom: 3px solid #003912;
+    font-family: 'Lufga Bold';
+    font-size: 1rem;
+    outline: none;
+    color: #9B9B9B;
+}
+
+.contactLowerDiv{
+    display: flex;
+    gap: 2.5vw;
+}
+
+.contactMessageDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    width: 38.607vw;
+}
+
+.contactMessageDiv>span{
+    font-family: 'Lufga Bold';
+    font-size: 1.625rem;
+    color: #063C17;
+}
+
+.contactMessageDiv>input{
+    background: none;
+    border: none;
+    border-bottom: 3px solid #003912;
+    font-family: 'Lufga Bold';
+    font-size: 1rem;
+    outline: none;
+    color: #9B9B9B;
+}
+
+.contactRightBottomDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+
+.contactButton{
+    width: 13.932vw;
+    min-height: 7.347vh;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 1.953vw;
+    background: #003912;
+    font-family: 'Lufga Bold';
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.contactFooterDiv{
+    position: relative;
+    z-index: 2;
+    margin-top: -2vw;
+}
