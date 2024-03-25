@@ -1,0 +1,113 @@
+.admin-login-main{
+    width:100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.admin-login-div-1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.admin-login-div-1-top{
+    width: 100%;
+    height: 100%;
+}
+
+.admin-login-div-1-top img{
+transform: scale(1.1);
+position: relative;
+left:10px;
+opacity: 0.6;
+}
+
+.admin-login-div-1-bottom{
+    width: 100%;
+    height: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-box{
+    width: 25vw;
+    height: 58vh;
+    position: relative;
+    bottom: 550px;
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+}
+
+.login-box-part1{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-box-part1 img{
+    transform: scale(0.5);
+    
+}
+
+.login-box-part2{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box-part2 span{
+    font-family: 'Lufga Medium';
+    font-size: 1.2rem;
+}
+
+.login-box-part2 input{
+    font-family: 'Lufga Medium';
+    width: 100%;
+    height: 6vh;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    padding: 5px;
+    background-color: #e7e7e7;
+}
+
+
+.login-box-part2 button {
+    position: relative;
+    left: 60px;
+    width: 14vw;
+    height: 6vh;
+    color: #ffffff;
+    background-color: #003912;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for transform property */
+}
+
+.login-box-part2 button:hover {
+    transform: scale(1.07);
+}
+
+.login-box-part2 button:active {
+    transform: scale(0.9);
+}
+
+
+
+.forgot{
+    position: relative;
+    left:60px;
+    width: 14vw;
+    height: 6vh;
+    color: #000000 !important;
+    background-color:#ffffff !important;
+    border-radius: 10px;
+}
