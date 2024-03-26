@@ -38,8 +38,11 @@ function Navbar() {
         <NavLink to='/about' className={({isActive})=> isActive ? 'active':'navbarContent'}>
            <span>About Us</span>
         </NavLink>
-          
+        
+        <NavLink to='/cart' className={({isActive}) => isActive ? 'active':'navbarContent'}>
         <img src={cartIcon} alt='cart-icon'/>
+        </NavLink>
+
         </div>
        </div>
     </div>

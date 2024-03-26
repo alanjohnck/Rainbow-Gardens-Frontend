@@ -1,5 +1,436 @@
 .homeContainer{
     width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.homeTopDiv{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/HomeImage.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+.homeContentContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeContentDiv{
+    width: 76.302vw;
+    min-height: 39.864vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
+
+.homeContent{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.homeTopContent>span{
+    font-family: 'Lufga Medium';
+    font-size: 3.438rem;
+    line-height: 1;
+}
+
+.homeMiddleContent>span{
+    font-family: 'Lufga Bold';
+    font-size: 12.188rem;
+    line-height: 1;
+}
+
+.homeBottomContent{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.5vw;
+}
+
+.homeBottomContent>span{
+    font-family: 'Lufga Medium';
+    font-size: 2.188rem;
+}
+
+.orderButtonDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8vw;
+}
+
+.orderButton{
+    width: 14.128vw;
+    min-height: 8.116vh;
+    background: #ffffff;
+    border: none;
+    border-radius: 2.604vw;
+    font-family: 'Lufga Medium';
+    font-size: 1.6rem;
+    color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsappIconDiv{
+    margin-top: 0.8vw;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right:  2.5vw;
+}
+
+.homeMiddleDiv{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2.604vw;
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    margin-top: -3vw;
+
+}
+
+.homeMiddleTopDiv{
+    display: flex;
+    gap: 1.302vw;
+    height: auto;
+    margin: 5.034vh 0;
+}
+
+.homeTopLeftDiv{
+    display:flex;
+    flex-direction: column;
+    gap: 1.302vw;
+}
+
+.homeTopRightDiv{
+    flex: 1;
+    display: flex;
+    gap: 1.302vw;
+}
+
+.allPlantsDiv{
+    width: 46.615vw;
+    height: 45.435vh;
+    background-image: url('../images/AllPlants.svg'),linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1));
+    border-radius: 2.304vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.allPlantsDiv>span{
+  font-family: 'Lufga Bold';
+  font-size: 2.5rem;
+}
+
+.homeBottomLeftDiv{
+    display: flex;
+    gap: 1.302vw;
+}
+
+.airPurifierDiv{
+    width: 22.656vw;
+    height: 47.116vh;
+    background-image: url('../images/AirPurifier.svg'),linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1));
+    border-radius: 2.304vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.airPurifierDiv>span{
+    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+    max-width: 13.216vw;
+    text-align: center;
+}
+
+.indoorPlantsDiv{
+    width: 22.656vw;
+    height: 47.116vh;
+    background-image: url('../images/IndoorPlants.svg'),linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1));
+    border-radius: 2.304vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.indoorPlantsDiv>span{
+    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+    max-width: 8.138vw;
+    text-align: center;
+}
+
+.outdoorPlantsDiv{
+    width: 22.656vw;
+    background-image: url('../images/OutdoorPlants.svg'),linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1));
+    border-radius: 2.304vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.outdoorPlantsDiv>span{
+    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+    max-width: 10.417vw;
+    text-align: center;
+} 
+
+.homeRightSideDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 1.302vw;
+}
+
+.floweringPlantsDiv{
+    width: 22.656vw;
+    height:58.497vh;
+    background-image: url('../images/FloweringPlants.svg'),linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1));
+    border-radius: 2.304vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.floweringPlantsDiv>span{
+    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+    max-width: 12.044vw;
+    text-align: center;
+}
+
+.prosperityPlantsDiv{
+    width: 22.656vw;
+    height:34vh;
+    background-image: url('../images/ProsperityPlants.svg'),linear-gradient(rgba(0,0,0,1), rgba(0,0,0,1));
+    border-radius: 2.304vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+}
+
+.prosperityPlantsDiv>span{
+     font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+    max-width: 12.044vw;
+    text-align: center;
+}
+
+.whyChooseUsContainer{
+    width: 94.531vw;
+    min-height: 89.252vh;
+    background: #003912;
+    border-radius: 2.604vw;
+    display: flex;
+}
+
+.whyChooseUsContent{
+    width: 44.141vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5vw;
+    padding-left: 1.823vw;
+    color: #ffffff;
+}
+
+.whyChooseUsTitle>span{
+    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+}
+
+.whyChooseUsDiv{
+    min-height: 15.238vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3vw;
+}
+
+.whyChooseUsDiv>span{
+    font-family: 'Lufga Semibold';
+    font-size: 1.625rem;
+}
+
+.whyChooseUsImage{
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1.888vw;
+}
+
+.whyChooseUsImage>img{
+    height: 81.497vh;
+}
+
+.latestDiv{
+    width: 94.531vw ;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8vh;
+}
+
+.latestTitle>span{
+    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+    color: #000000;
+}
+
+.latestContents{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5vh;
+}
+
+.plantGridContainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto auto;
+    gap: 3vw;
+}
+
+.plantDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.plantCard{
+    border-radius: 1.563vw!important;
+    min-height: 47.211vh;
+    min-width: 22.786vw;
+}
+
+.plantCardImage{
+    padding: 0.5vw;
+    border-radius: 1.563vw!important;
+}
+
+.plantCardBody{
+    display: flex;
+    padding-top: 0!important;
+    gap: 0.8vw;
+}
+
+.plantDetailsDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plantDetailsTopDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.plantTitle>span{
+    font-family: 'Lufga Medium';
+    font-size: 1.875rem;
+    color: #000000;
+}
+
+.plantDescription>span{
+    font-family: 'Lufga';
+    font-size: 1.125rem;
+    color: #959595;
+}
+
+.plantPrice>span{
+    font-family: 'Lufga Bold';
+    font-size: 1.125rem;
+    color: #000000;
+}
+
+.viewPlantDiv{
+    display: flex;
+    align-items: flex-end;
+}
+
+.faqContainer{
+    width: 94.531vw ;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    margin-top: 8vh;
+}
+
+.faqTitle>span{
+   font-family: 'Lufga Bold';
+   color: #000000;
+   font-size: 2.5rem;
+}
+
+.questionSpan{
+    font-family: 'Lufga Bold';
+    color: #003912;
+}
+
+.questionsDiv{
+    display: flex;
+    flex-direction: column;
+    gap:1.302vw
+}
+
+.question{
+    width: 100%;
+    min-height: 8.844vh;
+    border: 1px solid #000000;
+    border-radius: 2.604vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vw;
+}
+
+.question>span{
+    font-family: 'Lufga Semibold';
+    color: #000000;
+    font-size: 1.5rem;
+}
+
+.homeBottomDiv{
+    margin-top: 10vh;
+}
+/* .hom
+eContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+ .homeContainer{
+    width: 100%;
     height:auto;
     display: flex;
     flex-direction: column;
@@ -7,7 +438,6 @@
 
 .homeTopDiv{
     width: 100%;
-    /* height: 105vh; */
     background-image: url('../images/HomeImage.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -362,5 +792,4 @@
     z-index: 3;
     margin-top: -2vw;
 }
-
-
+ */
