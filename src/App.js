@@ -6,6 +6,8 @@ import OutdoorPlants from './app/OutdoorPlants/OutdoorPlants';
 import Product from './app/Product/Product';
 import Cart from './app/Cart/Cart';
 import Contact from './app/Contact/Contact';
+import Adminlogin from './app/Admin/Admin Login/adminlogin';
+
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
           <Route path='/product' element={<Product/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/contact' element={<Contact/>}/>
+          <Route path='/adminlogin' element={<Adminlogin/>}/>
         </Routes>
       </Router>
       
