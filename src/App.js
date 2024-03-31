@@ -7,6 +7,8 @@ import Product from './app/Product/Product';
 import Cart from './app/Cart/Cart';
 import Contact from './app/Contact/Contact';
 import Adminlogin from './app/Admin/Admin Login/adminlogin';
+import ProductCreation from './app/Admin/Product Creation/product';
+import AdminDashboard from './app/Admin/Admin Dashboard/admindash';
 
 
 
@@ -21,7 +23,11 @@ function App() {
           <Route path='/product' element={<Product/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/contact' element={<Contact/>}/>
+
+{/* --------------------Admin side routes -----------------------*/}
           <Route path='/adminlogin' element={<Adminlogin/>}/>
+          <Route path='/dashboard' element={<AdminDashboard/>}/>
+          <Route path='/createproduct' element={<ProductCreation/>}/>
         </Routes>
       </Router>
       
