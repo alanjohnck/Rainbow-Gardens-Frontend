@@ -1,17 +1,22 @@
 import React from 'react'
 import "./admindash.css"
+import { Link } from 'react-router-dom';
 
 function admindash() {
   return (
     <div className="admin-dashboard-main">
         <div className="product-nav"></div>
-        <div className="hellointro"></div>
+        <div className="hellointro">
+          <h1>Welcome to Rainbow Garden Dashboard</h1>
+        </div>
         <div className="admin-dash-1">
           <div className="dashleft-1">
             <div className="createproduct">
               <h1>Add New Plant</h1>
               <h2>Click to Create New Plant to be added to Product List</h2>
+              <Link to="/createproduct">
               <button>Open</button>
+            </Link>
             </div>
           </div>
           <div className="dashright-1">

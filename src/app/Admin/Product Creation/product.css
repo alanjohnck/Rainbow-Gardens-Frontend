@@ -169,3 +169,71 @@
   color: #003912;
   transform: scale(0.9);
 }
+
+
+
+
+div:where(.swal2-container) div:where(.swal2-popup) {
+  display: none;
+  position: relative;
+  box-sizing: border-box;
+  grid-template-columns: minmax(0, 100%);
+  width: 32em;
+  max-width: 22%;
+  padding: 0 0 1.25em;
+  border: none;
+  border-radius: 20px;
+  background: #003912;
+  color: #fffbfb;
+  font-family: 'Lufga Medium';
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=left] {
+  top: -0.4375em;
+  left: -2.0635em;
+  transform: rotate(-45deg);
+  transform-origin: 3.75em 3.75em;
+  border-radius: 7.5em 0 0 7.5em;
+  opacity: 0;
+}
+div:where(.swal2-icon).swal2-success [class^=swal2-success-circular-line][class$=right] {
+  top: -0.6875em;
+  left: 1.875em;
+  transform: rotate(-45deg);
+  transform-origin: 0 3.75em;
+  border-radius: 0 7.5em 7.5em 0;
+  opacity: 0;
+}
+
+div:where(.swal2-icon).swal2-success .swal2-success-fix {
+  position: absolute;
+  z-index: 1;
+  top: .5em;
+  left: 1.625em;
+  width: .4375em;
+  height: 5.625em;
+  transform: rotate(-45deg);
+  opacity: 0;
+}
+div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-long {
+  animation: swal2-animate-success-line-long .75s;
+  background-color: #ffffff;
+}
+
+div:where(.swal2-icon).swal2-success.swal2-icon-show .swal2-success-line-tip {
+  animation: swal2-animate-success-line-tip .75s;
+  background-color: white;
+}
+
+div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
+  border: none;
+  outline: none;
+  border-radius: .25em;
+  background: initial;
+  background-color: #ffffff;
+  color: #063c17;
+  font-size: 1em;
+  font-family: 'Lufga Medium';
+}
