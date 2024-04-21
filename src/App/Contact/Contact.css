@@ -1,0 +1,160 @@
+.contact{
+    width: 100%;
+    height:100%;
+    overflow-y: auto;
+}
+
+.contactTopDiv{
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/ContactBackground.svg'),linear-gradient( rgba(40, 90, 67, 1), rgba(40, 90, 67, 1));
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contactBottomDiv{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactContainer{
+    width: 77.865vw;
+    min-height: 69.524vh;
+    background: #ffffff;
+    border-radius: 2.083vw;
+    display: flex;
+}
+
+.contactLeftContainer{
+    width: 31.966vw;
+    min-height: 67.075vh;
+    background: #063C17;
+    margin: 1vw;
+    border-radius: 2.083vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2.604vw;
+    gap: 2vw;
+}
+
+.contactRightContainer{
+    flex: 1;
+    padding: 2vw;
+}
+
+.contactLeftHeaderDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.contactLeftHeaderDiv>span:nth-child(1){
+    color: #ffffff;
+    font-family: 'Lufga Semibold';
+    font-size: 1.75rem;
+}
+
+.contactLeftHeaderDiv>span:nth-child(2){
+    color: #C9C9C9;
+    font-family: 'Lufga';
+    font-size: 1.125rem;
+}
+
+.contactLeftMiddleDiv{
+    width: 21.94vw;
+    min-height: 26.667vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contactLeftContent{
+    display: flex;
+    gap: 1.5vw;
+}
+
+.contactLeftContent>span{
+    color: #ffffff;
+    font-family: 'Lufga';
+}
+
+.contactLeftIconDiv{
+    display: flex;
+    gap: 1vw;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 2vw;
+    padding: 0.5vw 0;
+}
+
+.contactFormDiv{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactFormContent{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.contactFormContent>span{
+    font-family: 'Lufga Bold';
+    color: #063C17;
+    font-size: 1.625rem;
+}
+
+.contactFormContent>input{
+    width: 17.969vw;
+    border: none;
+    border-bottom: 3px solid #063C17;
+    font-family: 'Lufga Bold';
+    color: #9B9B9B;
+    outline: 0;
+}
+
+.contactMessageDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.contactMessageDiv>span{
+    font-family: 'Lufga Bold';
+    color: #063C17;
+    font-size: 1.625rem;
+}
+
+.contactMessageDiv>input{
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid #063C17;
+    font-family: 'Lufga Bold';
+    color: #9B9B9B;
+    outline: 0;
+}
+
+.contactButton{
+    width: 13.939vw;
+    min-height: 7.347vh;
+    background: #063C17;
+    border: none;
+    border-radius: 1.953vw;
+    color: #ffffff;
+    font-family: 'Lufga Bold';
+}
+
+.contactFooterContainer{
+    z-index: 2;
+    margin-top: -3vw;
+}

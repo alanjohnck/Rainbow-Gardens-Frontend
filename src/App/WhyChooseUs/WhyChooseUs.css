@@ -1,0 +1,69 @@
+.whyChooseUs{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.whyChooseUsContainer{
+    width: 95%;
+    min-height: 89.252vh;
+    border-radius: 2.607vw;
+    background: #003912;
+    display: flex;
+}
+
+.whyChooseUsLeftContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+    justify-content: space-between;
+    padding-left: 1.823vw!important;
+    padding: 10vh 0;
+}
+
+.whyChooseUsTitleContainer>span{
+    color: #ffffff;
+    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+}
+
+.whyChooseUsContent{
+    width: 44.141vw;
+    min-height: 15.238vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+}
+
+.whyChooseUsContent>span{
+    font-family: 'Lufga Semibold';
+    color: #ffffff;
+    font-size: 1.625rem;
+}
+
+.whyChooseUsContent>p{
+    margin: 0;
+    font-family: 'Lufga Medium';
+    font-size: 1rem;
+    color: #ffffff;
+    opacity: 0.6;
+}
+
+.whyChooseUsRightContainer{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.whyChooseUsImageContainer{
+    width: 39.193vw;
+    height: 81.497vh;
+    border-radius: 2.083vw;
+    padding-right: 1.6vw;
+}
+
+.whyChooseUsImageContainer>img{
+    width: 100%;
+    height:100%;
+}

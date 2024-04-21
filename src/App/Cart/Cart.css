@@ -1,0 +1,262 @@
+.cart{
+    width: 100%;
+    height: 100%;
+}
+
+.cartContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-height: auto;
+}
+
+.cartBottomContainer{
+    flex: 1;
+    display: flex;
+    margin-bottom: 8vh;
+}
+
+.cartLeftContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    padding-left: 2.5vw;
+}
+
+.cartRightContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 2.5vw;
+    gap: 5.924vw;
+}
+
+.cartPageTitle{
+    margin-top: 9.02vh;
+}
+
+.cartPageTitle>span{
+    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+    color: #063C17;
+    line-height: 1;
+}
+
+.productCard{
+    width: 40.951vw;
+    min-height: 22.993vh;
+    border-radius: 2.604vw;
+    display: flex;
+    border: 1px solid #BFBFBF;
+}
+
+.productImageDiv{
+    width: 28%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+}
+
+.productImageDiv>img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 1.693vw;
+    border-top-right-radius: 1.693vw;
+    border-bottom-left-radius: 1.693vw;
+    border-bottom-right-radius: 1.693vw;
+}
+
+.productDescriptionDiv{
+    padding: 1vw 1vw 1.5vw 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 1vw;
+}
+
+.productCardCategoryDiv{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.productCardButton{
+    min-width: 5.99vw;
+    min-height: 3.537vh;
+    background:#063C17;
+    border: none;
+    border-radius: 1.953vw;
+    font-family: 'Lufga Bold';
+    color: #ffffff;
+    padding: 0.25vw 1vw;
+}
+
+.productCardTitleDiv>span{
+    font-family: 'Lufga Bold';
+    color: #000000;
+    font-size: 1.625rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.productCardBottomDiv{
+    width: 100%;
+    display: flex;
+    gap: 1.5vw;
+    margin-bottom: 0.7vw;
+}
+
+.productCardPriceDiv{
+  display: flex;
+  align-items: center;
+}
+
+.productCardPriceDiv>span{
+    font-family: 'Lufga Bold';
+    color: #063C17;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.productQuantityDiv{
+    display: flex;
+    gap: 1vw;
+}
+
+.productQuantityDiv>img{
+    cursor: pointer;
+}
+
+.productQuantityDiv>span{
+    font-family: 'Lufga Semibold';
+    font-size: 1.625rem;
+    color: #000000;
+}
+
+.productCheckoutDiv{
+    width: 38.607vw;
+    height: auto;
+    gap: 1vw;
+    background: #063C17;
+    margin-top: 19.34vh;
+    border-radius: 2.604vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1vw 2vw;
+}
+
+.checkoutTitle>span{
+    font-family: 'Lufga Bold';
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.productItemsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+}
+
+.productItemsContainer>span{
+    font-family: 'Lufga Bold';
+    color: #B1B1B1;
+}
+
+.productFooterContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1vw;
+    color: #ffffff;
+}
+
+.productFooterContainer>img{
+    width: 100%;
+}
+
+.productTotalContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productTotalContainer>span:nth-child(1){
+    font-size: 1.5rem;
+    font-family: 'Lufga Bold';
+    line-height: 1;
+}
+
+.productTotalContainer>span:nth-child(2){
+    font-family: 'Lufga Bold';
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.cartContactDiv{
+    width: 38.607vw;
+    min-height: 60.272vh;
+    background: #063C17;
+    border-radius: 2.604vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5vw 2vw;
+    gap: 1vw;
+}
+
+
+.cartContactTitle>span{
+    color: #ffffff;
+    font-family: 'Lufga Bold';
+    font-size: 1.5rem;
+}
+
+.cartContactForm{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cartFormContent{
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.cartFormContent>span{
+    font-family: 'Lufga Bold';
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.cartFormContent>input{
+    border: none;
+    background: none;
+    border-bottom: 3px solid #ffffff;
+    font-family: 'Lufga Bold';
+    color: #9B9B9B;
+    outline: 0;
+}
+
+.cartSubmitButton{
+    width: 8.138vw;
+    min-height: 4.898vh;
+    background: #ffffff;
+    border: none;
+    border-radius: 1.953vw;
+    color: #000000;
+    font-family: 'Lufga Bold';
+}
