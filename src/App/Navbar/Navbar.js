@@ -17,7 +17,7 @@ export default function Navbar() {
             <span>Home</span>
          </NavLink>
 
-         <NavLink to='/products'  className={({isActive}) => isActive ? "active" : "navbarContent"}>
+         <NavLink to='/category'  className={({isActive}) => isActive ? "active" : "navbarContent"}>
             <span>Shop</span>
          </NavLink>
 

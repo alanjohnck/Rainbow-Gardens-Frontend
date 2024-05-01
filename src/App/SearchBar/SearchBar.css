@@ -1,0 +1,47 @@
+.searchBarContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3vh;
+    width: 95vw;
+}
+
+.inputContainer{
+    display: flex;
+    position: relative;
+}
+
+.searchIconDiv{
+    width: 2.214vw;
+    min-height: 4.626vh;
+    position: absolute;
+    left: 1vw;
+    top: 0.5vw;
+    bottom: 0.5vw;
+}
+
+.searchInput{
+    width: 71.857vw;
+    min-height: 6.803vh;
+    border: 3px solid #003912;
+    border-radius: 2.604vw;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #000000;
+    padding-left: 4vw;
+}
+
+.searchButton,.searchButton{
+    width: 10.417vw;
+    min-height: 6.803vh;
+    background: #003912;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    border: none;
+    border-radius: 2.604vw;
+    font-family: 'Lufga Semibold';
+    font-size: 1.3rem;
+    padding: 0.4vw 0;
+}
