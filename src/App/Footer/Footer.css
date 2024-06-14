@@ -1,164 +1,279 @@
-.footer{
-    width: 100%;
-    background: #003912;
-    border-top-left-radius: 2.604vw;
-    border-top-right-radius: 2.604vw;
+.footer {
+  width: 100%;
+  background: #003912;
+  border-top-left-radius: 2.604vw;
+  border-top-right-radius: 2.604vw;
 }
 
-.footerTopDiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.footerTopDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.footerMainHeading{
-    width: 75.669vw;
-    min-height: 12.966vh;
-    margin-top: 12.381vh;
-    display: flex;
-    justify-content: center;
+.footerMainHeading {
+  width: 75.669vw;
+  min-height: 12.966vh;
+  margin-top: 12.381vh;
+  display: flex;
+  justify-content: center;
 }
 
-.footerMainHeading>span{
-    font-family: 'Lufga Bold';
-    color: #ffffff;
-    font-size: 4.183rem;
+.footerMainHeading > span {
+  font-family: "Lufga Bold";
+  color: #ffffff;
+  font-size: 4.183rem;
 }
 
-.footerBottomHeading{
-    width: 41.667vw;
-    min-height: 10.068vh;
-    display: flex;
-    justify-content: center;
+.footerBottomHeading {
+  width: 41.667vw;
+  min-height: 10.068vh;
+  display: flex;
+  justify-content: center;
 }
 
-.footerBottomHeading>span{
-    font-family: 'Lufga';
-    font-size: 1.5rem;
-    color: #ffffff;
-    text-align: center;
+.footerBottomHeading > span {
+  font-family: "Lufga";
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-align: center;
 }
 
-.footerBottomDiv{
-    display: flex;
-    padding-top: 9.388vh;
+.footerBottomDiv {
+  display: flex;
+  padding-top: 9.388vh;
 }
 
-.footerBottomLeftDiv{
-    width: 50%;
-    padding-left: 2.214vw;
-    display: flex;
+.footerBottomLeftDiv {
+  width: 50%;
+  padding-left: 2.214vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.footerBottomLeftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8vw;
+}
+
+.footerContent {
+  width: 17.643vw;
+  min-height: 9.796vh;
+}
+
+.footerContent > span {
+  font-family: "Lufga Medium";
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.footerIconDiv {
+  display: flex;
+  gap: 1.5vw;
+}
+
+.footerBottomRightDiv {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4vw;
+  padding-right: 1.5vw;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.linkContainer > span {
+  font-family: "Lufga Semibold";
+  font-size: 1.625rem;
+  color: #ffffff;
+}
+
+.linkContents {
+  width: 9.115vw;
+  min-height: 19.592vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+}
+
+.linkContents > a {
+  text-decoration: none;
+}
+
+.linkContents > a > span {
+  font-family: "Lufga Medium";
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.footerContactContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+}
+
+.footerContactContainer > span {
+  font-family: "Lufga Semibold";
+  font-size: 1.625rem;
+  color: #ffffff;
+}
+
+.footerContactContents {
+  width: 19.839vw;
+  min-height: 17.415vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.footerContactContent {
+  display: flex;
+  gap: 0.5vw;
+  color: #ffffff;
+}
+
+.footerContactContent > span {
+    font-family: "Lufga";
+}
+
+.footerCcDiv {
+  margin-top: 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.footerLineContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.footerCcDiv > img {
+  width: 95vw;
+}
+
+.ccSpan {
+  font-family: "Lufga Medium";
+  color: #ffffff;
+  margin-bottom: 1vw;
+  padding-left: 2.214vw;
+}
+
+@media only screen and (width<=480px) {
+  .footer {
+    padding: 0 5vw;
+  }
+
+  .footerTopDiv {
+    align-items: flex-start;
     justify-content: flex-start;
-    align-items: flex-end;
-}
+  }
 
-.footerBottomLeftContent{
-    display: flex;
+  .footerMainHeading {
+    width: unset;
+    min-height: unset;
+    margin-top: 4vh;
+    justify-content: flex-start;
+  }
+
+  .footerMainHeading > span {
+    font-size: 2.3rem;
+  }
+
+  .footerBottomHeading {
+    display: none;
+  }
+
+  .footerBottomDiv {
+    flex-direction: column-reverse;
+    padding-top: 3vh;
+  }
+
+  .footerBottomRightDiv {
+    width: unset;
     flex-direction: column;
-    gap: 0.8vw;
-}
+    gap: 3vh;
+  }
 
-.footerContent{
-    width: 17.643vw;
-    min-height: 9.796vh;
-}
+  .linkContents {
+    width: unset;
+    gap: 1vw;
+    min-height: unset;
+    padding-top: 1.5vh;
+  }
 
-.footerContent>span{
-    font-family: 'Lufga Medium';
-    font-size: 1rem;
-    color: #ffffff;
-}
+  .linkContents > a > span {
+    font-family: "Lufga";
+  }
 
-.footerIconDiv{
-    display: flex;
-    gap: 1.5vw;
-}
+  .footerContactContents {
+    width: unset;
+    min-height: unset;
+    padding-top: 1.5vh;
+    gap: 3vh;
+  }
 
-.footerBottomRightDiv{
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
+  .footerContactContent {
     gap: 4vw;
-    padding-right: 1.5vw;
+  }
+
+  .footerContactContent > img {
+    width: 5vw;
+  }
+
+  .footerBottomLeftDiv {
+    width: unset;
+    padding-left: unset;
+    padding-top: 4vh;
+  }
+
+  .footerBottomLeftContent {
+    gap: unset;
+  }
+
+  .footerIconDiv {
+    padding: 3vh 0;
+    gap: 5vw;
+  }
+
+  .footerIconDiv > img {
+    width: 12vw;
+  }
+
+  .footerContent {
+    width: 60vw;
+  }
+
+  .footerContent > span {
+    font-size: 1.2rem;
+  }
+
+  .footerCcDiv {
+    margin-top: unset;
+  }
+
+  .footerLineContainer {
+    max-height: 0.5vh;
+  }
+
+  .ccSpan {
+    text-align: center;
+    padding-left: unset;
+    margin-bottom: unset;
+    padding: 1vh 0;
+  }
+
+  .ccSpan > span {
+    font-family: "Lufga";
+  }
+
 }
 
-.linkContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-
-.linkContainer>span{
-    font-family: 'Lufga Semibold';
-    font-size: 1.625rem;
-    color: #ffffff;
-}
-
-.linkContents{
-    width: 9.115vw;
-    min-height: 19.592vh;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vw;
-}
-
-.linkContents>a{
-    text-decoration: none;
-}
-
-.linkContents>a>span{
-    font-family: 'Lufga Medium';
-    font-size: 1rem;
-    color: #ffffff;
-}
-
-.footerContactContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vw;
-}
-
-.footerContactContainer>span{
-    font-family: 'Lufga Semibold';
-    font-size: 1.625rem;
-    color: #ffffff;
-}
-
-.footerContactContents{
-    width: 19.839vw;
-    min-height: 17.415vh;
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-
-.footerContactContent{
-    display: flex;
-    gap: 0.5vw;
-    color: #ffffff;
-}
-
-.footerCcDiv{
-    margin-top: 1vw;
-    display: flex;
-    flex-direction: column;
-    gap: 1vw;
-}
-
-.footerLineContainer{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.footerCcDiv>img{
-    width: 95vw;
-}
-
-.ccSpan{
-    font-family: 'Lufga Medium';
-    color: #ffffff;
-    margin-bottom: 1vw;
-    padding-left: 2.214vw;
-}
