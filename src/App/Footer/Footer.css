@@ -185,7 +185,7 @@
   }
 
   .footerMainHeading > span {
-    font-size: 2.3rem;
+    font-size: 3rem;
   }
 
   .footerBottomHeading {
@@ -203,6 +203,10 @@
     gap: 3vh;
   }
 
+  .linkContainer > span {
+    font-size: 2.2rem;
+  }
+
   .linkContents {
     width: unset;
     gap: 1vw;
@@ -212,6 +216,11 @@
 
   .linkContents > a > span {
     font-family: "Lufga";
+    font-size: 1.8rem;
+  }
+
+  .footerContactContainer > span {
+    font-size: 2.2rem;
   }
 
   .footerContactContents {
@@ -226,7 +235,11 @@
   }
 
   .footerContactContent > img {
-    width: 5vw;
+    width: 6vw;
+  }
+
+  .footerContactContent > span {
+    font-size: 1.8rem;
   }
 
   .footerBottomLeftDiv {
@@ -249,11 +262,11 @@
   }
 
   .footerContent {
-    width: 60vw;
+    width: 70vw;
   }
 
   .footerContent > span {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
   }
 
   .footerCcDiv {
@@ -273,6 +286,7 @@
 
   .ccSpan > span {
     font-family: "Lufga";
+    font-size: 1.5rem;
   }
 
 }
