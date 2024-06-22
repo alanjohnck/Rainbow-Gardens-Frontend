@@ -1,69 +1,119 @@
-.whyChooseUs{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.whyChooseUs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.whyChooseUsContainer{
-    width: 95%;
-    min-height: 89.252vh;
-    border-radius: 2.607vw;
-    background: #003912;
-    display: flex;
+.whyChooseUsContainer {
+  width: 95%;
+  min-height: 89.252vh;
+  border-radius: 2.607vw;
+  background: #003912;
+  display: flex;
 }
 
-.whyChooseUsLeftContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 1.5vw;
-    justify-content: space-between;
-    padding-left: 1.823vw!important;
-    padding: 10vh 0;
+.whyChooseUsLeftContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+  justify-content: space-between;
+  padding: 10vh 0 10vh 1.823vw;
 }
 
-.whyChooseUsTitleContainer>span{
-    color: #ffffff;
-    font-family: 'Lufga Bold';
-    font-size: 2.5rem;
+.whyChooseUsTitleContainer > span {
+  color: #ffffff;
+  font-family: "Lufga Bold";
+  font-size: 2.5rem;
 }
 
-.whyChooseUsContent{
-    width: 44.141vw;
-    min-height: 15.238vh;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5vw;
+.whyChooseUsContent {
+  width: 44.141vw;
+  min-height: 15.238vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
 }
 
-.whyChooseUsContent>span{
-    font-family: 'Lufga Semibold';
-    color: #ffffff;
-    font-size: 1.625rem;
+.whyChooseUsContent > span {
+  font-family: "Lufga Semibold";
+  color: #ffffff;
+  font-size: 1.625rem;
 }
 
-.whyChooseUsContent>p{
-    margin: 0;
-    font-family: 'Lufga Medium';
-    font-size: 1rem;
-    color: #ffffff;
-    opacity: 0.6;
+.whyChooseUsContent > p {
+  margin: 0;
+  font-family: "Lufga Medium";
+  font-size: 1rem;
+  color: #ffffff;
+  opacity: 0.6;
 }
 
-.whyChooseUsRightContainer{
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.whyChooseUsRightContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.whyChooseUsImageContainer{
-    width: 39.193vw;
-    height: 81.497vh;
-    border-radius: 2.083vw;
-    padding-right: 1.6vw;
+.whyChooseUsImageContainer {
+  width: 39.193vw;
+  height: 81.497vh;
+  border-radius: 2.083vw;
+  padding-right: 1.6vw;
 }
 
-.whyChooseUsImageContainer>img{
-    width: 100%;
-    height:100%;
+.whyChooseUsImageContainer > img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Media queries for small mobiles */
+
+@media screen and (width<=480px) {
+  .whyChooseUsContainer {
+    width: 96dvw;
+    flex-direction: column-reverse;
+    padding: 4dvh 5dvw;
+  }
+
+  .whyChooseUsRightContainer {
+    flex: unset;
+  }
+
+  .whyChooseUsImageContainer {
+    width: unset;
+    height: unset;
+    padding: unset;
+  }
+
+  .whyChooseUsLeftContainer {
+    padding: 5dvh 0 0 0;
+    gap: unset;
+  }
+
+  .whyChooseUsTitleContainer {
+    padding-bottom: 5dvh;
+  }
+  
+  .whyChooseUsTitleContainer > span {
+    font-size: 2.8rem;
+  }
+
+  .whyChooseUsContent {
+    width: unset;
+    min-height: auto;
+  }
+
+  .whyChooseUsContent:not(:last-child) {
+    padding-bottom: 5dvh;
+  }
+
+  .whyChooseUsContent > span {
+    font-family: "Lufga Medium";
+    font-size: 2.2rem;
+  }
+
+  .whyChooseUsContent > p {
+    font-size: 1.2rem;
+  }
 }
