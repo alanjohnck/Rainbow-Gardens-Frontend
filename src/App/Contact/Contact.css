@@ -1,6 +1,4 @@
 .contact{
-    width: 100%;
-    height:100%;
     overflow-y: auto;
 }
 
@@ -119,7 +117,7 @@
     border: none;
     border-bottom: 3px solid #063C17;
     font-family: 'Lufga Bold';
-    color: #9B9B9B;
+    color: black;
     outline: 0;
     font-size: 1.2rem;
 }
@@ -136,12 +134,12 @@
     font-size: 1.625rem;
 }
 
-.contactMessageDiv>input{
+.contactMessageDiv>textarea{
     width: 100%;
     border: none;
     border-bottom: 3px solid #063C17;
     font-family: 'Lufga Bold';
-    color: #9B9B9B;
+    color: black;
     outline: 0;
     font-size: 1.2rem;
 }
@@ -159,4 +157,106 @@
 .contactFooterContainer{
     z-index: 2;
     margin-top: -3vw;
+}
+
+@media screen and (width<=480px) {
+
+    .contactTopDiv {
+        height: ;
+    }
+
+    .contactBottomDiv {
+        margin-top: 5dvh;
+        height: unset;
+    }
+
+    .contactContainer {
+        width: 90vw;
+        min-height: unset;
+        flex-direction: column-reverse;
+    }    
+
+    .contactRightContainer {
+        padding: 3dvh 8dvw;
+    }
+
+    .contactForm {
+        gap: 3dvh;
+    }
+
+    .contactFormDiv {
+        flex-direction: column;
+        gap: 3dvh;
+    }
+
+    .contactFormContent {
+        
+    }
+
+    .contactFormContent > span{
+        font-size: 2.3rem;
+    }
+
+    .contactFormContent > input {
+        width: 100%;
+        font-size: 1.8rem;
+    }
+
+    .contactMessageDiv > span {
+        font-size: 2.3rem;
+    }
+
+    .contactMessageDiv > textarea {
+        font-size: 1.8rem;
+    }
+
+    .contactButton {
+        width: 40dvw;
+        min-height: 6dvh;
+        font-size: 1.8rem;
+    }
+
+    .contactLeftContainer {
+        width: unset;
+        min-height: unset;
+        padding: 3dvh 8dvw;
+        gap: unset;
+        justify-content: unset;
+    }
+
+    .contactLeftHeaderDiv>span:nth-child(1) {
+        font-size: 2.3rem;
+    }
+
+    .contactLeftHeaderDiv>span:nth-child(2){
+        font-size: 1.5rem;
+    }
+
+    .contactLeftMiddleDiv {
+        width: unset;
+        justify-content: unset;
+        min-height: unset;
+        padding: 4dvh 0;
+        gap: 3dvh;
+    }
+
+    .contactLeftContent {
+        align-items: center;
+    }
+    
+    .contactLeftContent {
+        font-size: 1.8rem;
+    }
+
+    .contactLeftIconDiv {
+        gap: 5dvw;
+    }
+
+    .contactLeftIconDiv > img{
+        width: 8dvw;
+    }
+
+    .contactFooterContainer {
+        
+    }
 }
