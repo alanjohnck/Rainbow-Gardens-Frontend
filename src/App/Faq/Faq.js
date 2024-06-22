@@ -10,21 +10,21 @@ export default function Faq() {
             <span>Frequently Asked <span className='questionSpan'>Questions</span></span>
         </div>
         <div className='faqDiv'>
-          <span>How do you purchase plants</span>
+          <span>How do you purchase plants?</span>
           <div className='faqIconContainer'>
             <img src={faqIcon} alt='faqIcon'/>
           </div>
         </div>
 
         <div className='faqDiv'>
-         <span>From where are the plants imported</span> 
+         <span>From where are the plants imported?</span> 
          <div className='faqIconContainer'>
             <img src={faqIcon} alt='faqIcon'/>
           </div>
         </div>
 
         <div className='faqDiv'>
-         <span>Is the fertilizer natural</span>
+         <span>Are the fertilizers natural?</span>
          <div className='faqIconContainer'>
             <img src={faqIcon} alt='faqIcon'/>
           </div>
