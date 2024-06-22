@@ -136,7 +136,7 @@ export default function Contact() {
 
                   <div className='contactMessageDiv'>
                     <span>Message to us!</span>
-                    <input type='text' placeholder='Enter your message' name='message' value={formData.message} onChange={handleChange}/>
+                    <textarea type='text' placeholder='Enter your message' name='message' value={formData.message} onChange={handleChange}/>
                   </div>
 
                   <div className='contactButtonContainer'>
