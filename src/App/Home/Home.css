@@ -56,6 +56,10 @@
   margin-top: 1vw;
 }
 
+.breakForMobile {
+  display: none;
+}
+
 .homeButtonContainer {
   margin-top: 1vw;
 }
@@ -283,7 +287,6 @@
 
 .plantCard {
   width: 22.786vw;
-  min-height: 47.211vh;
   border-radius: 1.563vw !important;
 }
 
@@ -356,7 +359,9 @@
   cursor: pointer;
 }
 
-@media (max-width: 480px) {
+/* Media queries for small mobiles */
+
+@media screen and (width<=480px) {
   .home {
     height: 100%;
     width: 100%;
@@ -364,250 +369,192 @@
   }
 
   .homeTopDiv {
-    height: 76.0702vh;
-    width: 100%; /* Adjusted to ensure the div covers full width of the container */
-    background-image: url("../images/HomeBgImg.svg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; /* Ensures the background image is centered */
-    display: flex;
-    flex-direction: column;
+    height: 90dvh;
+    background-position: left;
+    display: block;
   }
 
   .homeContentContainer {
     width: 30.1vw;
     min-height: 24vh;
-    margin-left: 8rem;
     display: flex;
     justify-content: center;
   }
+
   .homeContentDiv {
     display: flex;
     flex-direction: column;
     color: #ffffff;
   }
+
   .topBottomDiv {
-    margin-top: 5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: start;
-    position: relative;
+    margin-top: 12dvh;
+    position: unset;
   }
 
   .flourishDiv > span {
     font-family: "Lufga Medium";
-    font-size: 3.5rem;
+    font-size: 6rem;
     line-height: 1;
   }
 
   .togetherDiv > span {
     font-family: "Lufga Bold";
-    font-size: 4.5rem;
+    font-size: 8rem;
     line-height: 1;
+  }
+
+  .descriptionDiv {
+    margin-top: 4dvh;
   }
 
   .descriptionDiv > span {
     font-family: "Lufga Medium";
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: flex-end;
+    font-size: 2.2rem;
+    justify-content: unset;
     margin-top: 1vw;
   }
+
+  .breakForMobile {
+    display: unset;
+  }
+
   .homeButtonContainer {
-    margin-top: 2vw;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* Aligns the button to the left */
+    margin-top: 5dvh;
   }
 
   .orderButton {
-    margin-left: 3.3rem;
-    width: 100%; /* Adjusted to fit the screen width */
-    padding: 0.5rem;
-    background: #ffffff;
-    color: #000000;
-    border: none;
-    min-height: auto;
-    margin-top: 2rem;
-    border-radius: 4rem; /* Adjusted to a fixed value for smaller screens */
-    font-size: 1.4rem; /* Reduced font size for better visibility */
+    width: 30dvw;
+    min-height: 6dvh;
+    border-radius: 4rem;
+    font-size: 1.6rem; 
   }
+
   .whatsappIconContainer {
     position: absolute;
-    left: 3.3rem;
-    top: 40vh;
+    left: 8dvw;
+    top: 70dvh;
+    z-index: 10;
   }
+
   /* Categories */
   .homeMiddleDiv {
-    width: 100%;
-    height: auto;
-    background: #ffffff;
-    border-radius: 2.604vw;
-    z-index: 2;
-    margin-top: -2vw;
-    display: flex;
-    flex-direction: column;
+    padding: 0 2dvw;
   }
 
   .categoriesContainer {
-    display: flex;
-    gap: 1.302vw;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 1.302vw;
-    padding-bottom: 1.302vw;
+    padding: 2dvh 0;
+    gap: 1dvh;
   }
 
   .categoryLeftContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 1.302vw;
+    gap: 1dvh;
   }
 
   .allPlantsContainer {
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
-    width: 95.3vw;
-    height: 20.435vh;
-    border-radius: 3.604vw;
-    background-image: url("../images/AllPlantsImg.svg"),
-      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: unset;
+    height: 25dvh;
   }
 
-  .allPlantsContainer > span {
-    font-family: "Lufga Bold";
-    font-size: 2.5rem;
-    color: #ffffff;
-  }
   .categoryLeftBottomContainer {
-    display: flex;
-    gap: 1.302vw;
-    margin: 0.5rem;
-    margin-bottom: 0.3rem;
+    /* margin-bottom: 0.3rem; */
+    gap: 2dvw;
   }
 
   .airPurifierContainer {
-    width: 47.307vw;
+    width: 47dvw;
     height: 20.116vh;
-    border-radius: 2.604vw;
-    background-image: url("../images/AirPurifierImg.svg"),
-      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .airPurifierContainer > span {
-    font-family: "Lufga Bold";
-    font-size: 1.5rem;
-    color: #ffffff;
-    max-width: 13.216vw;
-    text-align: center;
   }
 
   .indoorContainer {
-    width: 47.307vw;
+    width: 47dvw;
     height: 20.116vh;
-    border-radius: 2.604vw;
-    background-image: url("../images/IndoorImg.svg"),
-      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .indoorContainer > span {
-    font-family: "Lufga Bold";
-    font-size: 1.5rem;
-    color: #ffffff;
-    max-width: 13.216vw;
-    text-align: center;
   }
 
   .categoryRightContainer {
-    display: flex;
-    margin: 0.5rem;
-    margin-top: 0;
+    /* margin: 0.5rem; */
+    gap: 2dvw;
   }
 
   .categorySideContainer {
-    display: flex;
     flex-direction: column;
-    gap: 1.302vw;
+    gap: 1dvh;
   }
 
   .outdoorContainer {
-    width: 47.307vw;
-    height: 55.656vh;
-    margin-right: 0.2rem;
-    border-radius: 2.604vw;
-    background-image: url("../images/OutdoorImg.svg"),
-      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .outdoorContainer > span {
-    font-family: "Lufga Bold";
-    font-size: 1.5rem;
-    color: #ffffff;
-    max-width: 13.216vw;
-    text-align: center;
+    width: 47dvw;
+    height: 55dvh;
   }
 
   .floweringContainer {
-    width: 45.307vw;
-    height: 35.497vh;
-    border-radius: 2.604vw;
-    background-image: url("../images/FloweringImg.svg"),
-      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 47dvw;
+    height: 34.5dvh;
   }
 
   .floweringContainer > span {
-    font-family: "Lufga Bold";
     font-size: 1.5rem;
-    color: #ffffff;
-    max-width: 13.216vw;
-    text-align: center;
   }
 
   .prosperityContainer {
-    width: 45.307vw;
-    height: 19.57vh;
-    border-radius: 2.604vw;
-    background-image: url("../images/ProsperityImg.svg"),
-      linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 47dvw;
+    height: 19.5dvh;
   }
 
+  .allPlantsContainer > span,
+  .airPurifierContainer > span,
+  .indoorContainer > span,
+  .outdoorContainer > span,
+  .floweringContainer > span,
   .prosperityContainer > span {
-    font-family: "Lufga Bold";
-    font-size: 1.5rem;
-    color: #ffffff;
-    max-width: 13.216vw;
-    text-align: center;
+    font-size: 2.5rem;
+    max-width: unset;
+  }
+
+  .outdoorContainer > span {
+    max-width: 25dvw;
+  }
+
+  /* Latest Arrivals Cards */
+
+  .plantGridDiv {
+    width: unset;
+    justify-content: unset;
+    margin: 5dvh 0;
+    padding: 0 2dvw;
+  }
+
+  .plantGrid {
+    width: unset;
+  }
+
+  .plantGridTitle > span {
+    font-size: 2.8rem;
+  }
+
+  .plantGridBottomDiv {
+    padding-top: 3dvh;
+  }
+
+  .plantGridContainer {
+    display: block;
+  }
+
+
+  .plantCardContainer {
+    justify-content: center;
+  }
+  .plantCardContainer:not(:last-child) {
+    padding-bottom: 3dvh;
+  }
+
+  .plantCard {
+    width: unset;
+  }
+
+  .plantCardImageContainer {
+    min-width: 100%;
+    min-height: 30dvh;
+    height: auto;
   }
 }
