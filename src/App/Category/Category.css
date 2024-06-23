@@ -22,6 +22,18 @@
   justify-content: flex-end;
 }
 
+.categoryTitleDiv {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.categoryTitleDiv > span {
+  font-family: "Lufga Medium";
+  font-size: 3.438rem;
+  line-height: 1;
+}
+
 .whatsappDiv > img {
   margin-right: 2.5vw;
   margin-top: 65vh;
@@ -186,4 +198,87 @@
 
 .categoryFooterDiv {
   margin-top: 10vh;
+}
+
+/* ---- Media queries begin ---- */
+
+/* For small mobiles */
+
+@media screen and (width<=480px) {
+    .categoryTopDiv {
+      background-position-x: -125dvw;
+      
+    }
+
+    .categoryFlexDiv {
+      display: block;
+      padding-top: 12dvh;
+      padding-left: 8dvw;
+    }
+
+    .categoryTitleDiv > span {
+      font-family: "Lufga Medium";
+      font-size: 5.5rem;
+      line-height: 1.2;  
+    }
+
+    /* Bolder type for the word Catalogue */
+    .categoryTitleType2 {
+      font-family: "Lufga Bold";      font-size: 6.5rem;
+    }
+
+    .whatsappIconContainer {
+      position: absolute;
+      left: 8dvw;
+      top: 70dvh;
+      z-index: 10;
+    }
+
+    .plantButtonContainer {
+      display: none;
+    }
+
+    .recommendationTitle > span {
+      font-size: 2.8rem;
+    }
+    
+    .recommendationTopGridContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    
+    .offerContainer {
+      width: unset;
+      flex-direction: column-reverse;
+      margin: 3dvh 0;
+      padding: 5dvh 0;
+    }
+
+    .offerImage {
+      justify-content: center;
+    }
+
+    .offerContent {
+      width: unset;
+      padding-top: 5dvh;
+      gap: 3dvh;
+    }
+
+    .offerContent > span:nth-child(1) {
+      font-size: 2.8rem;
+    }
+
+    .offerContent > span:nth-child(2) {
+      font-family: "Lufga Medium";
+      font-size: 1.8rem;
+    }
+
+    .recommendationBottomGridContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .viewPlantDiv > img {
+      width: 8dvw;
+    }
 }

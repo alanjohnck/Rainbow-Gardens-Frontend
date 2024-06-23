@@ -1,47 +1,85 @@
-.searchBarContainer{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3vh;
-    width: 95vw;
+.searchBarContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3vh;
+  width: 95dvw;
 }
 
-.inputContainer{
-    display: flex;
-    position: relative;
+.inputContainer {
+  display: flex;
+  position: relative;
 }
 
-.searchIconDiv{
-    width: 2.214vw;
-    min-height: 4.626vh;
+.inputContainer > input {
+  font-family: "Lufga Bold";
+  font-size: 1.5rem;
+  color: black;
+  outline: 0;
+}
+
+.searchIconDiv {
+  width: 2.214vw;
+  min-height: 4.626vh;
+  position: absolute;
+  left: 1vw;
+  top: 0.5vw;
+  bottom: 0.5vw;
+}
+
+.searchInput {
+  width: 71.857vw;
+  min-height: 6.803vh;
+  border: 3px solid #003912;
+  border-radius: 2.604vw;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #000000;
+  padding-left: 4vw;
+}
+
+.searchButton {
+  width: 10.417vw;
+  min-height: 6.803vh;
+  background: #003912;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 2.604vw;
+  font-family: "Lufga Semibold";
+  font-size: 1.3rem;
+  padding: 0.4vw 0;
+}
+
+/* For small mobiles */
+
+@media screen and (width<=480px) {
+  .inputContainer > input {
+    padding-left: 10dvw;
+    font-size: 2.2rem;
+  }
+
+  .searchInput {
+    border-radius: 3rem;
+  }
+  .searchIconDiv {
+    width: unset;
+    min-height: unset;
     position: absolute;
-    left: 1vw;
-    top: 0.5vw;
-    bottom: 0.5vw;
+    left: 2dvw;
+    top: 1dvh;
+  }
+
+  .searchIconDiv > img {
+    width: 8dvw;
+  }
+  
 }
 
-.searchInput{
-    width: 71.857vw;
-    min-height: 6.803vh;
-    border: 3px solid #003912;
-    border-radius: 2.604vw;
-    display: flex;
-    align-items: center;
-    font-size: 1.2rem;
-    color: #000000;
-    padding-left: 4vw;
-}
+/* For larger mobiles */
 
-.searchButton,.searchButton{
-    width: 10.417vw;
-    min-height: 6.803vh;
-    background: #003912;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    border: none;
-    border-radius: 2.604vw;
-    font-family: 'Lufga Semibold';
-    font-size: 1.3rem;
-    padding: 0.4vw 0;
+@media screen and (width<=600px) {
+
 }
