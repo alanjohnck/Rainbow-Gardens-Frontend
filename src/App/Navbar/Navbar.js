@@ -9,7 +9,6 @@ export default function Navbar() {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    console.log("Clicked Ham");
   };
 
   return (

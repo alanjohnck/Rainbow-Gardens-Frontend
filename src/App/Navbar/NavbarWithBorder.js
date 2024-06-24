@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import rainbowLogo from "../images/RainbowLogo.svg";
 import cartIcon from "../images/CartIcon.svg";
 
 export default function NavbarWithBorder() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="navbar">
       <div className="navbarContainerWithBorder">
@@ -12,59 +19,69 @@ export default function NavbarWithBorder() {
         </div>
 
         <div className="navbarContentsContainer">
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "active" : "navbarContent"
-            }
-          >
-            <span>Home</span>
-          </NavLink>
+          <div className={isOpen ? "navLinks active" : "navLinks"}>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarContent"
+              }
+            >
+              <span>Home</span>
+            </NavLink>
 
-          <NavLink
-            to="/products"
-            className={({ isActive }) =>
-              isActive ? "active" : "navbarContent"
-            }
-          >
-            <span>Shop</span>
-          </NavLink>
+            <NavLink
+              to="/category"
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarContent"
+              }
+            >
+              <span>Shop</span>
+            </NavLink>
 
-          <NavLink
-            to="/fertilizer"
-            className={({ isActive }) =>
-              isActive ? "active" : "navbarContent"
-            }
-          >
-            <span>Fertilizer</span>
-          </NavLink>
+            <NavLink
+              to="/fertilizer"
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarContent"
+              }
+            >
+              <span>Fertilizer</span>
+            </NavLink>
 
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              isActive ? "active" : "navbarContent"
-            }
-          >
-            <span>Contact us</span>
-          </NavLink>
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarContent"
+              }
+            >
+              <span>Contact us</span>
+            </NavLink>
 
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "active" : "navbarContent"
-            }
-          >
-            <span>About us</span>
-          </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarContent"
+              }
+            >
+              <span>About us</span>
+            </NavLink>
 
-          <div className="cartIconContainer">
-            <img src={cartIcon} alt="cartIcon" />
+            <NavLink
+              onClick={toggleMenu}
+            >
+              <span>Close</span>
+            </NavLink>
           </div>
 
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+          <div className="cartIconContainer">
+            <NavLink to="/cart">
+              <img src={cartIcon} alt="cartIcon" />
+            </NavLink>
+          </div>
+
+          <div className="hamburger" onClick={toggleMenu}>
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
           </div>
         </div>
       </div>
