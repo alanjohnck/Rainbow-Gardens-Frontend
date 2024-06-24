@@ -162,7 +162,8 @@
 @media screen and (width<=480px) {
 
     .contactTopDiv {
-        height: ;
+        height: unset;
+        padding-bottom: 5dvh;
     }
 
     .contactBottomDiv {
