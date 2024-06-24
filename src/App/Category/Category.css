@@ -252,11 +252,16 @@
       width: unset;
       flex-direction: column-reverse;
       margin: 3dvh 0;
-      padding: 5dvh 0;
+      padding: 10dvh 0 5dvh 0;
     }
 
     .offerImage {
       justify-content: center;
+      padding-bottom: 7dvh;
+    }
+
+    .offerImage > img {
+      scale: 1.5;
     }
 
     .offerContent {
