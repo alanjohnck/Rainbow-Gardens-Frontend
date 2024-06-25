@@ -363,8 +363,6 @@
 
 @media screen and (width<=480px) {
   .home {
-    height: 100%;
-    width: 100%;
     overflow-x: hidden;
   }
 
@@ -388,6 +386,8 @@
   .topBottomDiv {
     margin-top: 12dvh;
     position: unset;
+    display: block;
+    padding-left: 8dvw;
   }
 
   .flourishDiv > span {
