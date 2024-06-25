@@ -375,15 +375,13 @@
   }
 
   .homeContentContainer {
-    width: 30.1vw;
-    min-height: 24vh;
-    display: flex;
-    justify-content: center;
+    width: unset;
+    min-height: unset;
+    display: block;
   }
 
   .homeContentDiv {
-    display: flex;
-    flex-direction: column;
+    display: block;
     color: #ffffff;
   }
 
