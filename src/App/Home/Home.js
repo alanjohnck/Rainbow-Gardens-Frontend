@@ -68,27 +68,27 @@ export default function Home() {
 
             <div className="categoryLeftBottomContainer">
               <div className="airPurifierContainer">
-                <span>Air Purifier Plants</span>
+                <span>Air Purifier<br className="breakForMobile"></br>Plants</span>
               </div>
 
               <div className="indoorContainer">
-                <span>Indoor Plants</span>
+                <span>Indoor<br className="breakForMobile"></br>Plants</span>
               </div>
             </div>
           </div>
 
           <div className="categoryRightContainer">
             <div className="outdoorContainer">
-              <span>Outdoor Plants</span>
+              <span>Outdoor<br className="breakForMobile"></br>Plants</span>
             </div>
 
             <div className="categorySideContainer">
               <div className="floweringContainer">
-                <span>Flowering Plants</span>
+                <span>Flowering<br className="breakForMobile"></br>Plants</span>
               </div>
 
               <div className="prosperityContainer">
-                <span>Prosperity Plants</span>
+                <span>Prosperity<br className="breakForMobile"></br>Plants</span>
               </div>
             </div>
           </div>
