@@ -1,14 +1,9 @@
 .cart{
-    width: 100%;
-    height: 100%;
+    
 }
 
 .cartContainer{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    max-height: auto;
 }
 
 .cartBottomContainer{
@@ -155,7 +150,7 @@
 }
 
 .checkoutTitle>span{
-    font-family: 'Lufga Bold';
+    font-family: 'Lufga Medium';
     color: #ffffff;
     font-size: 1.5rem;
 }
@@ -191,8 +186,8 @@
 }
 
 .productTotalContainer>span:nth-child(1){
-    font-size: 1.5rem;
-    font-family: 'Lufga Bold';
+    font-size: 2.5rem;
+    font-family: 'Lufga Medium';
     line-height: 1;
 }
 
@@ -237,7 +232,7 @@
 }
 
 .cartFormContent>span{
-    font-family: 'Lufga Bold';
+    font-family: 'Lufga Medium';
     font-size: 1.2rem;
     color: #ffffff;
 }
@@ -246,8 +241,8 @@
     border: none;
     background: none;
     border-bottom: 3px solid #ffffff;
-    font-family: 'Lufga Bold';
-    color: #9B9B9B;
+    font-family: 'Lufga Semibold';
+    color: #ffffff;
     outline: 0;
 }
 
@@ -259,4 +254,101 @@
     border-radius: 1.953vw;
     color: #000000;
     font-family: 'Lufga Bold';
+}
+
+/* ---- Media queries begin ---- */
+
+/* For small mobiles */
+
+@media screen and (width<=480px) {
+    .cartBottomContainer {
+        display: block;
+        padding: 3vh 3vw;
+    }
+
+    .cartPageTitle {
+        margin-top: 3dvh;
+    }
+
+    .cartPageTitle > span {
+        font-size: 3rem;
+    }
+
+    .cartLeftContainer {
+        width: 100%;
+    }
+
+    .cartRightContainer {
+        width: 100%;
+        padding: unset;
+        gap: 2vh;
+        align-items: unset;
+    }
+
+    .productCheckoutDiv {
+        width: unset;
+        margin-top: 2vh;
+        padding: 3vh 5vw;
+    }
+
+    .checkoutTitle > span {
+        font-size: 2.5rem;
+    }
+
+    .productTotalContainer {
+        padding-top: 1vh;
+    }
+
+    .productTotalContainer>span:nth-child(1) {
+        font-size: 2.2rem;
+    }
+
+    .productTotalContainer>span:nth-child(2) {
+        font-size: 2.2rem;
+    }
+
+    .cartContactDiv {
+        width: unset;
+        min-height: unset;
+        padding: 3vh 5vw;
+        gap: 2vh;
+    }
+
+    .cartContactTitle > span {
+        font-size: 2.5rem;
+    }
+
+    .cartContactForm {
+        gap: 3vh;
+    }
+
+    .cartFormContent > span {
+        font-size: 2.2rem;
+    }
+
+    .cartFormContent > input {
+        font-size: 2rem;
+
+    }
+
+    .cartFormContent > ::placeholder {
+        font-size: 1.6rem;
+    }
+
+    .cartSubmitButton {
+        width: unset;
+        min-height: unset;
+        width: 24vw;
+        padding: 0.8vh 0;
+        font-size: 1.8rem;
+    }
+
+
+}
+
+
+/* For larger mobiles */
+
+@media screen and (width<=600px) {
+    
 }
