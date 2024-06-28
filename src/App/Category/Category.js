@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Category.css";
 import Navbar from "../Navbar/Navbar";
 import whatsappIcon from "../images/WhatsappIcon.svg";
@@ -9,8 +9,67 @@ import expandIcon from "../images/ExpandIcon.svg";
 import cardImage from "../images/CardImage.svg";
 import offerImage from "../images/OfferImage.svg";
 import Footer from "../Footer/Footer";
+import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import Demo from "../Demo";
 
 function Category() {
+  const [selectedPlant, setSelectedPlant] = useState(null);
+
+  const handleOnSearch = (string, results) => {
+    // onSearch will have as the first callback parameter
+    // the string searched and for the second the results.
+    console.log(string, results);
+  };
+
+  const handleOnHover = (result) => {
+    // the item hovered
+    console.log(result);
+  };
+
+  const handleOnSelect = (item) => {
+    // the item selected
+    setSelectedPlant(item);
+    console.log(item);
+  };
+
+  const handleOnFocus = () => {
+    console.log("Focused");
+  };
+
+  // const formatResult = (item) => {
+  //   return (
+  //     <>
+  //       {" "}
+  //       <span style={{ display: "block", textAlign: "left" }}>
+  //         Name: {item.name}{" "}
+  //       </span>{" "}
+  //       <span style={{ display: "block", textAlign: "left" }}>
+  //         Price: ₹ {item.price}{" "}
+  //       </span>{" "}
+  //     </>
+  //   );
+  // };
+
+  const formatResult = (item) => {
+    return (
+      <>
+        <span style={{ display: "block", textAlign: "left" }}>
+          Name: {item.name}
+        </span>
+        <span style={{ display: "block", textAlign: "left" }}>
+          Price: ₹ {item.price}
+        </span>
+      </>
+    );
+  };
+
+  const plantItems = plantData.plants.map((plant, index) => ({
+    id: index,
+    name: plant.plantName,
+    description: plant.plantDescription,
+    price: plant.price,
+  }));
+
   return (
     <div className="categoryContainer">
       <div className="categoryTopDiv">
@@ -20,7 +79,7 @@ function Category() {
             <div className="categoryContentDiv">
               <div className="categoryTitleDiv">
                 <span>
-                  Search our <br className="breakForMobile"></br>
+                  Search our <br></br>
                   <span className="categoryTitleType2">Catalogue</span>
                 </span>
               </div>
@@ -33,7 +92,19 @@ function Category() {
       </div>
 
       <div className="categoryMiddleDiv">
-        <SearchBar />
+        <div className="search-bar">
+          <ReactSearchAutocomplete
+            items={plantItems}
+            onSearch={handleOnSearch}
+            onHover={handleOnHover}
+            onSelect={handleOnSelect}
+            onFocus={handleOnFocus}
+            autoFocus
+            formatResult={formatResult}
+          />
+          <span>{plantData.plants.plantName}</span>
+        </div>
+
         <div className="plantButtonContainer">
           <button>Indoor Plants</button>
           <button>Outdoor Plants</button>
@@ -50,27 +121,27 @@ function Category() {
 
             <div className="recommendationGridContainer">
               <div className="recommendationTopGridContainer">
-                {plantData.plants.map((plant) => (
-                  <div className="plantDiv">
+                {selectedPlant && (
+                  <div className="selectedPlantContainer">
                     <Card className="plantCard">
                       <Card.Img
                         variant="top"
                         src={cardImage}
                         className="plantCardImage"
-                      ></Card.Img>
+                      />
                       <Card.Body className="plantCardBody">
                         <div className="plantTitle">
-                          <span>{plant.plantName}</span>
+                          <span>{selectedPlant.name}</span>
                         </div>
 
                         <div className="plantCardBottomDiv">
                           <div className="plantCardLeftDiv">
                             <div className="plantDescription">
-                              <span>{plant.plantDescription}</span>
+                              <span>{selectedPlant.description}</span>
                             </div>
 
                             <div className="plantPrice">
-                              <span>₹ {plant.price}</span>
+                              <span>₹ {selectedPlant.price}</span>
                             </div>
                           </div>
 
@@ -78,29 +149,10 @@ function Category() {
                             <img src={expandIcon} alt="expandIcon" />
                           </div>
                         </div>
-                        {/* <div className='plantDetailsDiv'>
-                        <div className='plantDetailsTopDiv'>
-                         <div className='plantTitle'>
-                           <span>{plant.plantName}</span>
-                         </div>
-
-                         <div className='plantDescription'>
-                           <span>{plant.plantDescription}</span>
-                         </div>
-                         </div>
-                        
-                        <div className='plantPrice'>
-                          <span>{plant.price}</span>
-                        </div>
-                      </div>
-                      
-                      <div className='viewPlantDiv'>
-                        <img src={expandIcon} alt='expandIcon'/>
-                      </div> */}
                       </Card.Body>
                     </Card>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -122,33 +174,33 @@ function Category() {
             <div className="recommendationBottomGridContainer">
               {plantData.plants.slice(0, 3).map((plant) => (
                 <div className="plantDiv">
-                <Card className="plantCard">
-                  <Card.Img
-                    variant="top"
-                    src={cardImage}
-                    className="plantCardImage"
-                  ></Card.Img>
-                  <Card.Body className="plantCardBody">
-                    <div className="plantTitle">
-                      <span>{plant.plantName}</span>
-                    </div>
-
-                    <div className="plantCardBottomDiv">
-                      <div className="plantCardLeftDiv">
-                        <div className="plantDescription">
-                          <span>{plant.plantDescription}</span>
-                        </div>
-
-                        <div className="plantPrice">
-                          <span>₹ {plant.price}</span>
-                        </div>
+                  <Card className="plantCard">
+                    <Card.Img
+                      variant="top"
+                      src={cardImage}
+                      className="plantCardImage"
+                    ></Card.Img>
+                    <Card.Body className="plantCardBody">
+                      <div className="plantTitle">
+                        <span>{plant.plantName}</span>
                       </div>
 
-                      <div className="plantCardRightDiv">
-                        <img src={expandIcon} alt="expandIcon" />
+                      <div className="plantCardBottomDiv">
+                        <div className="plantCardLeftDiv">
+                          <div className="plantDescription">
+                            <span>{plant.plantDescription}</span>
+                          </div>
+
+                          <div className="plantPrice">
+                            <span>₹ {plant.price}</span>
+                          </div>
+                        </div>
+
+                        <div className="plantCardRightDiv">
+                          <img src={expandIcon} alt="expandIcon" />
+                        </div>
                       </div>
-                    </div>
-                    {/* <div className='plantDetailsDiv'>
+                      {/* <div className='plantDetailsDiv'>
                     <div className='plantDetailsTopDiv'>
                      <div className='plantTitle'>
                        <span>{plant.plantName}</span>
@@ -167,9 +219,9 @@ function Category() {
                   <div className='viewPlantDiv'>
                     <img src={expandIcon} alt='expandIcon'/>
                   </div> */}
-                  </Card.Body>
-                </Card>
-              </div>
+                    </Card.Body>
+                  </Card>
+                </div>
               ))}
             </div>
           </div>
