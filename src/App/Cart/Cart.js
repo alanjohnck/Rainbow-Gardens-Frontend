@@ -38,7 +38,7 @@ export default function Cart() {
         <div className='cartBottomContainer'>
           <div className='cartLeftContainer'>
             <div className='cartPageTitle'>
-              <span>Cart Page</span>
+              <span>Your Cart</span>
             </div>
 
             {cartState.map((product,index)=>(
