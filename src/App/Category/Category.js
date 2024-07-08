@@ -10,24 +10,19 @@ import cardImage from "../images/CardImage.svg";
 import offerImage from "../images/OfferImage.svg";
 import Footer from "../Footer/Footer";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import Demo from "../Demo";
 
 function Category() {
   const [selectedPlant, setSelectedPlant] = useState(null);
 
   const handleOnSearch = (string, results) => {
-    // onSearch will have as the first callback parameter
-    // the string searched and for the second the results.
     console.log(string, results);
   };
 
   const handleOnHover = (result) => {
-    // the item hovered
     console.log(result);
   };
 
   const handleOnSelect = (item) => {
-    // the item selected
     setSelectedPlant(item);
     console.log(item);
   };
@@ -35,20 +30,6 @@ function Category() {
   const handleOnFocus = () => {
     console.log("Focused");
   };
-
-  // const formatResult = (item) => {
-  //   return (
-  //     <>
-  //       {" "}
-  //       <span style={{ display: "block", textAlign: "left" }}>
-  //         Name: {item.name}{" "}
-  //       </span>{" "}
-  //       <span style={{ display: "block", textAlign: "left" }}>
-  //         Price: ₹ {item.price}{" "}
-  //       </span>{" "}
-  //     </>
-  //   );
-  // };
 
   const formatResult = (item) => {
     return (
