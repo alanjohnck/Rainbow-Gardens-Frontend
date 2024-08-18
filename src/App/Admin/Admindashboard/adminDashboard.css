@@ -1,0 +1,49 @@
+.admin-dashboard{
+      font-family: Lufga;
+}
+.admin-header-section{
+      width: 100%;
+}
+.main-admin-content-section{
+      padding-top:15px;
+      padding-inline: 42px;
+}
+.admin-name{
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 62.65px;
+      padding-left:10px;
+}
+.main-admin-content-left-section{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 24px;
+}
+.main-admin-content-right-section{
+      display: flex;
+      flex-direction: column;
+      justify-content:start;
+      gap: 24px;
+}
+.main-admin-content-left-right-div{
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding-top: 25px;
+}
+.footer{
+      margin-top:252px;
+}
+
+/* media queries */
+
+@media (max-width:431px){
+      .main-admin-content-left-right-div{
+            display: flex;
+            flex-direction: column;
+      }
+      .admin-name{
+            font-size: 30px;
+      }
+}
