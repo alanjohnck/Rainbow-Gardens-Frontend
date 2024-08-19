@@ -1,0 +1,61 @@
+{
+  "plants": [
+    {
+      "plantName": "Peperomia Plant1",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    },
+    {
+      "plantName": "Peperomia Plant2",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    },
+    {
+      "plantName": "Peperomia Plant3",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    },
+    {
+      "plantName": "Peperomia Plant4",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    },
+    {
+      "plantName": "Peperomia Plant5",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    },
+    {
+      "plantName": "Peperomia Plant6",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    },
+    {
+      "plantName": "Peperomia Plant6",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    },
+    {
+      "plantName": "Peperomia Plant6",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    },
+    {
+      "plantName": "Peperomia Plant6",
+      "plantDescription": "Moist but well-drained",
+      "price": "122,056"
+    }
+  ],
+
+  "questions": [
+    {
+      "question": "How do you purchase plants"
+    },
+    {
+      "question": "From where are these plants imported"
+    },
+    {
+      "question": "Is the fertilizer natural"
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+.categoryContainer {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.categoryTopDiv {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/CategoryImg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.categoryFlexDiv {
+  padding-left: 15vw;
+  margin-top: 25vh;
+}
+
+.categoryTitleDiv {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.categoryTitleDiv > span {
+  font-family: "Lufga Semibold";
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.categoryTitleType2 {
+  font-family: "Lufga Bold";
+  font-size: 8rem;
+} 
+
+.whatsappDiv > img {
+  margin-right: 2.5vw;
+  margin-top: 65vh;
+  position: sticky;
+}
+
+.categoryMiddleDiv {
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+  margin-top: -5.5vw;
+  background: #ffffff;
+  border-radius: 2.604vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar {
+  width: 70vw;
+}
+
+.plantButtonContainer {
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5vw;
+}
+
+.plantButtonContainer > button {
+  min-width: 17.904vw;
+  min-height: 6.803vh;
+  background: #003912;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 2.604vw;
+  font-family: "Lufga Semibold";
+  font-size: 1.3rem;
+  padding: 0.8vw 0;
+}
+
+.recommendationContainer {
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  margin-top: 8vh;
+}
+
+.recommendationTopDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.recommendationTitle > span {
+  font-family: "Lufga Bold";
+  color: #000000;
+  font-size: 2.5rem;
+}
+
+.recommendationGridContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5vh;
+}
+
+.recommendationTopGridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 3vw;
+}
+
+.plantTitle > span {
+  font-family: "Lufga Medium";
+  font-size: 1.8rem;
+}
+
+
+.plantCardBottomDiv {
+  justify-content: space-between;
+}
+
+.plantCardLeftDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.plantDescription > span {
+  font-family: "Lufga";
+  font-size: 1.2rem;
+  color: #959595;
+}
+
+.plantPrice > span {
+    font-family: "Lufga Bold";
+    font-size: 1.2rem;
+}
+
+.plantCardRightDiv > img {
+  width: 4rem;
+}
+
+.recommendationMiddleDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offerContainer {
+  width: 78.125vw;
+  min-height: 34.966vh;
+  background: #003912;
+  border-radius: 2.604vw;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+  display: flex;
+}
+
+.offerContent {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 6.055vw;
+  color: #ffffff;
+  gap: 0.3vw;
+}
+
+.offerContent > span:nth-child(1) {
+  font-family: "Lufga Bold";
+  font-size: 2.5rem;
+}
+
+.offerContent > span:nth-child(2) {
+  font-family: "Lufga Semibold";
+  font-size: 1.625rem;
+}
+
+.offerImage {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1vw;
+}
+
+.recommendationBottomDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.recommendationBottomGridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 3vw;
+}
+
+.categoryFooterDiv {
+  margin-top: 10vh;
+}
+
+/* ---- Media queries begin ---- */
+
+/* For small mobiles */
+
+@media screen and (width<=480px) {
+    .categoryTopDiv {
+      background-position-x: -125dvw;
+      
+    }
+
+    .categoryFlexDiv {
+      display: block;
+      padding-top: 12dvh;
+      padding-left: 8dvw;
+    }
+
+    .categoryTitleDiv > span {
+      font-family: "Lufga Medium";
+      font-size: 5.5rem;
+      line-height: 1.2;  
+    }
+
+    /* Bolder type for the word Catalogue */
+    .categoryTitleType2 {
+      font-family: "Lufga Bold";      font-size: 6.5rem;
+    }
+
+    .whatsappIconContainer {
+      position: absolute;
+      left: 8dvw;
+      top: 70dvh;
+      z-index: 10;
+    }
+
+    .plantButtonContainer {
+      display: none;
+    }
+
+    .recommendationTitle > span {
+      font-size: 2.8rem;
+    }
+    
+    .recommendationTopGridContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    
+    .offerContainer {
+      width: unset;
+      flex-direction: column-reverse;
+      margin: 3dvh 0;
+      padding: 10dvh 0 5dvh 0;
+    }
+
+    .offerImage {
+      justify-content: center;
+      padding-bottom: 7dvh;
+    }
+
+    .offerImage > img {
+      scale: 1.5;
+    }
+
+    .offerContent {
+      width: unset;
+      padding-top: 5dvh;
+      gap: 3dvh;
+    }
+
+    .offerContent > span:nth-child(1) {
+      font-size: 2.8rem;
+    }
+
+    .offerContent > span:nth-child(2) {
+      font-family: "Lufga Medium";
+      font-size: 1.8rem;
+    }
+
+    .recommendationBottomGridContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .viewPlantDiv > img {
+      width: 8dvw;
+    }
+}
