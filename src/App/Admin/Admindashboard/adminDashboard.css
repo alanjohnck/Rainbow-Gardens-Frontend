@@ -36,8 +36,15 @@
       margin-top:252px;
 }
 
-/* media queries */
-
+/* media queries starts*/
+@media (max-width:481px){
+      .main-admin-content-left-right-div{
+            flex-direction: column;
+      }
+      .admin-name{
+            font-size: 36px;
+      }
+}
 @media (max-width:431px){
       .main-admin-content-left-right-div{
             display: flex;
@@ -47,3 +54,14 @@
             font-size: 30px;
       }
 }
+@media (max-width:376px){
+      .admin-name{
+            font-size: 26px;
+      }
+}
+@media (max-width:321px){
+      .admin-name{
+            font-size: 22px;
+      }
+}
+/* media queries ends*/
