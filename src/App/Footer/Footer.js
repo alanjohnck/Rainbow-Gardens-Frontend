@@ -13,6 +13,7 @@ import footerLine from "../images/Line 1.svg";
 export default function Footer() {
   return (
     <div className="footer">
+      <div className="footerImg" />
       <div className="footerTopDiv">
         <div className="footerMainHeading">
           <span>Find the plants that suit you!</span>

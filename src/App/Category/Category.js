@@ -73,7 +73,7 @@ function Category() {
       </div>
 
       <div className="categoryMiddleDiv">
-        <div className="search-bar">
+        {/* <div className="search-bar">
           <ReactSearchAutocomplete
             items={plantItems}
             onSearch={handleOnSearch}
@@ -84,7 +84,8 @@ function Category() {
             formatResult={formatResult}
           />
           <span>{plantData.plants.plantName}</span>
-        </div>
+        </div> */}
+        <SearchBar />
 
         <div className="plantButtonContainer">
           <button>Indoor Plants</button>

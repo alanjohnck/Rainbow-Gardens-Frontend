@@ -3,7 +3,7 @@ import "./Navbar.css";
 import rainbowLogo from "../images/RainbowLogo.svg";
 import { NavLink } from "react-router-dom";
 import cartIcon from "../images/CartIcon.svg";
-
+import WhatsappIcon from "../images/WhatsappIcon.svg";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -38,14 +38,14 @@ export default function Navbar() {
               <span>Shop</span>
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/fertilizer"
               className={({ isActive }) =>
                 isActive ? "active" : "navbarContent"
               }
             >
               <span>Fertilizer</span>
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
               to="/contact"
@@ -65,18 +65,18 @@ export default function Navbar() {
               <span>About us</span>
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               onClick={toggleMenu}
             >
               <span>Close</span>
-            </NavLink>
+            </NavLink> */}
           </div>
 
-          <div className="cartIconContainer">
+          {/* <div className="cartIconContainer">
             <NavLink to="/cart">
-              <img src={cartIcon} alt="cartIcon" />
+              <img src={zz} alt="cartIcon" />
             </NavLink>
-          </div>
+          </div> */}
 
           <div className="hamburger" onClick={toggleMenu}>
             <span class="bar1"></span>

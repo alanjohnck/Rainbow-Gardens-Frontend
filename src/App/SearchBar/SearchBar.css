@@ -68,12 +68,22 @@
     width: unset;
     min-height: unset;
     position: absolute;
+   
     left: 2dvw;
-    top: 1dvh;
+    top: 1.5dvh;
+    
   }
-
+  
   .searchIconDiv > img {
     width: 8dvw;
+  }
+  .searchButtonDiv >button {
+    display: none; 
+  }
+
+  .sortButtonDiv >button {
+    width: 20.834vw; 
+    border-radius: 3rem;
   }
   
 }

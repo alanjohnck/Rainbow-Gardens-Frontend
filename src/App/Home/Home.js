@@ -10,7 +10,7 @@ import { fetchProducts } from "../Redux/Slice/ProductSlice";
 import { Card } from "react-bootstrap";
 import expandIcon from "../images/ExpandIcon.svg";
 import { NavLink, useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 export default function Home() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -63,17 +63,21 @@ export default function Home() {
         <div className="categoriesContainer">
           <div className="categoryLeftContainer">
             <div className="allPlantsContainer">
-              <span>All Plants</span>
+              <span><span>All Plants</span></span>
             </div>
 
             <div className="categoryLeftBottomContainer">
-              <div className="airPurifierContainer">
-                <span>Air Purifier<br className="breakForMobile"></br>Plants</span>
-              </div>
+              <NavLink to="/plants/AirPurifier">
+                <div className="airPurifierContainer">               
+                    <span>Air Purifier<br className="breakForMobile"></br>Plants</span>            
+                </div>
+              </NavLink>
 
-              <div className="indoorContainer">
-                <span>Indoor<br className="breakForMobile"></br>Plants</span>
-              </div>
+              <NavLink to="/plants/Indoor">
+                <div className="indoorContainer">
+                   <span>Indoor<br className="breakForMobile"></br>Plants</span>
+                 </div>
+              </NavLink>
             </div>
           </div>
 
