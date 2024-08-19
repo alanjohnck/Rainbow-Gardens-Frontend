@@ -1,0 +1,89 @@
+.features-component{
+      display: flex;
+      flex-direction: column;
+      justify-content:start;
+      align-items: start;
+      font-family: lufga;
+      padding-top: 20px;
+      padding-left:64px;
+      border: 2px solid #014716;
+      border-radius:24px;
+      width:676px;
+      height: 180px;
+}
+.features-component .feature-title{
+      color:#014716;
+      font-size: 32px;
+      font-weight: 500;
+      line-height: 41.76px;
+}
+.features-component .feature-description{
+      font-size: 16px;
+      font-weight: 600;
+      color: #014716;
+      line-height: 20.88px;
+      opacity: .5;
+}
+.features-component .button-div{
+      padding-top: 2rem;
+}
+.features-component .button-div button{
+      width: 199px;
+      height: 54px;
+      padding: 15px 48px;
+      border: none;
+      background-color: #014716;
+      color: white;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+/* media queries starts*/
+@media(max-width:481px){
+      .features-component{
+            width:100%;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            padding: 16px;
+            height: 200px;
+      }
+      .features-component .feature-description{
+            font-size: 13.5px;
+      }
+      .features-component .feature-title{
+            color:#014716;
+            font-size: 25px;
+      }
+      .features-component .button-div button{
+            width: 199px;
+            height: 45px;
+      }
+}
+@media(max-width:431px){
+      .features-component .feature-description{
+            font-size: 13px;
+      }
+}
+@media(max-width:321px){
+      .features-component .feature-title{
+            font-size: 23px;
+            line-height:35px;
+      }
+      .features-component .feature-description{
+            font-size: 10px;
+            line-height: 14px;
+      }
+      .features-component .button-div button{
+            width: 180px;
+            height: 40px;
+            padding: 0;
+            font-size: 14px;
+      }
+}
+/* media queries ends*/
