@@ -31,9 +31,7 @@
       justify-content: center;
       gap: 24px;
       padding-top: 25px;
-}
-.footer{
-      margin-top:252px;
+      margin-bottom: 252px;
 }
 
 /* media queries starts*/
