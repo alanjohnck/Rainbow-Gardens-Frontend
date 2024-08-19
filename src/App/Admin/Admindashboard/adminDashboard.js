@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../../Footer/Footer'
 import './adminDashboard.css'
-import AdminHeader from '../adminHeader'
+import AdminHeader from '../adminHeader/adminHeader'
 import FeatureComponent from './adminfeatures/featureComponent'
 export default function AdminDashBoard() {
   return (
@@ -18,7 +18,7 @@ export default function AdminDashBoard() {
                     <FeatureComponent title="Contact Us Queries" description="click to create New Product to be added to Product List"/>
                 </div>
                 <div className="main-admin-content-right-section">
-                    <FeatureComponent title="Create New Product" description="click to create New Product to be added to Product List"/>
+                    <FeatureComponent title="Create New Product" description="click to create New Product to be added to Product List" link="/productAdding"/>
                     <FeatureComponent title="View Orders" description="click to create New Product to be added to Product List"/>
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import './adminHeader.css'
-import rainbowLogo from './images/rainbowLogo.svg'
+import rainbowLogo from '../../images/rainbowLogo copy.svg'
 export default function AdminHeader() {
   return (
     <div className='adminHeader'>
