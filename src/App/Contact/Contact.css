@@ -1,5 +1,6 @@
 .contact{
     overflow-y: auto;
+    overflow-x: hidden;    /* to solve overflowing to x-axis during mobile view */
 }
 
 .contactTopDiv{
