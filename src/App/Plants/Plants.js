@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
 import "./Plants.css";
 import Card from "react-bootstrap/Card";
@@ -9,28 +9,59 @@ import Footer from "../Footer/Footer";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { useParams } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
+import indoorImg from '../images/IndoorImage.svg';
+import outdoorImg from '../images/OutdoorImage.svg';
+
+
 
 function Plants() {
     const [selectedPlant, setSelectedPlant] = useState(null);
-    const {plantsCategory} = useParams();
-    //plantsCategory will give you the category of the plant.Then make get request to fetch the plants data according to the categroy
+    const { plantsCategoryParams } = useParams();
+    
+    const [plantCategory, setPlantCategory] = useState("");
+    const [backgroundImage, setBackgroundImage] = useState("");
 
-    const handleOnSearch = (string, results) => {
-        console.log(string, results);
-    };
+  
+    useEffect(() => {
+        console.log(plantsCategoryParams)
+        switch (plantsCategoryParams) {
+            case "Indoor":
+                setPlantCategory("Indoor");
+                setBackgroundImage(indoorImg);
+                break;
+            case "Outdoor":
+                setPlantCategory("Outdoor");
+                setBackgroundImage(outdoorImg);
+                break;
+            case "Flowering":
+                setPlantCategory("Flowering");
+                setBackgroundImage("../flowering");
+                break;
+            case "Prosperity":
+                setPlantCategory("Prosperity");
+                setBackgroundImage("../prosperity");
+                break;
+            
+           
+        }
+    }, [plantsCategoryParams]);
 
-    const handleOnHover = (result) => {
-        console.log(result);
-    };
+    // const handleOnSearch = (string, results) => {
+    //     console.log(string, results);
+    // };
 
-    const handleOnSelect = (item) => {
-        setSelectedPlant(item);
-        console.log(item);
-    };
+    // const handleOnHover = (result) => {
+    //     console.log(result);
+    // };
 
-    const handleOnFocus = () => {
-        console.log("Focused");
-    };
+    // const handleOnSelect = (item) => {
+    //     setSelectedPlant(item);
+    //     console.log(item);
+    // };
+
+    // const handleOnFocus = () => {
+    //     console.log("Focused");
+    // };
 
     const formatResult = (item) => {
         return (
@@ -54,7 +85,7 @@ function Plants() {
 
     return (
         <div className="plantsContainer">
-            <div className="plantsTopDiv">
+            <div className="plantsTopDiv" style={{backgroundImage:`url(${backgroundImage})`}}>
                 <Navbar />
                 <div className="plantsFlexDiv">
                     <div className="plantsContentContainer">
@@ -62,7 +93,7 @@ function Plants() {
                             <div className="plantsTitleDiv">
                                 <span>
                                     choose <br />
-                                    <span className="plantsTitleType2">{plantsCategory} Plants</span>
+                                    <span className="plantsTitleType2">{plantCategory} Plants</span>
                                 </span>
                             </div>
                         </div>

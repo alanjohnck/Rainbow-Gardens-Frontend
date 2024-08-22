@@ -6,7 +6,6 @@
 .plantsTopDiv {
     width: 100%;
     height: 100vh;
-    background-image: url(../images/IndoorImage.svg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -130,7 +129,7 @@
 
 @media screen and (width <= 480px) {
     .plantsTopDiv {
-        background-position-x: -125dvw;
+        background-position-x: -100dvw;
     }
 
     .plantsFlexDiv {

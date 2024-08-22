@@ -4,6 +4,7 @@ import AdminHeader from '../adminHeader'
 import imagePreview from '../images/image-uploading-preview.svg'
 import Footer from '../../Footer/Footer'
 export default function ProductAdding() {
+      
   return (
     <div className='admin-product-adding-page'>
             <div className="product-adding-header">

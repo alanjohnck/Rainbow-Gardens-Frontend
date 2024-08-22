@@ -142,6 +142,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .airPurifierContainer > span {
@@ -178,6 +179,11 @@
   gap: 1.302vw;
 }
 
+.categoryOutdoorContainer{
+  display: flex;
+  gap: 1.302vw;
+}
+
 .categorySideContainer {
   display: flex;
   flex-direction: column;
@@ -194,6 +200,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%; /* Ensure it takes full height */
+  box-sizing: border-box;
 }
 
 .outdoorContainer > span {
