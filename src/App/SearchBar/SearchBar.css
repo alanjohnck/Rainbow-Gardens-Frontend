@@ -1,6 +1,6 @@
 .searchBarContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 3vh;
   width: 95dvw;
 }
@@ -8,8 +8,13 @@
 .inputContainer {
   display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
 }
-
+.inputContainer img{
+  position: absolute !important;
+  left: 10px;
+}
 .inputContainer > input {
   font-family: "Lufga Bold";
   font-size: 1.5rem;
@@ -61,21 +66,48 @@
     font-size: 2.2rem;
   }
 
+  .searchBarContainer{
+    gap: .2rem;
+    position:unset;
+  }
+
+  .inputContainer img{
+      position: absolute;
+      left: 85% !important;
+      border:2px solid #003912 ;
+      padding: .3rem;
+      border-radius: 10rem;
+      width: 3rem;
+  }
+
+  .inputContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
   .searchInput {
     border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 1px;
+    position: relative;
   }
   .searchIconDiv {
-    width: unset;
-    min-height: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-   
-    left: 2dvw;
-    top: 1.5dvh;
-    
+    left:85%;
+    top: .3rem;
+    border: 1px solid #003912;
+    border-radius: 10rem;
+    padding: 10px;
   }
   
   .searchIconDiv > img {
-    width: 8dvw;
+    width: 1.5rem;
   }
   .searchButtonDiv >button {
     display: none; 
