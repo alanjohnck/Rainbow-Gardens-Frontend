@@ -6,7 +6,6 @@
 .plantsTopDiv {
     width: 100%;
     height: 100vh;
-    background-image: url(../images/IndoorImage.svg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -18,6 +17,7 @@
 
 .plantsFlexDiv {
     margin-top: 25vh;
+    padding-left: 15vw;
 }
 
 .plantsTitleDiv {
@@ -73,6 +73,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
+    padding: 1rem;
 }
 
 .PlantsGridDisplayContainer {
@@ -84,6 +85,7 @@
 
 .plantCard {
     padding: 10px;
+    
 }
 
 .plantTitle > span {
@@ -130,11 +132,10 @@
 @media screen and (width <= 480px) {
     .plantsTopDiv{ 
         background-position-x: -100dvw;
-         
     }
     .plantsFlexDiv {
         display: block;
-        padding-top: 2dvh;
+        padding-top: 12dvh;
         padding-left: 8dvw;
     }
 

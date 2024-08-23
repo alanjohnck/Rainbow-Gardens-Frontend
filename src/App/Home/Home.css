@@ -142,6 +142,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .airPurifierContainer > span {
@@ -194,6 +195,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .outdoorContainer > span {
