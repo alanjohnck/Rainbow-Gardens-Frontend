@@ -82,18 +82,27 @@ export default function Home() {
           </div>
 
           <div className="categoryRightContainer">
-            <div className="outdoorContainer">
-              <span>Outdoor<br className="breakForMobile"></br>Plants</span>
+
+           <div className="categoryOutdoorContainer">
+            <NavLink to="/plants/Outdoor">
+              <div className="outdoorContainer">
+                <span>Outdoor<br className="breakForMobile"></br>Plants</span>
+              </div>
+             </NavLink>
             </div>
-
+            
+            
             <div className="categorySideContainer">
-              <div className="floweringContainer">
-                <span>Flowering<br className="breakForMobile"></br>Plants</span>
-              </div>
-
-              <div className="prosperityContainer">
-                <span>Prosperity<br className="breakForMobile"></br>Plants</span>
-              </div>
+              <NavLink to="/plants/Flowering">
+               <div className="floweringContainer">
+                 <span>Flowering<br className="breakForMobile"></br>Plants</span>
+               </div>
+               </NavLink>
+               <NavLink to="/plants/Prosperity">
+                <div className="prosperityContainer">
+                  <span>Prosperity<br className="breakForMobile"></br>Plants</span>
+                </div>
+              </NavLink>
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ function App() {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/category' element={<Category/>}/>
-          <Route path='/plants/:plantsCategory' element={<Plants />} />
+          <Route path='/plants/:plantsCategoryParams' element={<Plants />} />
           <Route path='/adminDashboard' element={<AdminDashBoard/>}/>
           <Route path='/productAdding' element={<ProductAdding/>}/>
         </Routes>
