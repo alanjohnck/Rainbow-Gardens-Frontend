@@ -74,7 +74,6 @@
     align-items: center;
     margin-top: 2rem;
     padding: 1rem;
-   
 }
 
 .PlantsGridDisplayContainer {
@@ -131,11 +130,9 @@
 /* ---- Media queries ---- */
 
 @media screen and (width <= 480px) {
-    .plantsTopDiv {
-        background-position-x: -125dvw;
-     
+    .plantsTopDiv{ 
+        background-position-x: -100dvw;
     }
-
     .plantsFlexDiv {
         display: block;
         padding-top: 12dvh;
@@ -146,7 +143,7 @@
         font-family: "Lufga Medium";
         font-size: 3.5rem;
         line-height: 1.2;
-        visibility: visible;
+        visibility:visible;
     }
 
     .plantsMiddleDiv {
@@ -159,6 +156,10 @@
 
     .plantsTitleType2 {
         font-size: 6.5rem;
+    }
+
+    .plantsDisplayContainer{
+        padding-inline: 1rem;
     }
 
     .PlantsGridDisplayContainer {
