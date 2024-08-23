@@ -111,7 +111,7 @@
     background-color: #fff;
     width: 100%;
     min-height: 100vh;
-    z-index: 1;
+    z-index: 5;
     transition: top 0.5s ease-in-out;
   }
 

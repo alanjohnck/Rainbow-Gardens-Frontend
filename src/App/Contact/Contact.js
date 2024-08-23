@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Contact.css';
+import { NavLink } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import phoneImg from '../images/PhoneImg.svg';
 import mailImg from '../images/MailImg.svg';
@@ -140,7 +141,9 @@ export default function Contact() {
                   </div>
 
                   <div className='contactButtonContainer'>
-                    <button className='contactButton'>Send Message</button>
+                    <NavLink to="/thankyou">
+                    <button className="contactButton">Send Message</button>
+                    </NavLink>
                   </div>
                 </form>
               </div>
