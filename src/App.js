@@ -5,6 +5,7 @@ import Product from './App/Product/Product';
 import Cart from './App/Cart/Cart';
 import Contact from './App/Contact/Contact';
 import Category from './App/Category/Category';
+import ThankYou from './App/ThankYou/ThankYou';
 import Plants from './App/Plants/Plants';
 import AdminDashBoard from './App/Admin/Admindashboard/adminDashboard';
 import ProductAdding from './App/Admin/adminProductAdding/productAdding';
@@ -20,7 +21,8 @@ function App() {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/category' element={<Category/>}/>
-          <Route path='/plants/:plantsCategoryParams' element={<Plants />} />
+          <Route path='/thankyou' element={<ThankYou/>}/>
+          <Route path='/plants/:plantsCategory' element={<Plants />} />
           <Route path='/adminDashboard' element={<AdminDashBoard/>}/>
           <Route path='/productAdding' element={<ProductAdding/>}/>
         </Routes>
