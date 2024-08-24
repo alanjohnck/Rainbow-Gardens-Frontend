@@ -111,6 +111,7 @@
 .plantCardLeftDiv {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 2vh;
 }
 
@@ -126,7 +127,7 @@
 }
 .plantCardRightDiv{
     display: flex;
-    justify-content:space-between;
+    justify-content: center;
     align-items: end;  
 }
 .plantCardRightDiv > img:hover {
