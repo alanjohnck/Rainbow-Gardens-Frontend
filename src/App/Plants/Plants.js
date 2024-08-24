@@ -121,8 +121,9 @@ function Plants() {
                         </div>
                       </div>
                       <div className="plantCardRightDiv">
-                        <img src={expandIcon} alt="expandIcon"                               onClick={() => handleExpandClick(plant.Pno)}
-  />
+                        <img src={expandIcon} alt="expandIcon"
+                        onClick={() => handleExpandClick(plant.Pno)}
+                      />
                       </div>
                     </div>
                   </Card.Body>
