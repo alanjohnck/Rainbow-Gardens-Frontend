@@ -9,6 +9,7 @@ import ThankYou from './App/ThankYou/ThankYou';
 import Plants from './App/Plants/Plants';
 import AdminDashBoard from './App/Admin/Admindashboard/adminDashboard';
 import ProductAdding from './App/Admin/adminProductAdding/productAdding';
+import AdminEditSection from './App/Admin/AdminEditSection/AdminEditSection';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/plants/:plantsCategoryParams' element={<Plants />} />
           <Route path='/adminDashboard' element={<AdminDashBoard/>}/>
           <Route path='/productAdding' element={<ProductAdding/>}/>
+          <Route path='/adminEditSection' element={<AdminEditSection />} />
         </Routes>
       </Router>
     </div>

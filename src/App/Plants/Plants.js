@@ -7,66 +7,89 @@ import cardImage from '../images/CardImage.svg';
 import Footer from '../Footer/Footer';
 import { useParams } from 'react-router-dom';
 import SearchBar from '../SearchBar/SearchBar';
-
+import indoorImg from '../images/IndoorImage.svg';
+import outdoorImg from '../images/OutdoorImage.svg';
+import Airpurifier from '../images/Airpurifier.jpg';
+import { NavLink, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchProducts } from "../Redux/Slice/ProductSlice";
 function Plants() {
-    const [selectedPlant, setSelectedPlant] = useState(null);
-    const {plantsCategory} = useParams();
-    //plantsCategory will give you the category of the plant.Then make get request to fetch the plants data according to the categroy
+  const [selectedPlant, setSelectedPlant] = useState(null);
+  const { plantsCategoryParams } = useParams();
 
-    const handleOnSearch = (string, results) => {
-        console.log(string, results);
+  const [plantCategory, setPlantCategory] = useState('');
+  const [backgroundImage, setBackgroundImage] = useState('');
+  const [plantsData, setPlantsData] = useState([]); // State for API data
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const productState = useSelector((state) => state.product);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+
+  const handleExpandClick = (plantId) => {
+    navigate(`/product/${plantId}`);
+  };
+//image fixing,background image fixing
+  useEffect(() => {
+    const getPlantsByCategory = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/getproduct');
+        const data = await response.json();
+        setPlantsData(data); // Assign the fetched data to plantsData state
+      } catch (e) {
+        console.log(e);
+      }
     };
 
-    const handleOnHover = (result) => {
-        console.log(result);
-    };
+    getPlantsByCategory();
 
-    const handleOnSelect = (item) => {
-        setSelectedPlant(item);
-        console.log(item);
-    };
+    // Set category and background image based on route params
+    switch (plantsCategoryParams) {
+      case 'Indoor':
+        setPlantCategory('Indoor');
+        setBackgroundImage(indoorImg);
+        break;
+      case 'Outdoor':
+        setPlantCategory('Outdoor');
+        setBackgroundImage(outdoorImg);
+        break;
+      case 'Flowering':
+        setPlantCategory('Flowering');
+        setBackgroundImage('../flowering');
+        break;
+      case 'Prosperity':
+        setPlantCategory('Prosperity');
+        setBackgroundImage('../prosperity');
+        break;
+      case 'AirPurifier':
+        setPlantCategory('Airpurifier');
+        setBackgroundImage(Airpurifier);
+        break;
+      default:
+        setPlantCategory('');
+        setBackgroundImage('');
+    }
+  }, [plantsCategoryParams]);
 
-    const handleOnFocus = () => {
-        console.log("Focused");
-    };
-
-    const formatResult = (item) => {
-        return (
-            <>
-                <span style={{ display: "block", textAlign: "left" }}>
-                    Name: {item.name}
+  return (
+    <div className="plantsContainer">
+      <div className="plantsTopDiv" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <Navbar />
+        <div className="plantsFlexDiv">
+          <div className="plantsContentContainer">
+            <div className="plantsContentDiv">
+              <div className="plantsTitleDiv">
+                <span>
+                  choose <br />
+                  <span className="plantsTitleType2">{plantCategory} Plants</span>
                 </span>
-                <span style={{ display: "block", textAlign: "left" }}>
-                    Price: ₹ {item.price}
-                </span>
-            </>
-        );
-    };
-
-    const plantItems = plantData.plants.map((plant, index) => ({
-        id: index,
-        name: plant.plantName,
-        description: plant.plantDescription,
-        price: plant.price,
-    }));
-
-    return (
-        <div className="plantsContainer">
-            <div className="plantsTopDiv">
-                <Navbar />
-                <div className="plantsFlexDiv">
-                    <div className="plantsContentContainer">
-                        <div className="plantsContentDiv">
-                            <div className="plantsTitleDiv">
-                                <span>
-                                    choose <br />
-                                    <span className="plantsTitleType2">{plantsCategory} Plants</span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
 
       <div className="plantsMiddleDiv">
         <div className="plantsMiddleTopDiv">
@@ -98,7 +121,8 @@ function Plants() {
                         </div>
                       </div>
                       <div className="plantCardRightDiv">
-                        <img src={expandIcon} alt="expandIcon" />
+                        <img src={expandIcon} alt="expandIcon"                               onClick={() => handleExpandClick(plant.Pno)}
+  />
                       </div>
                     </div>
                   </Card.Body>

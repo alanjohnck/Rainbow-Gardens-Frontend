@@ -82,12 +82,23 @@
     grid-template-rows: auto auto;
     gap: 3vw;
 }
-
+.plantDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 .plantCard {
     padding: 10px;
     
 }
-
+.plantCardImage{
+    padding: 0.5vw;
+    height: 26.939vh;
+    border-top-left-radius: 1.563vw !important;
+    border-top-right-radius: 1.563vw !important;
+    border-bottom-left-radius: 1.563vw !important;
+    border-bottom-right-radius: 1.563vw !important;
+}
 .plantTitle > span {
     font-family: "Lufga Medium";
     font-size: 1.8rem;
@@ -115,10 +126,14 @@
 }
 .plantCardRightDiv{
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     align-items: end;  
 }
-
+.plantCardRightDiv > img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
 .plantCardRightDiv > img {
     width: 4rem;
 }
@@ -165,11 +180,15 @@
     .PlantsGridDisplayContainer {
         grid-template-columns: repeat(2, 1fr);
     }
-
+   
     .plantCard {
         padding: 5px;
     }
-
+    .plantCardImage{
+        min-width: 100%;
+        min-height: 30dvh;
+        height: auto;
+    }
     .plantCardRightDiv > img {
         width: 8dvw;
     }

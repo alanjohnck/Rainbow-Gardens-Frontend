@@ -1,0 +1,96 @@
+.adminViewContainer {
+    padding: 20px;
+    font-family: "Lufga medium "
+  }
+  
+  .plantTable {
+    width: 100%;
+    border-collapse: collapse;
+
+  }
+  
+  .plantTable th, .plantTable td {
+    border: 1px solid #003912;
+    padding: 8px;
+    text-align: left;
+    font-weight: thin;
+    
+  }
+  
+ .plantTable th {
+    background-color: #003912;
+    color: white;
+  }
+  
+ .adminButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem
+}
+
+.adminEdit{
+    padding: 5px 10px;
+    background-color: white;
+    color: #003912;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #003912 ;
+    border-radius: 10px;
+}
+
+.adminDelete{
+    padding: 5px 10px;
+    background-color: white;
+    color: #003912;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #003912 ;
+    border-radius: 10px;
+  }
+  
+  button:hover {
+    background-color:#003912 ;
+    color: white;
+  }
+  
+  /* Responsive styles below 480px */
+  @media (max-width: 480px) {
+    .plantTable, .plantTable thead, .plantTable tbody, .plantTable th, .plantTable td, .plantTable tr {
+      display: block;
+      width: 100%;
+    }
+    
+    .plantTable tr {
+      margin-bottom: 15px;
+    }
+  
+    .plantTable td {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+      position: relative;
+      padding-left: 50%;
+    }
+  
+    .plantTable td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  
+    .plantTable th {
+      display: none;
+    }
+  
+    button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
