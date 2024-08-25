@@ -39,12 +39,23 @@ function Plants() {
   useEffect(() => {
     const getPlantsByCategory = async () => {
       setLoading(true); // Start loading
-      try {
-        const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`);
-        const data = await response.json();
-        setPlantsData(data);
-      } catch (e) {
-        console.log(e);
+      if(plantsCategoryParams !== 'All'){
+        try {
+          const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`);
+          const data = await response.json();
+          setPlantsData(data);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+      else{
+        try {
+          const response = await fetch(`http://localhost:3001/api/getproduct`);
+          const data = await response.json();
+          setPlantsData(data);
+        } catch (e) {
+          console.log(e);
+        }
       }
       setLoading(false); // End loading
     };
@@ -95,8 +106,8 @@ function Plants() {
         setBackgroundImage(Airpurifier);
         break;
       default:
-        setPlantCategory('');
-        setBackgroundImage('');
+        setPlantCategory('All');
+        setBackgroundImage(Airpurifier);
     }
   }, [plantsCategoryParams, plantName]);
 
@@ -160,7 +171,12 @@ function Plants() {
               ))
             ) : (
               plantsData
-                .filter(plant => plant.category === `${plantCategory} Plant` || plant.category === `${plantCategory} plant`)
+                .filter(plant => {
+                  if (plantCategory !== 'All') {
+                    return plant.category === `${plantCategory} Plant` || plant.category === `${plantCategory} plant`;
+                  }
+                  return true; // When plantCategory is 'All', include all plants
+                  })
                 .slice(0, 9)
                 .map((plant) => (
                   <div className="plantDiv" key={plant.pno}>
