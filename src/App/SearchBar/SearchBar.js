@@ -29,7 +29,7 @@ function SearchBar({sendDataToParent}) {
           onFocus={handleFocus}
           onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
         />
-        <img src={searchIcon} alt='searchIcon' />
+        <img src={searchIcon} alt='searchIcon' onClick={handleSearch} />
       </div>
 
       <div className='searchButtonDiv'>
