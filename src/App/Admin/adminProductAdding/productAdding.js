@@ -1,11 +1,13 @@
-import './productAdding.css'
-import AdminHeader from '../adminHeader/adminHeader'
-import imagePreview from '../../images/image-uploading-preview.svg'
-import Footer from '../../Footer/Footer'
-import { useState } from 'react'
-import axios from 'axios' // Make sure to install and import axios
+import './productAdding.css';
+import AdminHeader from '../adminHeader/adminHeader';
+import imagePreview from '../../images/image-uploading-preview.svg';
+import Footer from '../../Footer/Footer';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function ProductAdding() {
+  const location = useLocation();
   const [adminData, setAdminData] = useState({
     plantName: '',
     plantSmallDescription: '',
@@ -21,6 +23,28 @@ export default function ProductAdding() {
     plantSecondImage: null,
     plantThirdImage: null
   });
+
+  // Fetch product details if editing
+  useEffect(() => {
+    if (location.state && location.state.id) {
+      const productId = location.state.id;
+      axios.get(`http://localhost:3001/api/getproduct/${productId}`)
+        .then(response => {
+          const product = response.data;
+          setAdminData({
+            plantName: product.plantName,
+            plantSmallDescription: product.plantSmallDescription,
+            plantPrice: product.plantPrice,
+            plantLongDescription: product.plantLongDescription,
+            plantDescriptionForCard: product.plantDescriptionForCard,
+            category: product.category,
+          });
+        })
+        .catch(error => {
+          console.error('Error fetching product details:', error);
+        });
+    }
+  }, [location.state]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -53,13 +77,28 @@ export default function ProductAdding() {
     });
 
     try {
-      const response = await axios.post('http://localhost:3001/api/createproduct', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      });
-      console.log('Product created:', response.data);
-      alert('Product created successfully!');
+      if (location.state && location.state.id) {
+        // Edit mode: update the product
+        const productId = location.state.id;
+        console.log('Updating product:', productId);
+        const response = await axios.put(`http://localhost:3001/api/updateproducts/${productId}`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+        console.log('Product updated:', response.data);
+        alert('Product updated successfully!');
+      } else {
+        // Add mode: create a new product
+        const response = await axios.post('http://localhost:3001/api/createproduct', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+        console.log('Product created:', response.data);
+        alert('Product created successfully!');
+      }
+
       // Reset form after successful submission
       setAdminData({
         plantName: '',
@@ -76,8 +115,8 @@ export default function ProductAdding() {
         plantThirdImage: null
       });
     } catch (error) {
-      console.error('Error creating product:', error);
-      alert('Error creating product. Please try again.');
+      console.error('Error creating/updating product:', error);
+      alert('Error creating/updating product. Please try again.');
     }
   };
 
@@ -88,7 +127,7 @@ export default function ProductAdding() {
       </div>
       <form className="main-content-product-adding" onSubmit={handleFormSubmit}>
         <div className="input-fields">
-          <span className='main-content-title'>Create New Product</span>
+          <span className='main-content-title'>{location.state && location.state.id ? "Edit Product" : "Create New Product"}</span>
           <label htmlFor="plantName">Enter the Plant Name</label>
           <input type="text" placeholder='Enter the Plant Name' name='plantName' className='product-adding-input-box' value={adminData.plantName} onChange={handleChange} />
           <label htmlFor="plantPrice">Enter the Price</label>
@@ -166,7 +205,7 @@ export default function ProductAdding() {
         </div>
 
         <div className="product-adding-button-div">
-          <button type="submit" className='product-adding-confirm-button' title='confirm'>confirm</button>
+          <button type="submit" className='product-adding-confirm-button' title='confirm'>{location.state && location.state.id ? "Update Product" : "Create Product"}</button>
         </div>
       </form>
       <div className="producting-adding-footer">

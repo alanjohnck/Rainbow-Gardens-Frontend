@@ -35,7 +35,7 @@ function Plants() {
   useEffect(() => {
     const getPlantsByCategory = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`);
+        const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}`);
         const data = await response.json();
         setPlantsData(data); // Assign the fetched data to plantsData state
       } catch (e) {

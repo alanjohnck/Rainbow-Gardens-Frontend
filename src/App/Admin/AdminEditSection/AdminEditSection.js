@@ -3,10 +3,12 @@ import AdminHeader from '../adminHeader/adminHeader';
 import "./AdminEditSection.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from '../../Redux/Slice/ProductSlice';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function AdminEditSection() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // Fetch products on component mount
   useEffect(() => {
@@ -18,12 +20,10 @@ function AdminEditSection() {
 
   // Handlers for edit and delete actions
   const handleEdit = (id) => {
-    console.log(`Edit plant with ID: ${id}`);
+    navigate(`/productAdding`, { state: { id } });
   };
 
   const handleDelete = (id) => {
-    console.log(`Delete plant with ID: ${id}`);
-    // Here you might want to dispatch an action to delete the product from the server and update the state
     axios.delete(`http://localhost:3001/api/deleteproducts/${id}`)
       .then((response) => {
         console.log(response);
