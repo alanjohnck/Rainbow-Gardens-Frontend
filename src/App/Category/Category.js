@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Category.css";
 import Navbar from "../Navbar/Navbar";
-import whatsappIcon from "../images/WhatsappIcon.svg";
 import SearchBar from "../SearchBar/SearchBar";
 import plantData from "../Home/Home.json";
 import Card from "react-bootstrap/Card";
@@ -68,10 +67,6 @@ function Category() {
           </div>
         </div>
       </div>
-      <div className="whatsappIconContainer">
-        <img src={whatsappIcon} alt="whatsappIcon" />
-      </div>
-
       <div className="categoryMiddleDiv">
         {/* <div className="search-bar">
           <ReactSearchAutocomplete
