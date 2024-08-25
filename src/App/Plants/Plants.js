@@ -31,11 +31,11 @@ function Plants() {
   const handleExpandClick = (plantId) => {
     navigate(`/product/${plantId}`);
   };
-//image fixing,background image fixing
+  //image fixing,background image fixing
   useEffect(() => {
     const getPlantsByCategory = async () => {
       try {
-        const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`);
+        const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+plants`);
         const data = await response.json();
         setPlantsData(data); // Assign the fetched data to plantsData state
       } catch (e) {
@@ -104,7 +104,7 @@ function Plants() {
                   <Card.Img
                     variant="top"
                     src={plant.images[0]}
-                    style={{backgroundPosition:"center",backgroundSize:"cover",}}
+                    style={{ backgroundPosition: "center", backgroundSize: "cover", }}
                     className="plantCardImage"
                   />
                   <Card.Body className="plantCardBody">
@@ -122,8 +122,8 @@ function Plants() {
                       </div>
                       <div className="plantCardRightDiv">
                         <img src={expandIcon} alt="expandIcon"
-                        onClick={() => handleExpandClick(plant.Pno)}
-                      />
+                          onClick={() => handleExpandClick(plant.Pno)}
+                        />
                       </div>
                     </div>
                   </Card.Body>
