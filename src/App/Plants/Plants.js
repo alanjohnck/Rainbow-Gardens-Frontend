@@ -17,6 +17,7 @@ function Plants() {
   const [selectedPlant, setSelectedPlant] = useState(null);
   const { plantsCategoryParams } = useParams();
 
+  const [plantName,setPlantName] = useState('');
   const [plantCategory, setPlantCategory] = useState('');
   const [backgroundImage, setBackgroundImage] = useState('');
   const [plantsData, setPlantsData] = useState([]); // State for API data
@@ -31,8 +32,13 @@ function Plants() {
   const handleExpandClick = (plantId) => {
     navigate(`/product/${plantId}`);
   };
+
+  const sendDataToParent = (plantName) => {
+    setPlantName(plantName);
+  }
 //image fixing,background image fixing
   useEffect(() => {
+
     const getPlantsByCategory = async () => {
       try {
         const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`);
@@ -43,7 +49,27 @@ function Plants() {
       }
     };
 
-    getPlantsByCategory();
+    const getProductByName = async () => {
+      if (plantName) {
+        try {
+          const url =`http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`
+          console.log('url : ',url); 
+          const response = await fetch(url);
+          const data = await response.json();
+          setPlantsData(Array.isArray(data)? data : []); // Assign the fetched data to plantsData state
+        } catch (e) {
+          console.log(e);
+        }
+      }
+    };
+  
+    // Fetch data based on category or search
+    if (plantName) {
+      getProductByName();
+    } else {
+      getPlantsByCategory();
+    }
+
 
     // Set category and background image based on route params
     switch (plantsCategoryParams) {
@@ -64,14 +90,14 @@ function Plants() {
         setBackgroundImage('../prosperity');
         break;
       case 'AirPurifier':
-        setPlantCategory('Airpurifier');
+        setPlantCategory('AirPurifier');
         setBackgroundImage(Airpurifier);
         break;
       default:
         setPlantCategory('');
         setBackgroundImage('');
     }
-  }, [plantsCategoryParams]);
+  }, [plantsCategoryParams,plantName]);
 
   return (
     <div className="plantsContainer">
@@ -93,12 +119,15 @@ function Plants() {
 
       <div className="plantsMiddleDiv">
         <div className="plantsMiddleTopDiv">
-          <SearchBar />
+          <SearchBar sendDataToParent={sendDataToParent} />
         </div>
 
         <div className="plantsDisplayContainer">
           <div className="PlantsGridDisplayContainer">
-            {plantsData.slice(0, 9).map((plant) => (
+            {plantsData
+              .filter(plant => plant.category === `${plantCategory} Plant` || plant.category === `${plantCategory} plant`)
+              .slice(0, 9)
+              .map((plant) => (
               <div className="plantDiv" key={plant.pno}>
                 <Card className="plantCard">
                   <Card.Img
