@@ -19,7 +19,7 @@ const faqs = [
 export default function FaqAccordion() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const toggleAccordion = (index: number) => {
+  const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 

@@ -23,7 +23,7 @@ export default function AdminDashBoard() {
                     />
                     <FeatureComponent title="Edit or Delete Existing Product"
                         description="click to Update or Delete the existing Product list" 
-                        link="/"
+                        link="/adminEditSection"
                     />
                     <FeatureComponent
                          title="Contact Us Queries" 

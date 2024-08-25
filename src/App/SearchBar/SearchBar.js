@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './SearchBar.css';
 import searchIcon from '../images/SearchIcon.svg';
 
-function SearchBar() {
+function SearchBar({sendDataToParent}) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
     // Implement search functionality here
     console.log('Searching for:', searchQuery);
+    sendDataToParent(searchQuery);
   };
 
   const handleFocus = () => {
