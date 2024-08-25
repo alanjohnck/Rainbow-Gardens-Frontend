@@ -138,11 +138,11 @@ export default function ProductAdding() {
           <select name="category" placeholder="Enter the Plant Category" className='product-adding-input-box' onChange={handleChange} value={adminData.category}>
             <option value="">Select a category</option>
             <option value="All Plants">All Plants</option>
-            <option value="Outdoor Plants">Outdoor Plant</option>
-            <option value="Indoor Plants">Indoor Plant</option>
-            <option value="Air Purifiers">Air Purifier Plant</option>
-            <option value="Flowering Plants">Flowering Plant</option>
-            <option value="Prosperity Plants">Prosperity Plant</option>
+            <option value="Outdoor Plant">Outdoor Plant</option>
+            <option value="Indoor Plant">Indoor Plant</option>
+            <option value="AirPurifiers plant">Air Purifier</option>
+            <option value="Flowering Plant">Flowering Plant</option>
+            <option value="Prosperity Plant">Prosperity Plant</option>
           </select>
           <label htmlFor="plantSmallDescription">Enter Small Description</label>
           <input type="text" placeholder='Enter small description' name='plantSmallDescription' className='product-adding-input-box' value={adminData.plantSmallDescription} onChange={handleChange} />
