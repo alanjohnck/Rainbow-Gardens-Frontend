@@ -140,7 +140,7 @@ export default function ProductAdding() {
             <option value="All Plants">All Plants</option>
             <option value="Outdoor Plant">Outdoor Plant</option>
             <option value="Indoor Plant">Indoor Plant</option>
-            <option value="AirPurifier plant">Air Purifier</option>
+            <option value="AirPurifier Plant">Air Purifier</option>
             <option value="Flowering Plant">Flowering Plant</option>
             <option value="Prosperity Plant">Prosperity Plant</option>
           </select>
