@@ -23,6 +23,8 @@ function Plants() {
   const [plantCategory, setPlantCategory] = useState('');
   const [backgroundImage, setBackgroundImage] = useState('');
   const [plantsData, setPlantsData] = useState([]);
+  const [sortCriteria, setSortCriteria] = useState(null);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -38,6 +40,7 @@ function Plants() {
     setPlantName(plantName);
   }
 
+//fetching plants data
   useEffect(() => {
     const getPlantsByCategory = async () => {
       setLoading(true); // Start loading
@@ -86,6 +89,9 @@ function Plants() {
       getPlantsByCategory();
     }
 
+    //sorting functionality
+
+
     // Set category and background image based on route params
     switch (plantsCategoryParams) {
       case 'Indoor':
@@ -114,6 +120,24 @@ function Plants() {
     }
   }, [plantsCategoryParams, plantName]);
 
+  //sort functionality
+   const handleSort = (criteria) => {
+     setSortCriteria(criteria);
+   };
+
+   const sortPlants = (plants) => {
+    if (!sortCriteria) return plants;
+
+    return [...plants].sort((a, b) => {
+      if (sortCriteria === 'price') {
+        return a.plantPrice - b.plantPrice;
+      } else if (sortCriteria === 'name') {
+        return a.plantName.localeCompare(b.plantName);
+      }
+      return 0;
+     });
+   };
+
   return (
     <div className="plantsContainer">
       <div className="plantsTopDiv" style={{ backgroundImage: `url(${backgroundImage})` }}>
@@ -134,7 +158,7 @@ function Plants() {
 
       <div className="plantsMiddleDiv">
         <div className="plantsMiddleTopDiv">
-          <SearchBar sendDataToParent={sendDataToParent} />
+          <SearchBar sendDataToParent={sendDataToParent} onSort={handleSort}/>
         </div>
 
         <div className="plantsDisplayContainer">
@@ -173,7 +197,7 @@ function Plants() {
                 </div>
               ))
             ) : (
-              plantsData
+              sortPlants(plantsData)
                 .filter(plant => {
                   if (plantCategory !== 'All') {
                     return plant.category === `${plantCategory} Plant` || plant.category === `${plantCategory} plant`;

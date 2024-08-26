@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './SearchBar.css';
 import searchIcon from '../images/SearchIcon.svg';
 
-function SearchBar({sendDataToParent}) {
+function SearchBar({sendDataToParent,onSort}) {
   const [searchQuery, setSearchQuery] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -20,6 +20,7 @@ function SearchBar({sendDataToParent}) {
   const handleSort = (criteria) => {
     // Implement sort functionality here
     console.log(`Sorting by: ${criteria}`);
+    onSort(criteria);
     setShowDropdown(false); // Close dropdown after selection
   };
 
@@ -48,12 +49,12 @@ function SearchBar({sendDataToParent}) {
           className='searchButton' 
           onClick={() => setShowDropdown(!showDropdown)}
         >
-          Sort
+          Sort {"↓"}
         </button>
         {showDropdown && (
           <div className='dropdownMenu'>
-            <div className='dropdownItem' onClick={() => handleSort('price')}>Price</div>
-            <div className='dropdownItem' onClick={() => handleSort('category')}>Category</div>
+               <div className='dropdownItem' onClick={() => handleSort('price')}>Price</div>
+               <div className='dropdownItem' onClick={() => handleSort('name')}>A-Z</div>
           </div>
         )}
       </div>

@@ -40,7 +40,7 @@
   align-items: center;
   font-size: 1.2rem;
   color: #000000;
-  padding-left: 4vw;
+  padding-left: 3vw;
 }
 
 .searchButton {
@@ -63,9 +63,8 @@
   background-color: white;
   border: 1px solid #003912;
   font-family: "Lufga Bold";
-
   padding: 5px;
-  width: 100px;
+  width: 150px;
   margin-top: 5px;
   margin-left: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -142,7 +141,10 @@
     width: 20.834vw; 
     border-radius: 3rem;
   }
-  
+  .dropdownMenu{
+    width: 50px;
+    margin-left: 0;
+  }
 }
 
 /* For larger mobiles */
