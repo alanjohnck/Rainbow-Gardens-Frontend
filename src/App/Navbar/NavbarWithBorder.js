@@ -72,12 +72,6 @@ export default function NavbarWithBorder() {
             </NavLink>
           </div>
 
-          <div className="cartIconContainer">
-            <NavLink to="/cart">
-              <img src={cartIcon} alt="cartIcon" />
-            </NavLink>
-          </div>
-
           <div className="hamburger" onClick={toggleMenu}>
             <span class="bar1"></span>
             <span class="bar2"></span>

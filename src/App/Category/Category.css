@@ -71,6 +71,7 @@
   min-width: 17.904vw;
   min-height: 6.803vh;
   background: #003912;
+  background-image: url("../images/buttonBg.svg");
   display: flex;
   align-items: center;
   justify-content: center;
