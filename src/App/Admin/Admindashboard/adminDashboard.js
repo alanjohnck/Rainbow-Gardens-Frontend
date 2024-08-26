@@ -25,11 +25,11 @@ export default function AdminDashBoard() {
                         description="click to Update or Delete the existing Product list" 
                         link="/adminEditSection"
                     />
-                    <FeatureComponent
+                    {/* <FeatureComponent
                          title="Contact Us Queries" 
                          description="click to create New Product to be added to Product List" 
                          link="/"
-                    />
+                    /> */}
                 </div>
                 <div className="main-admin-content-right-section">
                     <FeatureComponent 
@@ -37,11 +37,11 @@ export default function AdminDashBoard() {
                         description="click to create New Product to be added to Product List" 
                         link="/productAdding"
                     />
-                    <FeatureComponent 
+                    {/* <FeatureComponent 
                         title="View Orders" 
                         description="click to view the orders you made" 
                         link="/"
-                    />
+                    /> */}
                 </div>
             </div>
         </div>

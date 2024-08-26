@@ -129,13 +129,13 @@ export default function ProductAdding() {
         <div className="input-fields">
           <span className='main-content-title'>{location.state && location.state.id ? "Edit Product" : "Create New Product"}</span>
           <label htmlFor="plantName">Enter the Plant Name</label>
-          <input type="text" placeholder='Enter the Plant Name' name='plantName' className='product-adding-input-box' value={adminData.plantName} onChange={handleChange} />
+          <input required type="text" placeholder='Enter the Plant Name' name='plantName' className='product-adding-input-box' value={adminData.plantName} onChange={handleChange} />
           <label htmlFor="plantPrice">Enter the Price</label>
-          <input type="text" placeholder='Enter the price' name='plantPrice' className='product-adding-input-box' value={adminData.plantPrice} onChange={handleChange} />
+          <input required type="text" placeholder='Enter the price' name='plantPrice' className='product-adding-input-box' value={adminData.plantPrice} onChange={handleChange} />
           <label htmlFor="plantLongDescription">Enter the Plant's Description</label>
-          <textarea placeholder="Enter the Description" name='plantLongDescription' className='product-adding-input-box' value={adminData.plantLongDescription} onChange={handleChange} />
+          <textarea required placeholder="Enter the Description" name='plantLongDescription' className='product-adding-input-box' value={adminData.plantLongDescription} onChange={handleChange} />
           <label htmlFor="category">Enter the Plant Category</label>
-          <select name="category" placeholder="Enter the Plant Category" className='product-adding-input-box' onChange={handleChange} value={adminData.category}>
+          <select required name="category" placeholder="Enter the Plant Category" className='product-adding-input-box' onChange={handleChange} value={adminData.category}>
             <option value="">Select a category</option>
             <option value="All Plants">All Plants</option>
             <option value="Outdoor Plant">Outdoor Plant</option>
@@ -144,16 +144,17 @@ export default function ProductAdding() {
             <option value="Flowering Plant">Flowering Plant</option>
             <option value="Prosperity Plant">Prosperity Plant</option>
           </select>
-          <label htmlFor="plantSmallDescription">Enter Small Description</label>
-          <input type="text" placeholder='Enter small description' name='plantSmallDescription' className='product-adding-input-box' value={adminData.plantSmallDescription} onChange={handleChange} />
+          <label  htmlFor="plantSmallDescription">Enter Small Description</label>
+          <inpu requiredt type="text" placeholder='Enter small description' name='plantSmallDescription' className='product-adding-input-box' value={adminData.plantSmallDescription} onChange={handleChange} />
           <label htmlFor="plantDescriptionForCard">Enter Description for Card</label>
-          <input type="text" placeholder='Enter description for card' name='plantDescriptionForCard' className='product-adding-input-box' value={adminData.plantDescriptionForCard} onChange={handleChange} />
+          <input required type="text" placeholder='Enter description for card' name='plantDescriptionForCard' className='product-adding-input-box' value={adminData.plantDescriptionForCard} onChange={handleChange} />
         </div>
         <span className='upload-pictures-text'>Upload Pictures</span>
         <div className="image-upload-section">
           <div className="file-access-parent-div">
             <label className="file-access-div">
               <input
+                required
                 className="file-selector-input"
                 type="file"
                 name="plantImage"
@@ -167,6 +168,7 @@ export default function ProductAdding() {
           <div className="file-access-parent-div">
             <label className="file-access-div">
               <input
+                required
                 className="file-selector-input"
                 type="file"
                 name="plantImageForCard"
@@ -180,6 +182,7 @@ export default function ProductAdding() {
           <div className="file-access-parent-div">
             <label className="file-access-div">
               <input
+                required
                 className="file-selector-input"
                 type="file"
                 name="plantSecondImage"
