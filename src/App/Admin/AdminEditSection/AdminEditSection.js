@@ -9,15 +9,20 @@ import axios from 'axios';
 function AdminEditSection() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   // State to manage the confirmation popup
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [productToDelete, setProductToDelete] = useState(null);
 
-  // Fetch products on component mount
+  // Check if user is authenticated
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      navigate('/adminLogin'); // Redirect to login page if not authenticated
+    } else {
+      dispatch(fetchProducts()); // Fetch products if authenticated
+    }
+  }, [dispatch, navigate]);
 
   // Select products and status from Redux state
   const { productList, isLoading, fetchProductStatus } = useSelector((state) => state.product);
@@ -35,8 +40,14 @@ function AdminEditSection() {
 
   // Handle delete after confirmation
   const handleDelete = () => {
-    if (productToDelete) {
-      axios.delete(`http://localhost:3001/api/deleteproducts/${productToDelete}`)
+    const token = localStorage.getItem('authToken');
+
+    if (productToDelete && token) {
+      axios.delete(`http://localhost:3001/api/deleteproducts/${productToDelete}`, {
+        headers: {
+          'Authorization': `Bearer ${token}` // Add JWT token in Authorization header
+        }
+      })
         .then((response) => {
           console.log(response);
           setShowDeleteConfirmation(false);

@@ -1,4 +1,3 @@
-
 import AdminHeader from '../adminHeader/adminHeader';
 import imagePreview from '../../images/image-uploading-preview.svg';
 import Footer from '../../Footer/Footer';
@@ -9,6 +8,7 @@ import "./productAdding.css"
 
 export default function ProductAdding() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [adminData, setAdminData] = useState({
     plantName: '',
     plantSmallDescription: '',
@@ -24,6 +24,14 @@ export default function ProductAdding() {
     plantSecondImage: null,
     plantThirdImage: null
   });
+
+  // Check if user is authenticated
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    if (!token) {
+      navigate('/adminLogin'); // Redirect to login page if not authenticated
+    }
+  }, [navigate]);
 
   // Fetch product details if editing
   useEffect(() => {
@@ -78,24 +86,26 @@ export default function ProductAdding() {
     });
 
     try {
+      // Get the JWT token from localStorage
+      const token = localStorage.getItem('authToken');
+
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${token}` // Add JWT token in Authorization header
+        }
+      };
+
       if (location.state && location.state.id) {
         // Edit mode: update the product
         const productId = location.state.id;
         console.log('Updating product:', productId);
-        const response = await axios.put(`http://localhost:3001/api/updateproducts/${productId}`, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        });
+        const response = await axios.put(`http://localhost:3001/api/updateproducts/${productId}`, formData, config);
         console.log('Product updated:', response.data);
         alert('Product updated successfully!');
       } else {
         // Add mode: create a new product
-        const response = await axios.post('http://localhost:3001/api/createproduct', formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        });
+        const response = await axios.post('http://localhost:3001/api/createproduct', formData, config);
         console.log('Product created:', response.data);
         alert('Product created successfully!');
       }

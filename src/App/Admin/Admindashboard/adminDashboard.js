@@ -1,10 +1,23 @@
-import React from 'react'
-import Footer from '../../Footer/Footer'
-import './adminDashboard.css'
-import AdminHeader from '../adminHeader/adminHeader'
-import FeatureComponent from './adminfeatures/featureComponent'
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Footer from '../../Footer/Footer';
+import './adminDashboard.css';
+import AdminHeader from '../adminHeader/adminHeader';
+import FeatureComponent from './adminfeatures/featureComponent';
 
 export default function AdminDashBoard() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if the user is logged in by verifying the presence of the JWT token
+    const token = localStorage.getItem('authToken');
+    
+    if (!token) {
+      // If no token is found, redirect to the login page
+      navigate('/adminLogin');
+    }
+  }, [navigate]);
+
   return (
     <div className='adminDashboard'>
         <div className="adminHeaderSection">
@@ -26,11 +39,6 @@ export default function AdminDashBoard() {
                         description="click to Update or Delete the existing Product list" 
                         link="/adminEditSection"
                     />
-                    {/* <FeatureComponent
-                         title="Contact Us Queries" 
-                         description="click to create New Product to be added to Product List" 
-                         link="/"
-                    /> */}
                 </div>
                 <div className="mainAdminContentRightSection">
                     <FeatureComponent 
@@ -38,11 +46,6 @@ export default function AdminDashBoard() {
                         description="click to create New Product to be added to Product List" 
                         link="/productAdding"
                     />
-                    {/* <FeatureComponent 
-                        title="View Orders" 
-                        description="click to view the orders you made" 
-                        link="/"
-                    /> */}
                 </div>
             </div>
         </div>
@@ -50,5 +53,5 @@ export default function AdminDashBoard() {
               <Footer/>
         </div>
     </div>
-  )
+  );
 }
