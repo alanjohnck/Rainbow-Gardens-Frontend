@@ -67,26 +67,22 @@ function Plants() {
       setLoading(false);
     };
 
-    const getProductByName = async () => {
-      setLoading(true);
-      if (plantName) {
-        try {
-          const url = `http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`
-          const response = await fetch(url);
-          const data = await response.json();
-          setPlantsData(Array.isArray(data) ? data : []);
-        } catch (e) {
-          console.log(e);
-        }
-      }
-      setLoading(false);
-    };
+    // const getProductByName = async () => {
+    //   setLoading(true);
+    //   if (plantName) {
+    //     try {
+    //       const url = `http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`
+    //       const response = await fetch(url);
+    //       const data = await response.json();
+    //       setPlantsData(Array.isArray(data) ? data : []);
+    //     } catch (e) {
+    //       console.log(e);
+    //     }
+    //   }
+    //   setLoading(false);
+    // };
 
-    if (plantName) {
-      getProductByName();
-    } else {
-      getPlantsByCategory();
-    }
+    getPlantsByCategory();
 
     switch (plantsCategoryParams) {
       case 'Indoor':
@@ -198,7 +194,9 @@ function Plants() {
                 </div>
               ))
             ) : (
-              currentPlants.map((plant) => (
+              currentPlants
+                .filter((plant) => plant.plantName.toLowerCase().includes(plantName.toLowerCase()))
+                .map((plant) => (
                 <div className="plantDiv" key={plant.pno}>
                   <Card className="plantCard">
                     <Card.Img
