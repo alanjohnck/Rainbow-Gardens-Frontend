@@ -10,85 +10,46 @@ import SearchBar from '../SearchBar/SearchBar';
 import indoorImg from '../images/IndoorImage.svg';
 import outdoorImg from '../images/OutdoorImage.svg';
 import Airpurifier from '../images/Airpurifier.jpg';
-import { useNavigate, NavLink } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../Redux/Slice/ProductSlice";
+import { useNavigate } from "react-router-dom";
 import prosperityImg from "../images/prosperity.jpg";
 import floweringImg from "../images/flowering.jpg";
-import Allplants from "../images/Allplants.jpg"
+import Allplants from "../images/Allplants.jpg";
 
 function Plants() {
   const [loading, setLoading] = useState(true);
   const { plantsCategoryParams } = useParams();
-  const [plantName, setPlantName] = useState('');
   const [plantCategory, setPlantCategory] = useState('');
   const [backgroundImage, setBackgroundImage] = useState('');
   const [plantsData, setPlantsData] = useState([]);
+  const [filteredPlants, setFilteredPlants] = useState([]);
   const [sortCriteria, setSortCriteria] = useState(null);
-
+  
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
   const plantsPerPage = 9;
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, []);
-
-  const handleExpandClick = (plantId) => {
-    navigate(`/product/${plantId}`);
-  };
-
-  const sendDataToParent = (plantName) => {
-    setPlantName(plantName);
-  }
-
-  useEffect(() => {
+    // Fetch products based on category once
     const getPlantsByCategory = async () => {
       setLoading(true);
-      if (plantsCategoryParams !== 'All') {
-        try {
-          const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`);
-          const data = await response.json();
-          setPlantsData(data);
-        } catch (e) {
-          console.log(e);
-        }
-      } else {
-        try {
-          const response = await fetch(`http://localhost:3001/api/getproduct`);
-          const data = await response.json();
-          setPlantsData(data);
-        } catch (e) {
-          console.log(e);
-        }
+      try {
+        const response = await fetch(plantsCategoryParams !== 'All'
+          ? `http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`
+          : `http://localhost:3001/api/getproduct`);
+        const data = await response.json();
+        setPlantsData(data);
+        setFilteredPlants(data); // Initialize filteredPlants with the fetched data
+      } catch (e) {
+        console.log(e);
       }
       setLoading(false);
     };
-
-    const getProductByName = async () => {
-      setLoading(true);
-      if (plantName) {
-        try {
-          const url = `http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`
-          const response = await fetch(url);
-          const data = await response.json();
-          setPlantsData(Array.isArray(data) ? data : []);
-        } catch (e) {
-          console.log(e);
-        }
-      }
-      setLoading(false);
-    };
-
-    if (plantName) {
-      getProductByName();
-    } else {
-      getPlantsByCategory();
-    }
-
+    
+    getPlantsByCategory();
+    
+    // Set background images and category
     switch (plantsCategoryParams) {
       case 'Indoor':
         setPlantCategory('Indoor');
@@ -114,9 +75,24 @@ function Plants() {
         setPlantCategory('All');
         setBackgroundImage(Allplants);
     }
-  }, [plantsCategoryParams, plantName]);
+  }, [plantsCategoryParams]);
 
-  // Sort functionality
+  const handleExpandClick = (plantId) => {
+    navigate(`/product/${plantId}`);
+  };
+
+  const sendDataToParent = (plantName) => {
+    if (plantName) {
+      const searchQuery = plantName.toLowerCase();
+      const filtered = plantsData.filter((plant) =>
+        plant.plantName.toLowerCase().includes(searchQuery)
+      );
+      setFilteredPlants(filtered);
+    } else {
+      setFilteredPlants(plantsData); // Reset to all plants if search is cleared
+    }
+  };
+
   const handleSort = (criteria) => {
     setSortCriteria(criteria);
   };
@@ -136,7 +112,7 @@ function Plants() {
   // Pagination Logic
   const indexOfLastPlant = currentPage * plantsPerPage;
   const indexOfFirstPlant = indexOfLastPlant - plantsPerPage;
-  const currentPlants = sortPlants(plantsData).slice(indexOfFirstPlant, indexOfLastPlant);
+  const currentPlants = sortPlants(filteredPlants).slice(indexOfFirstPlant, indexOfLastPlant);
 
   // Handle page change
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -234,8 +210,8 @@ function Plants() {
         </div>
 
         {/* Pagination Controls */}
-        <div className="pagination ">
-          {Array.from({ length: Math.ceil(plantsData.length / plantsPerPage) }, (_, i) => (
+        <div className="pagination">
+          {Array.from({ length: Math.ceil(filteredPlants.length / plantsPerPage) }, (_, i) => (
             <button key={i} onClick={() => paginate(i + 1)}>
               {i + 1}
             </button>
