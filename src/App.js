@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import Home from './App/Home/Home';
 import Product from './App/Product/Product';
-import Cart from './App/Cart/Cart';
 import Contact from './App/Contact/Contact';
 import Category from './App/Category/Category';
 import ThankYou from './App/ThankYou/ThankYou';
@@ -12,6 +11,7 @@ import ProductAdding from './App/Admin/adminProductAdding/productAdding';
 import AdminEditSection from './App/Admin/AdminEditSection/AdminEditSection';
 import AdminLogin from './App/AdminLogin/adminLogin';
 import PasswordReset from './App/AdminLogin/passwordReset';
+import WhyChooseUs from './App/WhyChooseUs/WhyChooseUs';
 
 
 
@@ -22,7 +22,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/product/:productId' element={<Product/>}/>
-          <Route path='/cart' element={<Cart/>}/>
           <Route path='/contact' element={<Contact/>}/>
           <Route path='/category' element={<Category/>}/>
           <Route path='/thankyou' element={<ThankYou/>}/>

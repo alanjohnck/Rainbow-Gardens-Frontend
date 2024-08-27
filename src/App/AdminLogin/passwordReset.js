@@ -9,6 +9,7 @@ export default function PasswordReset() {
             </div>
             <form className='inputDiv'>
                   <span className='title'>Password Reset</span>
+                  <input type="email" className='EmailInput loginInput' placeholder='Email' required/>
                   <input type="password" className="passwordInput" placeholder='Current Password' required/>
                   <input type="password" className="passwordInput" placeholder='New Password' required/>
                   <button className='passwordResetConfimButton' title='confirm'>Confirm</button>

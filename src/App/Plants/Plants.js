@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../Redux/Slice/ProductSlice";
 import prosperityImg from "../images/prosperity.jpg";
 import floweringImg from "../images/flowering.jpg";
+import Allplants from "../images/Allplants.jpg"
 
 function Plants() {
   const [loading, setLoading] = useState(true);
@@ -103,11 +104,11 @@ function Plants() {
         break;
       case 'AirPurifier':
         setPlantCategory('AirPurifier');
-        setBackgroundImage(Airpurifier);
+        setBackgroundImage(Allplants);
         break;
       default:
         setPlantCategory('All');
-        setBackgroundImage(Airpurifier);
+        setBackgroundImage(Allplants);
     }
   }, [plantsCategoryParams, plantName]);
 

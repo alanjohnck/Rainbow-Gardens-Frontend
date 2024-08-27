@@ -20,18 +20,7 @@ export default function Product() {
     dispatch(fetchProductByPno(productId));
   }, []);
 
-  const handleAddCartClick = () => {
-    const product = {
-      productPno: productState.product?.Pno,
-      productName: productState.product?.plantName,
-      productCategory: productState.product?.category,
-      productPrice: productState.product?.plantPrice,
-      productImage: productState.product?.images?.[0],
-      quantity: 1,
-    };
-    dispatch(addProduct({ product }));
-    navigate("/cart");
-  };
+ 
 
   return (
     <div className="product">
@@ -64,13 +53,11 @@ export default function Product() {
                     <span>₹ {productState.product?.plantPrice}</span>
                   </div>
 
-                  <div className="addCartButton">
-                    <button
-                      className="cartButton"
-                      onClick={() => handleAddCartClick(productState.product)}
-                    >
-                      Add to cart
-                    </button>
+                  <div className="whatsappContactButton">
+                     <button className="whatsappButton">
+                       <img src={whatsappIcon} alt="whatsappIcon" />
+                       <span>+91 8999999999</span>
+                     </button>
                   </div>
                 </div>
               </div>
@@ -91,12 +78,7 @@ export default function Product() {
                   <span>{productState.product?.plantLongDescription}</span>
                 </div>
 
-                <div className="whatsappContactButton">
-                  <button className="whatsappButton">
-                    <img src={whatsappIcon} alt="whatsappIcon" />
-                    <span>+91 8999999999</span>
-                  </button>
-                </div>
+               
               </div>
             </div>
           </div>

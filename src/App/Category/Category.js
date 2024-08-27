@@ -16,8 +16,13 @@ function Category() {
   const [plantName, setPlantName] = useState('');
   const [loading, setLoading] = useState(true);
   const [plantsData, setPlantsData] = useState([]);
-  const navigate = useNavigate();
+  const [sortCriteria, setSortCriteria] = useState(null);
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const plantsPerPage = 9;
+  const navigate = useNavigate();
+  
   useEffect(() => {
     const getProductAll = async () => {
       setLoading(true);
@@ -42,7 +47,32 @@ function Category() {
   const handleExpandClick = (plantId) => {
     navigate(`/product/${plantId}`);
   };
+ 
+  //handler for sorting
+  const handleSort = (criteria) => {
+    setSortCriteria(criteria);
+  };
+   //handler for sorting plants based on price,A-Z
+  const sortPlants = (plants) => {
+    if (!sortCriteria) return plants;
+    return [...plants].sort((a, b) => {
+      if (sortCriteria === 'price') {
+        return a.plantPrice - b.plantPrice;
+      } else if (sortCriteria === 'name') {
+        return a.plantName.localeCompare(b.plantName);
+      }
+      return 0;
+    });
+  };
 
+    // Pagination Logic
+    const indexOfLastPlant = currentPage * plantsPerPage;
+    const indexOfFirstPlant = indexOfLastPlant - plantsPerPage;
+    const currentPlants = sortPlants(plantsData).slice(indexOfFirstPlant, indexOfLastPlant);
+  
+    // Handle page change
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  
   return (
     <div className="categoryContainer">
       <div className="categoryTopDiv">
@@ -65,31 +95,31 @@ function Category() {
       </div>
 
       <div className="categoryMiddleDiv">
-        <SearchBar sendDataToParent={sendDataToParent} />
+        <SearchBar sendDataToParent={sendDataToParent} onSort={handleSort} />
 
         <div className="plantButtonContainer">
           <button>
-            <NavLink to="/plants/Indoor">
+            <NavLink to="/plants/Indoor" className="button-link">
               <span className="button-text">Indoor Plants</span>
             </NavLink>
           </button>
           <button>
-            <NavLink to="/plants/Outdoor">
+            <NavLink to="/plants/Outdoor" className="button-link">
               <span className="button-text">Outdoor Plants</span>
             </NavLink>
           </button>
           <button>
-            <NavLink to="/plants/Flowering">
+            <NavLink to="/plants/Flowering" className="button-link">
               <span className="button-text">Flowering Plants</span>
             </NavLink>
           </button>
           <button>
-            <NavLink to="/plants/Prosperity">
+            <NavLink to="/plants/Prosperity" className="button-link">
               <span className="button-text">Prosperity Plants</span>
             </NavLink>
           </button>
           <button>
-            <NavLink to="/plants/AirPurifier">
+            <NavLink to="/plants/AirPurifier" className="button-link">
               <span className="button-text">Air Purifier Plants</span>
             </NavLink>
           </button>
@@ -220,10 +250,11 @@ function Category() {
                   </div>
                 ))
               ) : (
-                plantsData
+                currentPlants
                   .filter((plant) => plant.plantName.toLowerCase().includes(plantName.toLowerCase()))
                   .slice(0, 9)
                   .map((plant) => (
+
                   <div className="plantDiv" key={plant.pno}>
                     <Card className="plantCard">
                       <Card.Img
@@ -256,6 +287,14 @@ function Category() {
               )}
             </div>
           </div>
+           {/* Pagination Controls */}
+        <div className="pagination ">
+          {Array.from({ length: Math.ceil(plantsData.length / plantsPerPage) }, (_, i) => (
+            <button key={i} onClick={() => paginate(i + 1)}>
+              {i + 1}
+            </button>
+          ))}
+        </div>
         </div>
       </div>
 
