@@ -24,19 +24,8 @@ function Category() {
   const navigate = useNavigate();
   
   useEffect(() => {
-    const getProductByName = async () => {
+    const getProductAll = async () => {
       setLoading(true);
-      if (plantName) {
-        try {
-          const url = `http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`;
-          console.log('url : ', url);
-          const response = await fetch(url);
-          const data = await response.json();
-          setPlantsData(Array.isArray(data) ? data : []);
-        } catch (e) {
-          console.log(e);
-        }
-      } else {
         // Fetch all products if no plant name is specified
         try {
           const response = await fetch(`http://localhost:3001/api/getproduct`);
@@ -45,11 +34,10 @@ function Category() {
         } catch (e) {
           console.log(e);
         }
-      }
       setLoading(false);
     };
 
-    getProductByName();
+    getProductAll();
   }, [plantName]);
 
   const sendDataToParent = (name) => {
@@ -262,7 +250,11 @@ function Category() {
                   </div>
                 ))
               ) : (
-                currentPlants.slice(0, 9).map((plant) => (
+                currentPlants
+                  .filter((plant) => plant.plantName.toLowerCase().includes(plantName.toLowerCase()))
+                  .slice(0, 9)
+                  .map((plant) => (
+
                   <div className="plantDiv" key={plant.pno}>
                     <Card className="plantCard">
                       <Card.Img
