@@ -137,7 +137,7 @@
   width: 100%;
   height: 27vh;
   object-fit: cover;
-  border-radius: 1.563vw;
+  border-radius: 1.563vw !important;
 }
 
 .plantTitle > span {
@@ -276,6 +276,11 @@
   border-radius: .6rem;
   cursor: pointer;
 }
+.button-link{
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+}
 
 /* ---- Media queries ---- */
 
@@ -294,7 +299,9 @@
   .categoryTopDiv {
     background-position-x: -125dvw;
   }
-
+  .plantButtonContainer{
+    display: none;
+  }
   .categoryFlexDiv {
     display: block;
     padding-top: 12dvh;
@@ -322,12 +329,7 @@
     border-radius: 0;
   }
 
-  .button-text{
-    font-family: "Lufga Bold";
-    font-size: 2.5rem;
-    color: #ffffff !important;
-    text-decoration: none;
-  }
+ 
 
   .recommendationTitle > span {
     font-size: 2.8rem;

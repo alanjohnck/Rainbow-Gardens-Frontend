@@ -10,7 +10,6 @@ export default function AdminLogin() {
             </div>
             <form className="inputDiv">
                   <span className="loginTitle">Login</span>
-                  <input type="text" className="userNameInput loginInput" placeholder='Username' required/>
                   <input type="email" className='EmailInput loginInput' placeholder='Email' required/>
                   <input type="password" placeholder='Password' className='password loginInput' required/>
                   <NavLink to="/resetPassword">

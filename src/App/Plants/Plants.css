@@ -16,7 +16,6 @@
     position: relative;
     z-index: 1;
 }
-
 .plantsFlexDiv {
     margin-top: 25vh;
 }
@@ -92,11 +91,10 @@
 }
 
 .plantCardImage {
-    padding: 0.5vw;
     width: 100%;
-    height: 27vh;
+    height: 29vh;
     object-fit: cover;
-    border-radius: 1.563vw;
+    border-radius: 1.563vw !important;
 }
 
 .plantTitle > span {
@@ -154,7 +152,6 @@
     background-color: #e0e0e0;
     border-radius: 1.563vw; /* Match with image border-radius */
 }
-/* Add this class to the Placeholder to ensure proper sizing */
 .plantPlaceholder {
     width: 100%;
     display: block;
@@ -187,8 +184,6 @@
 }
 
 @media screen and (max-width: 480px) {
-
-
     .plantsTopDiv {
         background-position-x: -100vw;
     }

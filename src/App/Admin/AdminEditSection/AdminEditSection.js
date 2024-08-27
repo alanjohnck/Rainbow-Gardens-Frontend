@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminHeader from '../adminHeader/adminHeader';
 import "./AdminEditSection.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,6 +9,10 @@ import axios from 'axios';
 function AdminEditSection() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
+  // State to manage the confirmation popup
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
+  const [productToDelete, setProductToDelete] = useState(null);
 
   // Fetch products on component mount
   useEffect(() => {
@@ -23,18 +27,32 @@ function AdminEditSection() {
     navigate(`/productAdding`, { state: { id } });
   };
 
-  const handleDelete = (id) => {
-    axios.delete(`http://localhost:3001/api/deleteproducts/${id}`)
-      .then((response) => {
-        console.log(response);
-        alert('Product deleted successfully!');
-        dispatch(fetchProducts());
-      })
-      .catch((error) => {
-        console.error(error);
-        alert('Error deleting product. Please try again.');
-      });
+  // Show confirmation modal
+  const confirmDelete = (id) => {
+    setShowDeleteConfirmation(true);
+    setProductToDelete(id);
+  };
 
+  // Handle delete after confirmation
+  const handleDelete = () => {
+    if (productToDelete) {
+      axios.delete(`http://localhost:3001/api/deleteproducts/${productToDelete}`)
+        .then((response) => {
+          console.log(response);
+          setShowDeleteConfirmation(false);
+          dispatch(fetchProducts());
+        })
+        .catch((error) => {
+          console.error(error);
+          alert('Error deleting product. Please try again.');
+        });
+    }
+  };
+
+  // Close confirmation popup
+  const closeDeleteConfirmation = () => {
+    setShowDeleteConfirmation(false);
+    setProductToDelete(null);
   };
 
   return (
@@ -64,7 +82,7 @@ function AdminEditSection() {
                   <td className='adminDecription'>{plant.plantDescriptionForCard}</td>
                   <td className='adminButtonContainer'>
                     <button className='adminEdit' onClick={() => handleEdit(plant.Pno)}>Edit</button>
-                    <button className="adminDelete" onClick={() => handleDelete(plant.Pno)}>Delete</button>
+                    <button className="adminDelete" onClick={() => confirmDelete(plant.Pno)}>Delete</button>
                   </td>
                 </tr>
               ))}
@@ -72,6 +90,19 @@ function AdminEditSection() {
           </table>
         )}
       </div>
+
+      {/* Delete Confirmation Popup */}
+      {showDeleteConfirmation && (
+        <div className="deleteConfirmationModal">
+          <div className="deleteConfirmationContent">
+            <p>Are you sure you want to delete this product?</p>
+            <div className="deleteConfirmationButtons">
+              <button onClick={handleDelete} className="confirmDeleteButton">Yes</button>
+              <button onClick={closeDeleteConfirmation} className="cancelDeleteButton">No</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
