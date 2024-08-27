@@ -1,96 +1,93 @@
 .adminViewContainer {
-    padding: 20px;
-    font-family: "Lufga medium "
+  padding: 20px;
+  font-family: "Lufga medium", sans-serif;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+}
+
+.plantTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.plantTable th, .plantTable td {
+  border: 1px solid #003912;
+  padding: 8px;
+  text-align: left;
+  font-weight: normal;
+}
+
+.plantTable th {
+  background-color: #003912;
+  color: white;
+}
+
+.adminButtonContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.adminEdit, .adminDelete {
+  padding: 5px 10px;
+  background-color: white;
+  color: #003912;
+  border: 1px solid #003912;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #003912;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .adminViewContainer {
+    padding: 10px;
   }
-  
+
   .plantTable {
-    width: 100%;
-    border-collapse: collapse;
-
+    font-size: 0.9em;
   }
-  
+
   .plantTable th, .plantTable td {
-    border: 1px solid #003912;
-    padding: 8px;
-    text-align: left;
-    font-weight: thin;
-    
+    padding: 6px 4px;
   }
-  
- .plantTable th {
-    background-color: #003912;
-    color: white;
+
+  .adminDescription {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
-  
- .adminButtonContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:1rem
+
+  .adminButtonContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .adminEdit, .adminDelete {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.adminEdit{
-    padding: 5px 10px;
-    background-color: white;
-    color: #003912;
-    border: none;
-    cursor: pointer;
-    border: 1px solid #003912 ;
-    border-radius: 10px;
-}
+@media (max-width: 480px) {
+  .plantTable {
+    font-size: 0.8em;
+  }
 
-.adminDelete{
-    padding: 5px 10px;
-    background-color: white;
-    color: #003912;
-    border: none;
-    cursor: pointer;
-    border: 1px solid #003912 ;
-    border-radius: 10px;
+  .plantTable th, .plantTable td {
+    padding: 4px 2px;
   }
-  
-  button:hover {
-    background-color:#003912 ;
-    color: white;
+
+  .adminDescription {
+    max-width: 100px;
   }
-  
-  /* Responsive styles below 480px */
-  @media (max-width: 480px) {
-    .plantTable, .plantTable thead, .plantTable tbody, .plantTable th, .plantTable td, .plantTable tr {
-      display: block;
-      width: 100%;
-    }
-    
-    .plantTable tr {
-      margin-bottom: 15px;
-    }
-  
-    .plantTable td {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-      border: 1px solid #ddd;
-      text-align: left;
-      position: relative;
-      padding-left: 50%;
-    }
-  
-    .plantTable td::before {
-      content: attr(data-label);
-      position: absolute;
-      left: 10px;
-      top: 10px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  
-    .plantTable th {
-      display: none;
-    }
-  
-    button {
-      width: 100%;
-      margin-top: 10px;
-    }
-  }
-  
+}

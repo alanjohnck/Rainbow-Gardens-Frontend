@@ -1,10 +1,11 @@
-import './productAdding.css';
+
 import AdminHeader from '../adminHeader/adminHeader';
 import imagePreview from '../../images/image-uploading-preview.svg';
 import Footer from '../../Footer/Footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
+import "./productAdding.css"
 
 export default function ProductAdding() {
   const location = useLocation();

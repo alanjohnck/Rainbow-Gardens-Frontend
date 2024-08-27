@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Category.css";
 import Navbar from "../Navbar/Navbar";
-import whatsappIcon from "../images/WhatsappIcon.svg";
 import SearchBar from "../SearchBar/SearchBar";
 import plantData from "../Home/Home.json";
 import Card from "react-bootstrap/Card";
@@ -10,10 +9,15 @@ import cardImage from "../images/CardImage.svg";
 import offerImage from "../images/OfferImage.svg";
 import Footer from "../Footer/Footer";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
+import { NavLink } from "react-router-dom";
 
 function Category() {
   const [selectedPlant, setSelectedPlant] = useState(null);
-
+  const [plantName, setPlantName] = useState('');
+  const sendDataToParent = (plantName) => {
+    setPlantName(plantName);
+  }
+  
   const handleOnSearch = (string, results) => {
     console.log(string, results);
   };
@@ -68,10 +72,6 @@ function Category() {
           </div>
         </div>
       </div>
-      <div className="whatsappIconContainer">
-        <img src={whatsappIcon} alt="whatsappIcon" />
-      </div>
-
       <div className="categoryMiddleDiv">
         {/* <div className="search-bar">
           <ReactSearchAutocomplete
@@ -85,14 +85,14 @@ function Category() {
           />
           <span>{plantData.plants.plantName}</span>
         </div> */}
-        <SearchBar />
+        <SearchBar sendDataToParent={sendDataToParent} />
 
         <div className="plantButtonContainer">
-          <button>Indoor Plants</button>
-          <button>Outdoor Plants</button>
-          <button>Flowering Plants</button>
-          <button>Prosperity Plants</button>
-          <button>Air Purifier Plants</button>
+          <button><NavLink to="/plants/Indoor" className="text-white">Indoor Plants</NavLink></button>
+          <button><NavLink to="/plants/Outdoor" className="text-white">Outdoor Plants</NavLink></button>
+          <button><NavLink to="/plants/Flowering" className="text-white">Flowering Plants</NavLink></button>
+          <button><NavLink to="/plants/Prosperity" className="text-white">Prosperity Plants</NavLink></button>
+          <button><NavLink to="/plants/AirPurifier" className="text-white">Air Purifier Plants</NavLink></button>
         </div>
 
         <div className="recommendationContainer">

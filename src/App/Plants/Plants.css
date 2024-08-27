@@ -19,7 +19,6 @@
 
 .plantsFlexDiv {
     margin-top: 25vh;
-    padding-left: 15vw;
 }
 
 .plantsTitleDiv {
@@ -161,7 +160,20 @@
     display: block;
     background-color: #e0e0e0; /* You can adjust this */
 }
-
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.pagination > button{
+    background-color: #003912;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: .6rem;
+    cursor: pointer;
+}
 /* ---- Media queries ---- */
 
 @media screen and (max-width: 768px) {
@@ -212,7 +224,7 @@
     }
 
     .PlantsGridDisplayContainer {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         width: 100%;
     }
 

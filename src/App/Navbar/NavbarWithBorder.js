@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { NavLink } from "react-router-dom";
 import rainbowLogo from "../images/RainbowLogo.svg";
 import cartIcon from "../images/CartIcon.svg";
-
+import whatsappIcon from '../images/WhatsappIcon.svg'
 export default function NavbarWithBorder() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -70,12 +70,8 @@ export default function NavbarWithBorder() {
             >
               <span>Close</span>
             </NavLink>
-          </div>
 
-          <div className="cartIconContainer">
-            <NavLink to="/cart">
-              <img src={cartIcon} alt="cartIcon" />
-            </NavLink>
+            <NavLink to=""><img src={whatsappIcon} alt="" /></NavLink>
           </div>
 
           <div className="hamburger" onClick={toggleMenu}>

@@ -13,14 +13,22 @@ import Airpurifier from '../images/Airpurifier.jpg';
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../Redux/Slice/ProductSlice";
+import prosperityImg from "../images/prosperity.jpg";
+import floweringImg from "../images/flowering.jpg";
 
 function Plants() {
-  const [loading, setLoading] = useState(true); // State to track loading status
+  const [loading, setLoading] = useState(true);
   const { plantsCategoryParams } = useParams();
   const [plantName, setPlantName] = useState('');
   const [plantCategory, setPlantCategory] = useState('');
   const [backgroundImage, setBackgroundImage] = useState('');
   const [plantsData, setPlantsData] = useState([]);
+  const [sortCriteria, setSortCriteria] = useState(null);
+
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const plantsPerPage = 9;
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -38,8 +46,8 @@ function Plants() {
 
   useEffect(() => {
     const getPlantsByCategory = async () => {
-      setLoading(true); // Start loading
-      if(plantsCategoryParams !== 'All'){
+      setLoading(true);
+      if (plantsCategoryParams !== 'All') {
         try {
           const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`);
           const data = await response.json();
@@ -47,8 +55,7 @@ function Plants() {
         } catch (e) {
           console.log(e);
         }
-      }
-      else{
+      } else {
         try {
           const response = await fetch(`http://localhost:3001/api/getproduct`);
           const data = await response.json();
@@ -57,33 +64,30 @@ function Plants() {
           console.log(e);
         }
       }
-      setLoading(false); // End loading
+      setLoading(false);
     };
 
     const getProductByName = async () => {
       setLoading(true);
       if (plantName) {
         try {
-          const url =`http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`
-          console.log('url : ',url); 
+          const url = `http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`
           const response = await fetch(url);
           const data = await response.json();
-          setPlantsData(Array.isArray(data)? data : []); // Assign the fetched data to plantsData state
+          setPlantsData(Array.isArray(data) ? data : []);
         } catch (e) {
           console.log(e);
         }
       }
       setLoading(false);
     };
-  
-    // Fetch data based on category or search
+
     if (plantName) {
       getProductByName();
     } else {
       getPlantsByCategory();
     }
 
-    // Set category and background image based on route params
     switch (plantsCategoryParams) {
       case 'Indoor':
         setPlantCategory('Indoor');
@@ -95,11 +99,11 @@ function Plants() {
         break;
       case 'Flowering':
         setPlantCategory('Flowering');
-        setBackgroundImage('../flowering');
+        setBackgroundImage(floweringImg);
         break;
       case 'Prosperity':
         setPlantCategory('Prosperity');
-        setBackgroundImage('../prosperity');
+        setBackgroundImage(prosperityImg);
         break;
       case 'AirPurifier':
         setPlantCategory('AirPurifier');
@@ -110,6 +114,31 @@ function Plants() {
         setBackgroundImage(Airpurifier);
     }
   }, [plantsCategoryParams, plantName]);
+
+  // Sort functionality
+  const handleSort = (criteria) => {
+    setSortCriteria(criteria);
+  };
+
+  const sortPlants = (plants) => {
+    if (!sortCriteria) return plants;
+    return [...plants].sort((a, b) => {
+      if (sortCriteria === 'price') {
+        return a.plantPrice - b.plantPrice;
+      } else if (sortCriteria === 'name') {
+        return a.plantName.localeCompare(b.plantName);
+      }
+      return 0;
+    });
+  };
+
+  // Pagination Logic
+  const indexOfLastPlant = currentPage * plantsPerPage;
+  const indexOfFirstPlant = indexOfLastPlant - plantsPerPage;
+  const currentPlants = sortPlants(plantsData).slice(indexOfFirstPlant, indexOfLastPlant);
+
+  // Handle page change
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <div className="plantsContainer">
@@ -131,18 +160,17 @@ function Plants() {
 
       <div className="plantsMiddleDiv">
         <div className="plantsMiddleTopDiv">
-          <SearchBar sendDataToParent={sendDataToParent} />
+          <SearchBar sendDataToParent={sendDataToParent} onSort={handleSort} />
         </div>
 
         <div className="plantsDisplayContainer">
           <div className="PlantsGridDisplayContainer">
             {loading ? (
-              // Placeholder for loading state
               Array.from({ length: 3 }).map((_, idx) => (
                 <div className="plantDiv" key={idx}>
                   <Card className="plantCard">
-                  <Placeholder as="div" animation="glow" className="plantCardPlaceholderImage plantPlaceholder" />
-                  <Card.Body className="plantCardBody">
+                    <Placeholder as="div" animation="glow" className="plantCardPlaceholderImage plantPlaceholder" />
+                    <Card.Body className="plantCardBody">
                       <div className="plantTitle">
                         <Placeholder as="span" animation="glow">
                           <Placeholder xs={6} />
@@ -170,46 +198,47 @@ function Plants() {
                 </div>
               ))
             ) : (
-              plantsData
-                .filter(plant => {
-                  if (plantCategory !== 'All') {
-                    return plant.category === `${plantCategory} Plant` || plant.category === `${plantCategory} plant`;
-                  }
-                  return true; // When plantCategory is 'All', include all plants
-                  })
-                .slice(0, 9)
-                .map((plant) => (
-                  <div className="plantDiv" key={plant.pno}>
-                    <Card className="plantCard">
-                      <Card.Img
-                        variant="top"
-                        src={plant.images[0]}
-                        style={{ height: '180px', width: '100%', objectFit: 'cover' }}
-                        className="plantCardImage"
-                      />
-                      <Card.Body className="plantCardBody">
-                        <div className="plantTitle">
-                          <span>{plant.plantName}</span>
-                        </div>
-                        <div className="plantCardBottomDiv">
-                          <div className="plantCardLeftDiv">
-                            <div className="plantDescription">
-                              <span>{plant.plantDescriptionForCard}</span>
-                            </div>
-                            <div className="plantPrice">
-                              <span>₹ {plant.plantPrice}</span>
-                            </div>
+              currentPlants.map((plant) => (
+                <div className="plantDiv" key={plant.pno}>
+                  <Card className="plantCard">
+                    <Card.Img
+                      variant="top"
+                      src={plant.images[0]}
+                      style={{ height: '180px', width: '100%', objectFit: 'cover' }}
+                      className="plantCardImage"
+                    />
+                    <Card.Body className="plantCardBody">
+                      <div className="plantTitle">
+                        <span>{plant.plantName}</span>
+                      </div>
+                      <div className="plantCardBottomDiv">
+                        <div className="plantCardLeftDiv">
+                          <div className="plantDescription">
+                            <span>{plant.plantDescriptionForCard}</span>
                           </div>
-                          <div className="plantCardRightDiv">
-                            <img src={expandIcon} alt="expandIcon" onClick={() => handleExpandClick(plant.Pno)} />
+                          <div className="plantPrice">
+                            <span>₹ {plant.plantPrice}</span>
                           </div>
                         </div>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                ))
+                        <div className="plantCardRightDiv">
+                          <img src={expandIcon} alt="expandIcon" onClick={() => handleExpandClick(plant.Pno)} />
+                        </div>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </div>
+              ))
             )}
           </div>
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="pagination ">
+          {Array.from({ length: Math.ceil(plantsData.length / plantsPerPage) }, (_, i) => (
+            <button key={i} onClick={() => paginate(i + 1)}>
+              {i + 1}
+            </button>
+          ))}
         </div>
       </div>
 
