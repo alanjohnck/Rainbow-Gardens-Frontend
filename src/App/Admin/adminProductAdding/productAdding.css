@@ -3,32 +3,32 @@
       justify-content: space-between;
       align-items: center;
 }
-.mainContentProductAdding{
+.main-content-product-adding{
       display: flex;
       flex-direction: column;
-      padding-inline: 170px;
+      padding-inline:170px;
       padding-top: 64px;
       font-family: lufga;
       color: #003912;
       margin-bottom: 300px;
 }
-.mainContentProductAdding .inputFields{
+.main-content-product-adding .input-fields{
       display: flex;
       flex-direction: column;
 }
-.mainContentProductAdding .mainContentTitle{
+.main-content-product-adding .main-content-title{
       padding-bottom: 25px;
       font-size: 48px;
       font-weight: 500;
 }
-.mainContentProductAdding label{
+.main-content-product-adding label{
       padding-top: 24px;
       padding-bottom: 16px;
       font-size: 20px;
       font-weight: 500;
       line-height: 24.2px;
 }
-.productAddingInputBox{
+.product-adding-input-box{
       height: 50px;
       border: 2px solid #D9D9D9;
       border-radius: 8px;
@@ -39,40 +39,40 @@
       justify-content: center;
       position: relative;
 }
-.productAddingInputBox:focus{
+.product-adding-input-box:focus{
       outline-color: #003912;
 }
-.productAddingInputBox::placeholder{
+.product-adding-input-box::placeholder{
       font-size: 20px;
       position: absolute;
       bottom: 0;
       top: 0;
       align-self: center;
 }
-.uploadPicturesText{
-      font-size: 26px;
+.upload-pictures-text{
+      font-size:26px;
       font-weight: 700;
       padding-top: 32px;
 }
-.imageUploadSection{
+.image-upload-section{
       display: flex;
       align-items: center;
       gap: 2rem;
 }
-.fileSelectorInput{
+.file-selector-input{
       width: .1px;
       height: .1px;
       opacity: .1;
       position: absolute;
 }
-.fileAccessDiv img{
+.file-access-div img{
       width: 45px;
       position: absolute;
       top: 0;
       bottom: 0;
       align-self: center;
 }
-.fileAccessDiv{
+.file-access-div{
       display: flex;
       align-items: center;
       justify-content: center;
@@ -84,18 +84,18 @@
       height: 76px;
       cursor: pointer;
 }
-.fileAccessParentDiv{
+.file-access-parent-div{
       display: flex;
-      flex-direction: column;
+      flex-direction:column;
       justify-content: center;
       align-items: center;
       text-align: center;
 }
-.imageUploadingButtonSpecifiers{
+.image-uploading-button-specifiers{
       font-size: 16px;
       color: black;
 }
-.mainContentProductAdding .productAddingConfirmButton{
+.main-content-product-adding .product-adding-confirm-button{
       margin-top: 74px;
       height: 50px;
       display: flex;
@@ -110,73 +110,73 @@
       text-transform: uppercase;
       width: 100%;
 }
-.productAddingButtonDiv{
+.product-adding-button-div{
       width: 100%;
 }
 /* media queries starts */
-@media (max-width: 481px){
-      .mainContentProductAdding{
-            padding-inline: 55px;
+@media(max-width:481px){
+      .main-content-product-adding{
+            padding-inline:55px;
             padding-top: 30px;
       }
-      .mainContentProductAdding .mainContentTitle{
+      .main-content-product-adding .main-content-title{
             padding-bottom: 25px;
             font-size: 40px;
-            line-height: 60px;
+            line-height:60px;
       }
-      .imageUploadSection{
+      .image-upload-section{
             gap: 2rem;
       }
-      .fileAccessDiv{
+      .file-access-div{
             width: 70px;
             height: 70px;
       }
 }
-@media (max-width: 426px){
-      .mainContentProductAdding{
-            padding-inline: 45px;
+@media(max-width:426px){
+      .main-content-product-adding{
+            padding-inline:45px;
       }
-      .imageUploadSection{
+      .image-upload-section{
             gap: 1.5rem;
       }
 }
-@media (max-width: 376px){
-      .fileAccessDiv{
+@media(max-width:376px){
+      .file-access-div{
             width: 60px;
             height: 60px;
       }
-      .fileAccessDiv img{
+      .file-access-div img{
             width: 40px;
       }
-      .imageUploadingButtonSpecifiers{
+      .image-uploading-button-specifiers{
             font-size: 13px;
       }
 }
-@media (max-width: 321px){
-      .mainContentProductAdding{
-            padding-inline: 35px;
+@media(max-width:321px){
+      .main-content-product-adding{
+            padding-inline:35px;
       }
-      .mainContentProductAdding .mainContentTitle{
+      .main-content-product-adding .main-content-title{
             font-size: 35px;
-            line-height: 50px;
+            line-height:50px;
       }
-      .productAddingInputBox::placeholder{
+      .product-adding-input-box::placeholder{
             font-size: 14px;
             position: unset;
       }
-      .productAddingInputBox{
+      .product-adding-input-box{
             height: 45px;
             padding-left: 18px;
       }
-      .fileAccessDiv{
+      .file-access-div{
             width: 55px;
             height: 55px;
       }
-      .fileAccessDiv img{
+      .file-access-div img{
             width: 35px;
       }
-      .imageUploadSection{
+      .image-upload-section{
             gap: 1.4rem;
       }
 }
-/* media queries ends */
+/*media queries ends*/

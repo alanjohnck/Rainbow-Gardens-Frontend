@@ -1,16 +1,11 @@
 
-import './productAdding.css'
-import AdminHeader from '../adminHeader/adminHeader'
-import imagePreview from '../../images/image-uploading-preview.svg'
-import Footer from '../../Footer/Footer'
-import { useState } from 'react'
-import './productAdding.css';
 import AdminHeader from '../adminHeader/adminHeader';
 import imagePreview from '../../images/image-uploading-preview.svg';
 import Footer from '../../Footer/Footer';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useLocation, useNavigate } from 'react-router-dom';
+import "./productAdding.css"
 
 export default function ProductAdding() {
   const location = useLocation();
@@ -68,191 +63,6 @@ export default function ProductAdding() {
     });
   };
 
-      const handleImageChange = (e) => {
-            const { name, files } = e.target;
-            setAdminData({
-                  ...adminData,
-                  [name]: files[0]
-            });
-      };
-
-      const handleFormSubmit = async (e) => {
-            e.preventDefault();
-            setAdminData({
-                  plantName: '',
-                  plantCategory: '',
-                  plantPrice: '',
-                  plantDescription: '',
-                  plantImage: '',
-                  plantImageForCard: '',
-                  plantSecondImage: '',
-                  plantThirdImage: ''
-            });
-      };
-
-      return (
-            <div className='adminProductAddingPage'>
-                  <div className="productAddingHeader">
-                        <AdminHeader />
-                  </div>
-                  <form 
-                        className="mainContentProductAdding" 
-                        onSubmit={handleFormSubmit}
-                  >
-                        <div className="inputFields">
-                              <span className='mainContentTitle'>
-                                    Create New Product
-                              </span>
-                              <label htmlFor="plantName">
-                                    Enter the Plant Name
-                              </label>
-                              <input 
-                                    type="text" 
-                                    placeholder="Enter the Plant Name" 
-                                    name="plantName" 
-                                    className="productAddingInputBox" 
-                                    value={adminData.plantName} 
-                                    onChange={handleChange} 
-                                    required
-                              />
-                              <label htmlFor="plantPrice">
-                                    Enter the Price
-                              </label>
-                              <input 
-                                    type="text" 
-                                    placeholder="Enter the price" 
-                                    name="plantPrice" 
-                                    className="productAddingInputBox" 
-                                    value={adminData.plantPrice} 
-                                    onChange={handleChange} 
-                                    required
-                              />
-                              <label htmlFor="plantDescription">
-                                    Enter the Plant's Description
-                              </label>
-                              <textarea 
-                                    type="text" 
-                                    placeholder="Enter the Description" 
-                                    name="plantDescription" 
-                                    className="productAddingInputBox" 
-                                    value={adminData.plantDescription} 
-                                    onChange={handleChange} 
-                                    required
-                              />
-                              <label htmlFor="plantCategory">
-                                    Enter the Plant Category
-                              </label>
-                              <select 
-                                    name="plantCategory" 
-                                    placeholder="Enter the Plant Category" 
-                                    className="productAddingInputBox" 
-                                    onChange={handleChange} 
-                                    value={adminData.plantCategory} 
-                                    required
-                              >
-                                    <option value="All Plants">
-                                          All Plants
-                                    </option>
-                                    <option value="Outdoor Plants" selected>
-                                          Outdoor Plants
-                                    </option>
-                                    <option value="Indoor Plants">
-                                          Indoor Plants
-                                    </option>
-                                    <option value="Air Purifiers">
-                                          Air Purifiers
-                                    </option>
-                                    <option value="Flowering Plants">
-                                          Flowering Plants
-                                    </option>
-                                    <option value="Prosperity Plants">
-                                          Prosperity Plants
-                                    </option>
-                              </select>
-                        </div>
-                        <span className='uploadPicturesText'>
-                              Upload Pictures
-                        </span>
-                        <div className="imageUploadSection">
-                              <div className="fileAccessParentDiv">
-                                    <label className="fileAccessDiv">
-                                          <input
-                                                className="fileSelectorInput"
-                                                type="file"
-                                                name="plantImage"
-                                                onChange={handleImageChange}
-                                                required
-                                          />
-                                          <img src={imagePreview} alt="" />
-                                    </label>
-                                    <span className="imageUploadingButtonSpecifiers">
-                                          Main Image
-                                    </span>
-                              </div>
-
-                              <div className="fileAccessParentDiv">
-                                    <label className="fileAccessDiv">
-                                          <input
-                                                className="fileSelectorInput"
-                                                type="file"
-                                                name="plantImageForCard"
-                                                onChange={handleImageChange}
-                                                required
-                                          />
-                                          <img src={imagePreview} alt="" />
-                                    </label>
-                                    <span className="imageUploadingButtonSpecifiers">
-                                          Image for Card
-                                    </span>
-                              </div>
-
-                              <div className="fileAccessParentDiv">
-                                    <label className="fileAccessDiv">
-                                          <input
-                                                className="fileSelectorInput"
-                                                type="file"
-                                                name="plantSecondImage"
-                                                onChange={handleImageChange}
-                                                required
-                                          />
-                                          <img src={imagePreview} alt="" />
-                                    </label>
-                                    <span className="imageUploadingButtonSpecifiers">
-                                          Second Image
-                                    </span>
-                              </div>
-
-                              <div className="fileAccessParentDiv">
-                                    <label className="fileAccessDiv">
-                                          <input
-                                                className="fileSelectorInput"
-                                                type="file"
-                                                name="plantThirdImage"
-                                                onChange={handleImageChange}
-                                                required
-                                          />
-                                          <img src={imagePreview} alt="" />
-                                    </label>
-                                    <span className="imageUploadingButtonSpecifiers">
-                                          Third Image
-                                    </span>
-                              </div>
-                        </div>
-
-                        <div className="productAddingButtonDiv">
-                              <button 
-                                    className='productAddingConfirmButton' 
-                                    title='confirm'
-                              >
-                                    confirm
-                              </button>
-                        </div>
-                  </form>
-                  <div className="productAddingFooter">
-                        <Footer />
-                  </div>
-            </div>
-      )
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     
@@ -320,13 +130,13 @@ export default function ProductAdding() {
         <div className="input-fields">
           <span className='main-content-title'>{location.state && location.state.id ? "Edit Product" : "Create New Product"}</span>
           <label htmlFor="plantName">Enter the Plant Name</label>
-          <input required type="text" placeholder='Enter the Plant Name' name='plantName' className='product-adding-input-box' value={adminData.plantName} onChange={handleChange} />
+          <input type="text" placeholder='Enter the Plant Name' name='plantName' className='product-adding-input-box' value={adminData.plantName} onChange={handleChange} />
           <label htmlFor="plantPrice">Enter the Price</label>
-          <input required type="text" placeholder='Enter the price' name='plantPrice' className='product-adding-input-box' value={adminData.plantPrice} onChange={handleChange} />
+          <input type="text" placeholder='Enter the price' name='plantPrice' className='product-adding-input-box' value={adminData.plantPrice} onChange={handleChange} />
           <label htmlFor="plantLongDescription">Enter the Plant's Description</label>
-          <textarea required placeholder="Enter the Description" name='plantLongDescription' className='product-adding-input-box' value={adminData.plantLongDescription} onChange={handleChange} />
+          <textarea placeholder="Enter the Description" name='plantLongDescription' className='product-adding-input-box' value={adminData.plantLongDescription} onChange={handleChange} />
           <label htmlFor="category">Enter the Plant Category</label>
-          <select required name="category" placeholder="Enter the Plant Category" className='product-adding-input-box' onChange={handleChange} value={adminData.category}>
+          <select name="category" placeholder="Enter the Plant Category" className='product-adding-input-box' onChange={handleChange} value={adminData.category}>
             <option value="">Select a category</option>
             <option value="All Plants">All Plants</option>
             <option value="Outdoor Plant">Outdoor Plant</option>
@@ -335,17 +145,16 @@ export default function ProductAdding() {
             <option value="Flowering Plant">Flowering Plant</option>
             <option value="Prosperity Plant">Prosperity Plant</option>
           </select>
-          <label  htmlFor="plantSmallDescription">Enter Small Description</label>
-          <inpu requiredt type="text" placeholder='Enter small description' name='plantSmallDescription' className='product-adding-input-box' value={adminData.plantSmallDescription} onChange={handleChange} />
+          <label htmlFor="plantSmallDescription">Enter Small Description</label>
+          <input type="text" placeholder='Enter small description' name='plantSmallDescription' className='product-adding-input-box' value={adminData.plantSmallDescription} onChange={handleChange} />
           <label htmlFor="plantDescriptionForCard">Enter Description for Card</label>
-          <input required type="text" placeholder='Enter description for card' name='plantDescriptionForCard' className='product-adding-input-box' value={adminData.plantDescriptionForCard} onChange={handleChange} />
+          <input type="text" placeholder='Enter description for card' name='plantDescriptionForCard' className='product-adding-input-box' value={adminData.plantDescriptionForCard} onChange={handleChange} />
         </div>
         <span className='upload-pictures-text'>Upload Pictures</span>
         <div className="image-upload-section">
           <div className="file-access-parent-div">
             <label className="file-access-div">
               <input
-                required
                 className="file-selector-input"
                 type="file"
                 name="plantImage"
@@ -359,7 +168,6 @@ export default function ProductAdding() {
           <div className="file-access-parent-div">
             <label className="file-access-div">
               <input
-                required
                 className="file-selector-input"
                 type="file"
                 name="plantImageForCard"
@@ -373,7 +181,6 @@ export default function ProductAdding() {
           <div className="file-access-parent-div">
             <label className="file-access-div">
               <input
-                required
                 className="file-selector-input"
                 type="file"
                 name="plantSecondImage"
@@ -407,5 +214,4 @@ export default function ProductAdding() {
       </div>
     </div>
   )
-
 }
