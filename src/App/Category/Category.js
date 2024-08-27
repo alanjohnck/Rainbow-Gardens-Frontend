@@ -1,59 +1,59 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Category.css";
 import Navbar from "../Navbar/Navbar";
+import whatsappIcon from "../images/WhatsappIcon.svg";
 import SearchBar from "../SearchBar/SearchBar";
-import plantData from "../Home/Home.json";
 import Card from "react-bootstrap/Card";
+import Placeholder from 'react-bootstrap/Placeholder';
 import expandIcon from "../images/ExpandIcon.svg";
 import cardImage from "../images/CardImage.svg";
 import offerImage from "../images/OfferImage.svg";
 import Footer from "../Footer/Footer";
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import { NavLink } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 
 function Category() {
   const [selectedPlant, setSelectedPlant] = useState(null);
   const [plantName, setPlantName] = useState('');
-  const sendDataToParent = (plantName) => {
-    setPlantName(plantName);
+  const [loading, setLoading] = useState(true);
+  const [plantsData, setPlantsData] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getProductByName = async () => {
+      setLoading(true);
+      if (plantName) {
+        try {
+          const url = `http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`;
+          console.log('url : ', url);
+          const response = await fetch(url);
+          const data = await response.json();
+          setPlantsData(Array.isArray(data) ? data : []);
+        } catch (e) {
+          console.log(e);
+        }
+      } else {
+        // Fetch all products if no plant name is specified
+        try {
+          const response = await fetch(`http://localhost:3001/api/getproduct`);
+          const data = await response.json();
+          setPlantsData(data);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+      setLoading(false);
+    };
+
+    getProductByName();
+  }, [plantName]);
+
+  const sendDataToParent = (name) => {
+    setPlantName(name);
   }
-  
-  const handleOnSearch = (string, results) => {
-    console.log(string, results);
-  };
 
-  const handleOnHover = (result) => {
-    console.log(result);
+  const handleExpandClick = (plantId) => {
+    navigate(`/product/${plantId}`);
   };
-
-  const handleOnSelect = (item) => {
-    setSelectedPlant(item);
-    console.log(item);
-  };
-
-  const handleOnFocus = () => {
-    console.log("Focused");
-  };
-
-  const formatResult = (item) => {
-    return (
-      <>
-        <span style={{ display: "block", textAlign: "left" }}>
-          Name: {item.name}
-        </span>
-        <span style={{ display: "block", textAlign: "left" }}>
-          Price: ₹ {item.price}
-        </span>
-      </>
-    );
-  };
-
-  const plantItems = plantData.plants.map((plant, index) => ({
-    id: index,
-    name: plant.plantName,
-    description: plant.plantDescription,
-    price: plant.price,
-  }));
 
   return (
     <div className="categoryContainer">
@@ -64,7 +64,7 @@ function Category() {
             <div className="categoryContentDiv">
               <div className="categoryTitleDiv">
                 <span>
-                  Search our <br></br>
+                  Search our <br />
                   <span className="categoryTitleType2">Catalogue</span>
                 </span>
               </div>
@@ -72,27 +72,39 @@ function Category() {
           </div>
         </div>
       </div>
+      <div className="whatsappIconContainer">
+        <img src={whatsappIcon} alt="whatsappIcon" />
+      </div>
+
       <div className="categoryMiddleDiv">
-        {/* <div className="search-bar">
-          <ReactSearchAutocomplete
-            items={plantItems}
-            onSearch={handleOnSearch}
-            onHover={handleOnHover}
-            onSelect={handleOnSelect}
-            onFocus={handleOnFocus}
-            autoFocus
-            formatResult={formatResult}
-          />
-          <span>{plantData.plants.plantName}</span>
-        </div> */}
         <SearchBar sendDataToParent={sendDataToParent} />
 
         <div className="plantButtonContainer">
-          <button><NavLink to="/plants/Indoor" className="text-white">Indoor Plants</NavLink></button>
-          <button><NavLink to="/plants/Outdoor" className="text-white">Outdoor Plants</NavLink></button>
-          <button><NavLink to="/plants/Flowering" className="text-white">Flowering Plants</NavLink></button>
-          <button><NavLink to="/plants/Prosperity" className="text-white">Prosperity Plants</NavLink></button>
-          <button><NavLink to="/plants/AirPurifier" className="text-white">Air Purifier Plants</NavLink></button>
+          <button>
+            <NavLink to="/plants/Indoor">
+              <span className="button-text">Indoor Plants</span>
+            </NavLink>
+          </button>
+          <button>
+            <NavLink to="/plants/Outdoor">
+              <span className="button-text">Outdoor Plants</span>
+            </NavLink>
+          </button>
+          <button>
+            <NavLink to="/plants/Flowering">
+              <span className="button-text">Flowering Plants</span>
+            </NavLink>
+          </button>
+          <button>
+            <NavLink to="/plants/Prosperity">
+              <span className="button-text">Prosperity Plants</span>
+            </NavLink>
+          </button>
+          <button>
+            <NavLink to="/plants/AirPurifier">
+              <span className="button-text">Air Purifier Plants</span>
+            </NavLink>
+          </button>
         </div>
 
         <div className="recommendationContainer">
@@ -100,43 +112,75 @@ function Category() {
             <div className="recommendationTitle">
               <span>Top Recommendations</span>
             </div>
-
-            <div className="recommendationGridContainer">
-              <div className="recommendationTopGridContainer">
-                {selectedPlant && (
-                  <div className="selectedPlantContainer">
+            {/* <div className="recommendationBottomDiv">
+            <div className="recommendationBottomGridContainer">
+              {loading ? (
+                // Placeholder for loading state
+                Array.from({ length: 3 }).map((_, idx) => (
+                  <div className="plantDiv" key={idx}>
                     <Card className="plantCard">
-                      <Card.Img
-                        variant="top"
-                        src={cardImage}
-                        className="plantCardImage"
-                      />
+                      <Placeholder as="div" animation="glow" className="plantCardPlaceholderImage plantPlaceholder" />
                       <Card.Body className="plantCardBody">
                         <div className="plantTitle">
-                          <span>{selectedPlant.name}</span>
+                          <Placeholder as="span" animation="glow">
+                            <Placeholder xs={6} />
+                          </Placeholder>
                         </div>
-
                         <div className="plantCardBottomDiv">
                           <div className="plantCardLeftDiv">
                             <div className="plantDescription">
-                              <span>{selectedPlant.description}</span>
+                              <Placeholder as="span" animation="glow">
+                                <Placeholder xs={12} />
+                              </Placeholder>
                             </div>
-
                             <div className="plantPrice">
-                              <span>₹ {selectedPlant.price}</span>
+                              <Placeholder as="span" animation="glow">
+                                <Placeholder xs={4} />
+                              </Placeholder>
                             </div>
                           </div>
-
                           <div className="plantCardRightDiv">
-                            <img src={expandIcon} alt="expandIcon" />
+                            <Placeholder as="img" animation="glow" src={expandIcon} alt="expandIcon" />
                           </div>
                         </div>
                       </Card.Body>
                     </Card>
                   </div>
-                )}
-              </div>
+                ))
+              ) : (
+                plantsData.slice(0, 3).map((plant) => (
+                  <div className="plantDiv" key={plant.pno}>
+                    <Card className="plantCard">
+                      <Card.Img
+                        variant="top"
+                        src={plant.images[0]}
+                        style={{ height: '180px', width: '100%', objectFit: 'cover' }}
+                        className="plantCardImage"
+                      />
+                      <Card.Body className="plantCardBody">
+                        <div className="plantTitle">
+                          <span>{plant.plantName}</span>
+                        </div>
+                        <div className="plantCardBottomDiv">
+                          <div className="plantCardLeftDiv">
+                            <div className="plantDescription">
+                              <span>{plant.plantDescriptionForCard}</span>
+                            </div>
+                            <div className="plantPrice">
+                              <span>₹ {plant.plantPrice}</span>
+                            </div>
+                          </div>
+                          <div className="plantCardRightDiv">
+                            <img src={expandIcon} alt="expandIcon" onClick={() => handleExpandClick(plant.Pno)} />
+                          </div>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                ))
+              )}
             </div>
+            </div> */}
           </div>
 
           <div className="recommendationMiddleDiv">
@@ -154,57 +198,71 @@ function Category() {
 
           <div className="recommendationBottomDiv">
             <div className="recommendationBottomGridContainer">
-              {plantData.plants.slice(0, 3).map((plant) => (
-                <div className="plantDiv">
-                  <Card className="plantCard">
-                    <Card.Img
-                      variant="top"
-                      src={cardImage}
-                      className="plantCardImage"
-                    ></Card.Img>
-                    <Card.Body className="plantCardBody">
-                      <div className="plantTitle">
-                        <span>{plant.plantName}</span>
-                      </div>
-
-                      <div className="plantCardBottomDiv">
-                        <div className="plantCardLeftDiv">
-                          <div className="plantDescription">
-                            <span>{plant.plantDescription}</span>
+            {loading ? (
+                // Placeholder for loading state
+                Array.from({ length: 3 }).map((_, idx) => (
+                  <div className="plantDiv" key={idx}>
+                    <Card className="plantCard">
+                      <Placeholder as="div" animation="glow" className="plantCardPlaceholderImage plantPlaceholder" />
+                      <Card.Body className="plantCardBody">
+                        <div className="plantTitle">
+                          <Placeholder as="span" animation="glow">
+                            <Placeholder xs={6} />
+                          </Placeholder>
+                        </div>
+                        <div className="plantCardBottomDiv">
+                          <div className="plantCardLeftDiv">
+                            <div className="plantDescription">
+                              <Placeholder as="span" animation="glow">
+                                <Placeholder xs={12} />
+                              </Placeholder>
+                            </div>
+                            <div className="plantPrice">
+                              <Placeholder as="span" animation="glow">
+                                <Placeholder xs={4} />
+                              </Placeholder>
+                            </div>
                           </div>
-
-                          <div className="plantPrice">
-                            <span>₹ {plant.price}</span>
+                          <div className="plantCardRightDiv">
+                            <Placeholder as="img" animation="glow" src={expandIcon} alt="expandIcon" />
                           </div>
                         </div>
-
-                        <div className="plantCardRightDiv">
-                          <img src={expandIcon} alt="expandIcon" />
-                        </div>
-                      </div>
-                      {/* <div className='plantDetailsDiv'>
-                    <div className='plantDetailsTopDiv'>
-                     <div className='plantTitle'>
-                       <span>{plant.plantName}</span>
-                     </div>
-
-                     <div className='plantDescription'>
-                       <span>{plant.plantDescription}</span>
-                     </div>
-                     </div>
-                    
-                    <div className='plantPrice'>
-                      <span>{plant.price}</span>
-                    </div>
+                      </Card.Body>
+                    </Card>
                   </div>
-                  
-                  <div className='viewPlantDiv'>
-                    <img src={expandIcon} alt='expandIcon'/>
-                  </div> */}
-                    </Card.Body>
-                  </Card>
-                </div>
-              ))}
+                ))
+              ) : (
+                plantsData.slice(0, 9).map((plant) => (
+                  <div className="plantDiv" key={plant.pno}>
+                    <Card className="plantCard">
+                      <Card.Img
+                        variant="top"
+                        src={plant.images[0]}
+                        style={{ height: '180px', width: '100%', objectFit: 'cover' }}
+                        className="plantCardImage"
+                      />
+                      <Card.Body className="plantCardBody">
+                        <div className="plantTitle">
+                          <span>{plant.plantName}</span>
+                        </div>
+                        <div className="plantCardBottomDiv">
+                          <div className="plantCardLeftDiv">
+                            <div className="plantDescription">
+                              <span>{plant.plantDescriptionForCard}</span>
+                            </div>
+                            <div className="plantPrice">
+                              <span>₹ {plant.plantPrice}</span>
+                            </div>
+                          </div>
+                          <div className="plantCardRightDiv">
+                            <img src={expandIcon} alt="expandIcon" onClick={() => handleExpandClick(plant.Pno)} />
+                          </div>
+                        </div>
+                      </Card.Body>
+                    </Card>
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>

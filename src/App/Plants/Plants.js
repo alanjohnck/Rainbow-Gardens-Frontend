@@ -10,7 +10,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import indoorImg from '../images/IndoorImage.svg';
 import outdoorImg from '../images/OutdoorImage.svg';
 import Airpurifier from '../images/Airpurifier.jpg';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../Redux/Slice/ProductSlice";
 import prosperityImg from "../images/prosperity.jpg";
