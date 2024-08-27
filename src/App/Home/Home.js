@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./Home.css";
 import Navbar from "../Navbar/Navbar";
-import whatsappIcon from "../images/WhatsappIcon.svg";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import Faq from "../Faq/Faq";
 import Footer from "../Footer/Footer";
@@ -52,9 +51,6 @@ export default function Home() {
             <NavLink to="/category">
               <button className="orderButton">Order now</button>
             </NavLink>
-          </div>
-          <div className="whatsappIconContainer">
-            <img src={whatsappIcon} alt="whatsappIcon" />
           </div>
         </div>
       </div>

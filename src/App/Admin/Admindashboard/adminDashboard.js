@@ -3,25 +3,26 @@ import Footer from '../../Footer/Footer'
 import './adminDashboard.css'
 import AdminHeader from '../adminHeader/adminHeader'
 import FeatureComponent from './adminfeatures/featureComponent'
+
 export default function AdminDashBoard() {
   return (
-    <div className='admin-dashboard'>
-        <div className="admin-header-section">
+    <div className='adminDashboard'>
+        <div className="adminHeaderSection">
             <AdminHeader/>
         </div>
-        <div className="main-admin-content-section">
-            <span 
-                className='admin-name'
-                >Hi,Sangeeth Promod
+        <div className="mainAdminContentSection">
+            <span className='adminName'>
+                Hi, Sangeeth Promod
             </span>
-            <div className="main-admin-content-left-right-div">
-                <div className="main-admin-content-left-section">
+            <div className="mainAdminContentLeftRightDiv">
+                <div className="mainAdminContentLeftSection">
                     <FeatureComponent
                          title="Account Settings" 
                          description="click to view the Account Settings"
                          link="/"
                     />
-                    <FeatureComponent title="Edit or Delete Existing Product"
+                    <FeatureComponent 
+                        title="Edit or Delete Existing Product"
                         description="click to Update or Delete the existing Product list" 
                         link="/adminEditSection"
                     />
@@ -31,7 +32,7 @@ export default function AdminDashBoard() {
                          link="/"
                     /> */}
                 </div>
-                <div className="main-admin-content-right-section">
+                <div className="mainAdminContentRightSection">
                     <FeatureComponent 
                         title="Create New Product"
                         description="click to create New Product to be added to Product List" 

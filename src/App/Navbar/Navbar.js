@@ -70,6 +70,8 @@ export default function Navbar() {
             >
               <span>Close</span>
             </NavLink> */}
+
+            <NavLink to=""><img src={WhatsappIcon} alt=""/></NavLink>
           </div>
 
           {/* <div className="cartIconContainer">

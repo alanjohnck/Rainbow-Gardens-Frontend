@@ -1,32 +1,38 @@
-.admin-dashboard{
+.adminDashboard {
       font-family: Lufga;
 }
-.admin-header-section{
+
+.adminHeaderSection {
       width: 100%;
 }
-.main-admin-content-section{
-      padding-top:15px;
+
+.mainAdminContentSection {
+      padding-top: 15px;
       padding-inline: 42px;
 }
-.admin-name{
+
+.adminName {
       font-size: 48px;
       font-weight: 500;
       line-height: 62.65px;
-      padding-left:10px;
+      padding-left: 10px;
 }
-.main-admin-content-left-section{
+
+.mainAdminContentLeftSection {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       gap: 24px;
 }
-.main-admin-content-right-section{
+
+.mainAdminContentRightSection {
       display: flex;
       flex-direction: column;
-      justify-content:start;
+      justify-content: start;
       gap: 24px;
 }
-.main-admin-content-left-right-div{
+
+.mainAdminContentLeftRightDiv {
       display: flex;
       justify-content: center;
       gap: 24px;
@@ -34,32 +40,37 @@
       margin-bottom: 252px;
 }
 
-/* media queries starts*/
-@media (max-width:481px){
-      .main-admin-content-left-right-div{
+/* media queries start */
+@media (max-width: 481px) {
+      .mainAdminContentLeftRightDiv {
             flex-direction: column;
       }
-      .admin-name{
+
+      .adminName {
             font-size: 36px;
       }
 }
-@media (max-width:431px){
-      .main-admin-content-left-right-div{
+
+@media (max-width: 431px) {
+      .mainAdminContentLeftRightDiv {
             display: flex;
             flex-direction: column;
       }
-      .admin-name{
+
+      .adminName {
             font-size: 30px;
       }
 }
-@media (max-width:376px){
-      .admin-name{
+
+@media (max-width: 376px) {
+      .adminName {
             font-size: 26px;
       }
 }
-@media (max-width:321px){
-      .admin-name{
+
+@media (max-width: 321px) {
+      .adminName {
             font-size: 22px;
       }
 }
-/* media queries ends*/
+/* media queries end */

@@ -1,4 +1,4 @@
-.features-component{
+.featuresComponent{
       display: flex;
       flex-direction: column;
       justify-content:start;
@@ -11,23 +11,23 @@
       width:676px;
       height: 180px;
 }
-.features-component .feature-title{
+.featuresComponent .featureTitle{
       color:#014716;
       font-size: 32px;
       font-weight: 500;
       line-height: 41.76px;
 }
-.features-component .feature-description{
+.featuresComponent .featureDescription{
       font-size: 16px;
       font-weight: 600;
       color: #014716;
       line-height: 20.88px;
       opacity: .5;
 }
-.features-component .button-div{
+.featuresComponent .buttonDiv{
       padding-top: 2rem;
 }
-.features-component .button-div button{
+.featuresComponent .buttonDiv button{
       width: 199px;
       height: 54px;
       padding: 15px 48px;
@@ -45,7 +45,7 @@
 
 /* media queries starts*/
 @media(max-width:481px){
-      .features-component{
+      .featuresComponent{
             width:100%;
             display: flex;
             justify-content:center;
@@ -53,33 +53,33 @@
             padding: 16px;
             height: 200px;
       }
-      .features-component .feature-description{
+      .featuresComponent .featureDescription{
             font-size: 13.5px;
       }
-      .features-component .feature-title{
+      .featuresComponent .featureTitle{
             color:#014716;
             font-size: 25px;
       }
-      .features-component .button-div button{
+      .featuresComponent .buttonDiv button{
             width: 199px;
             height: 45px;
       }
 }
 @media(max-width:431px){
-      .features-component .feature-description{
+      .featuresComponent .featureDescription{
             font-size: 13px;
       }
 }
 @media(max-width:321px){
-      .features-component .feature-title{
+      .featuresComponent .featureTitle{
             font-size: 23px;
             line-height:35px;
       }
-      .features-component .feature-description{
+      .featuresComponent .featureDescription{
             font-size: 10px;
             line-height: 14px;
       }
-      .features-component .button-div button{
+      .featuresComponent .buttonDiv button{
             width: 180px;
             height: 40px;
             padding: 0;

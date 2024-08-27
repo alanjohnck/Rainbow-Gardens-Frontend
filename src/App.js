@@ -10,6 +10,8 @@ import Plants from './App/Plants/Plants';
 import AdminDashBoard from './App/Admin/Admindashboard/adminDashboard';
 import ProductAdding from './App/Admin/adminProductAdding/productAdding';
 import AdminEditSection from './App/Admin/AdminEditSection/AdminEditSection';
+import AdminLogin from './App/AdminLogin/adminLogin';
+import PasswordReset from './App/AdminLogin/passwordReset';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
           <Route path='/adminDashboard' element={<AdminDashBoard/>}/>
           <Route path='/productAdding' element={<ProductAdding/>}/>
           <Route path='/adminEditSection' element={<AdminEditSection />} />
+          <Route path='/adminLogin' element={<AdminLogin />} />
+          <Route path='/resetPassword' element={<PasswordReset />} />
         </Routes>
       </Router>
     </div>
