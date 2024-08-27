@@ -2,17 +2,26 @@ import React, { useState } from 'react';
 import './SearchBar.css';
 import searchIcon from '../images/SearchIcon.svg';
 
-function SearchBar() {
+function SearchBar({sendDataToParent,onSort}) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleSearch = () => {
     // Implement search functionality here
     console.log('Searching for:', searchQuery);
+    sendDataToParent(searchQuery);
   };
 
   const handleFocus = () => {
     // Implement focus functionality here
     console.log('Input field focused');
+  };
+
+  const handleSort = (criteria) => {
+    // Implement sort functionality here
+    console.log(`Sorting by: ${criteria}`);
+    onSort(criteria);
+    setShowDropdown(false); // Close dropdown after selection
   };
 
   return (
@@ -28,7 +37,7 @@ function SearchBar() {
           onFocus={handleFocus}
           onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
         />
-        <img src={searchIcon} alt='searchIcon' />
+        <img src={searchIcon} alt='searchIcon' onClick={handleSearch} />
       </div>
 
       <div className='searchButtonDiv'>
@@ -36,7 +45,18 @@ function SearchBar() {
       </div>
 
       <div className='sortButtonDiv'>
-        <button className='searchButton'>Sort</button>
+        <button 
+          className='searchButton' 
+          onClick={() => setShowDropdown(!showDropdown)}
+        >
+          Sort {"↓"}
+        </button>
+        {showDropdown && (
+          <div className='dropdownMenu'>
+               <div className='dropdownItem' onClick={() => handleSort('price')}>Price</div>
+               <div className='dropdownItem' onClick={() => handleSort('name')}>A-Z</div>
+          </div>
+        )}
       </div>
     </div>
   );

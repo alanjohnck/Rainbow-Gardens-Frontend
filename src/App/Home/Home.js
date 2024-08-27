@@ -58,9 +58,11 @@ export default function Home() {
       <div className="homeMiddleDiv">
         <div className="categoriesContainer">
           <div className="categoryLeftContainer">
-            <div className="allPlantsContainer">
-              <span><span>All Plants</span></span>
-            </div>
+              <NavLink to="/plants/All">
+                <div className="allPlantsContainer">
+                  <span><span>All Plants</span></span>
+                </div>
+              </NavLink>
 
             <div className="categoryLeftBottomContainer">
               <NavLink to="/plants/AirPurifier">
