@@ -9,7 +9,7 @@ import "./productAdding.css"
 export default function ProductAdding() {
   const navigate = useNavigate();
   const location = useLocation();
-  const navigate = useNavigate();
+ 
   const [adminData, setAdminData] = useState({
     plantName: '',
     plantSmallDescription: '',
