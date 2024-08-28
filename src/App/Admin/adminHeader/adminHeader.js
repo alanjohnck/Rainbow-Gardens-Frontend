@@ -7,7 +7,7 @@ export default function AdminHeader() {
       <div className="header">
             <img src={rainbowLogo} alt="" />
             <div className="adminProfileSection">
-                  <span>SP</span>
+                  <span>RG</span>
             </div>
       </div>
     </div>

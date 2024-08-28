@@ -71,7 +71,7 @@ export default function NavbarWithBorder() {
               <span>Close</span>
             </NavLink> */}
 
-            <NavLink to="https://wa.me/919980918073?text=I'm%20interested%20in%20your%20Plants%20"><img src={whatsappIcon} alt="" /></NavLink>
+            <NavLink to="https://wa.me/917012351551?text=I'm%20interested%20in%20your%20Plants%20"><img src={whatsappIcon} alt="" /></NavLink>
           </div>
 
           <div className="hamburger" onClick={toggleMenu}>

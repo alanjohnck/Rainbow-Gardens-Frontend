@@ -89,6 +89,7 @@ const VerificationCodeForm = ({ onVerify, email }) => {
   return (
     <form className='inputDiv' onSubmit={handleSubmit}>
       <span className='title'>Verify Code</span>
+      <span className='verification-info'> A verification code has been sent to your email. Please enter it below to proceed.</span>
       <input 
         type="text" 
         className='CodeInput loginInput' 
@@ -98,6 +99,7 @@ const VerificationCodeForm = ({ onVerify, email }) => {
         required 
         disabled={isLoading}
       />
+
       <input 
         type="password" 
         className='PasswordInput loginInput' 
@@ -127,10 +129,10 @@ const CountdownRedirect = ({ seconds }) => {
   }, []);
 
   return (
-    <div className='inputDiv'>
+    <div className='inputDiv' >
       <span className='title'>Password Reset Complete</span>
-      <p>Your password has been successfully reset.</p>
-      <p>Redirecting to login page in {countdown} seconds...</p>
+      <p className='password-reset'>Your password has been successfully reset.</p>
+      <p className='password-reset'>Redirecting to login page in {countdown} seconds...</p>
     </div>
   );
 };
@@ -153,19 +155,19 @@ export default function PasswordReset() {
     }, 5000);
   };
 
-  if (isResetComplete) {
-    return (
-      <div className='PasswordReset'>
-        <div className="passwordHeader">
-          <AdminHeader />
-        </div>
-        <div className='inputDiv'>
-          <span className='title'>Password Reset Complete</span>
-          <p>Your password has been successfully reset.</p>
-        </div>
-      </div>
-    );
-  }
+  // if (isResetComplete) {
+  //   return (
+  //     <div className='PasswordReset'>
+  //       <div className="passwordHeader">
+  //         <AdminHeader />
+  //       </div>
+  //       <div className='inputDiv'>
+  //         <span className='title'>Password Reset Complete</span>
+  //         <p>Your password has been successfully reset.</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className='PasswordReset'>

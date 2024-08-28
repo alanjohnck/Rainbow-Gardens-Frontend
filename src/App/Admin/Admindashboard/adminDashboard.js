@@ -7,7 +7,6 @@ import FeatureComponent from './adminfeatures/featureComponent';
 
 export default function AdminDashBoard() {
   const navigate = useNavigate();
-
   useEffect(() => {
     // Check if the user is logged in by verifying the presence of the JWT token
     const token = localStorage.getItem('authToken');
@@ -25,7 +24,7 @@ export default function AdminDashBoard() {
         </div>
         <div className="mainAdminContentSection">
             <span className='adminName'>
-                Hi, Sangeeth Promod
+                Hi,Admin 
             </span>
             <div className="mainAdminContentLeftRightDiv">
                 <div className="mainAdminContentLeftSection">

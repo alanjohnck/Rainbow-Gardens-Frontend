@@ -91,7 +91,7 @@ function Category() {
         </div>
       </div>
       <div className="whatsappIconContainer">
-        <NavLink to="https://wa.me/919980918073?text=I'm%20interested%20in%20your%20Plants%20">
+        <NavLink to="https://wa.me/917012351551?text=I'm%20interested%20in%20your%20Plants%20">
           <img src={whatsappIcon} alt="whatsappIcon" />
         </NavLink> 
       </div>

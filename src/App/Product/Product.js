@@ -54,7 +54,7 @@ export default function Product() {
                   </div>
 
                   <div className="whatsappContactButton">
-                   <NavLink to="https://wa.me/919980918073?text=I'm%20interested%20in%20your%20Plants%20">
+                   <NavLink to="https://wa.me/917012351551?text=I'm%20interested%20in%20your%20Plants%20">
                      <button className="whatsappButton">
                        <img src={whatsappIcon} alt="whatsappIcon" />
                        <span>+91 8999999999</span>

@@ -20,7 +20,6 @@ export default function AdminLogin() {
       if (response.status === 200) {
         // Store token in localStorage (or another secure storage)
         localStorage.setItem('authToken', response.data.token);
-
         // Redirect to the admin dashboard
         navigate('/adminDashboard');
       }
