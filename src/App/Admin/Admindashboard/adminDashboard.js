@@ -32,7 +32,7 @@ export default function AdminDashBoard() {
                     <FeatureComponent
                          title="Account Settings" 
                          description="click to view the Account Settings"
-                         link="/"
+                         link="/resetPassword"
                     />
                     <FeatureComponent 
                         title="Edit or Delete Existing Product"
