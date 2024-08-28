@@ -91,7 +91,9 @@ function Category() {
         </div>
       </div>
       <div className="whatsappIconContainer">
-        <img src={whatsappIcon} alt="whatsappIcon" />
+        <NavLink to="">
+          <img src={whatsappIcon} alt="whatsappIcon" />
+        </NavLink> 
       </div>
 
       <div className="categoryMiddleDiv">

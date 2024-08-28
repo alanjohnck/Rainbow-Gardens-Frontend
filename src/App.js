@@ -11,7 +11,6 @@ import ProductAdding from './App/Admin/adminProductAdding/productAdding';
 import AdminEditSection from './App/Admin/AdminEditSection/AdminEditSection';
 import AdminLogin from './App/AdminLogin/adminLogin';
 import PasswordReset from './App/AdminLogin/passwordReset';
-import WhyChooseUs from './App/WhyChooseUs/WhyChooseUs';
 
 
 
@@ -34,6 +33,7 @@ function App() {
         </Routes>
       </Router>
     </div>
+    
   );
 }
 

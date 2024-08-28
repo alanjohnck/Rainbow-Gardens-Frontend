@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Product.css";
 import NavbarWithBorder from "../Navbar/NavbarWithBorder";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { fetchProductByPno } from "../Redux/Slice/ProductSlice";
 import { useDispatch, useSelector } from "react-redux";
 import productLine from "../images/ProductFooterLine.svg";
@@ -54,10 +54,12 @@ export default function Product() {
                   </div>
 
                   <div className="whatsappContactButton">
+                   <NavLink to="https://wa.me/919980918073?text=I'm%20interested%20in%20your%20Plants%20">
                      <button className="whatsappButton">
                        <img src={whatsappIcon} alt="whatsappIcon" />
                        <span>+91 8999999999</span>
                      </button>
+                    </NavLink> 
                   </div>
                 </div>
               </div>

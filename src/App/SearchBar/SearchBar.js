@@ -32,7 +32,6 @@ function SearchBar({sendDataToParent,onSort}) {
           className='searchInput'
           autoComplete='on'
           value={searchQuery}
-          placeholder='Search the plant name.....'
           autoFocus
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={handleFocus}

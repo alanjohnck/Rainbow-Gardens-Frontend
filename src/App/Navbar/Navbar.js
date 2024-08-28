@@ -56,14 +56,14 @@ export default function Navbar() {
               <span>Contact us</span>
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="/about"
               className={({ isActive }) =>
                 isActive ? "active" : "navbarContent"
               }
             >
               <span>About us</span>
-            </NavLink>
+            </NavLink> */}
 
             {/* <NavLink
               onClick={toggleMenu}
@@ -71,7 +71,7 @@ export default function Navbar() {
               <span>Close</span>
             </NavLink> */}
 
-            <NavLink to=""><img src={WhatsappIcon} alt=""/></NavLink>
+            <NavLink to="https://wa.me/919980918073?text=I'm%20interested%20in%20your%20Plants%20"><img src={WhatsappIcon} alt=""/></NavLink>
           </div>
 
           {/* <div className="cartIconContainer">
