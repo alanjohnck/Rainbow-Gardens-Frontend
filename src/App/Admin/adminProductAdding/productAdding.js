@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import "./productAdding.css"
 
 export default function ProductAdding() {
+  const navigate = useNavigate();
   const location = useLocation();
   const navigate = useNavigate();
   const [adminData, setAdminData] = useState({
@@ -216,7 +217,7 @@ export default function ProductAdding() {
         </div>
 
         <div className="product-adding-button-div">
-          <button type="submit" className='product-adding-confirm-button' title='confirm'>{location.state && location.state.id ? "Update Product" : "Create Product"}</button>
+          <button type="submit" className='product-adding-confirm-button' title='confirm' onClick={()=>navigate('/')}>{location.state && location.state.id ? "Update Product" : "Create Product"}</button>
         </div>
       </form>
       <div className="producting-adding-footer">
