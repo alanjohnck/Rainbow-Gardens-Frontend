@@ -1,0 +1,22 @@
+.header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 21px;
+      height:60px;
+      background-color: #003912;
+}
+.adminProfileSection{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      color:#003912;
+      width: 34px;
+      height: 34px;
+      font-family: lufga medium;
+      font-size: 15px;
+      border-radius: 10rem;
+      text-transform: uppercase;
+      cursor: pointer;
+}

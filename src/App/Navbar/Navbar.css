@@ -1,0 +1,149 @@
+.navbar {
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  padding-bottom: 0 !important;
+}
+
+.navbarContainer {
+  width: 95vw;
+  height: 7vh;
+  margin-top: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 2.604vw;
+  padding: 0 1.5vw;
+}
+
+.navbarContentsContainer img{
+  width: 3.6rem;
+}
+
+.navbarContainerWithBorder {
+  border: 1px solid #000000;
+  width: 95vw;
+  height: 7vh;
+  margin-top: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 2.604vw;
+  padding: 0 1.5vw;
+}
+
+.navbarContentsContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5vw;
+}
+
+.navbarContent {
+  font-family: "Lufga Medium";
+  font-size: 1rem;
+  color: #063c17;
+}
+
+.active {
+  font-family: "Lufga Bold";
+  font-size: 1rem;
+  color: #000000;
+}
+
+.cartIconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+.bar1, .bar2, .bar3 {
+  display: flex;
+  margin: 0.5vh 0;
+  height: 0.3rem;
+  border-radius: 12px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #003912;
+}
+
+.bar1 {
+  display: flex;
+  align-items: flex-start;  
+}
+
+.bar2 {
+  width: 100%;
+}
+
+.bar3 {  
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (width<=786px) {
+  .navbarContainer {
+    margin-top: 1.5vh;
+  }
+
+  .navbarContentsContainer {
+    padding: 0 3vw;
+  }
+  .navbarContentsContainer img{
+    width: 6rem;
+  }
+  .logoContainer {
+    padding-left: 3vw;
+  }
+
+  .cartIconContainer > a > img {
+    width: 8vw;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: -120%;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 5;
+    transition: top 0.5s ease-in-out;
+  }
+
+  .navLinks.active {
+    top: 0;
+    left: 0;
+    padding-top: 5dvh;
+    gap: 3vh;
+    width: 100%;
+  }
+
+  .navLinks.active > a > span {
+    font-size: 5dvh;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    width: 5rem;
+    cursor: pointer;
+    padding-left: 5vw;
+  }
+
+  .hamburger.inactive {
+    display: none;
+  }
+
+
+}

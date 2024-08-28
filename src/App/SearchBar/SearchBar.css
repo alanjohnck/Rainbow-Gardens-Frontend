@@ -1,0 +1,154 @@
+.searchBarContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3vh;
+  width: 95dvw;
+}
+
+.inputContainer {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.inputContainer img{
+  position: absolute !important;
+  left: 10px;
+}
+.inputContainer > input {
+  font-family: "Lufga Bold";
+  font-size: 1.5rem;
+  color: black;
+  outline: 0;
+}
+
+.searchIconDiv {
+  width: 2.214vw;
+  min-height: 4.626vh;
+  position: absolute;
+  left: 1vw;
+  top: 0.5vw;
+  bottom: 0.5vw;
+}
+
+.searchInput {
+  width: 71.857vw;
+  min-height: 6.803vh;
+  border: 3px solid #003912;
+  border-radius: 2.604vw;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: #000000;
+  padding-left: 3vw;
+}
+
+.searchButton {
+  width: 10.417vw;
+  min-height: 6.803vh;
+  background: #003912;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 2.604vw;
+  font-family: "Lufga Semibold";
+  font-size: 1.3rem;
+  padding: 0.4vw 0;
+  background-image: url("../images/buttonBg.svg");
+}
+.dropdownMenu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #003912;
+  font-family: "Lufga Bold";
+  padding: 5px;
+  width: 150px;
+  margin-top: 5px;
+  margin-left: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  border-radius: 10px;
+}
+
+.dropdownItem {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.dropdownItem:hover {
+  background-color: #003912;
+  color: white;
+}
+/* For small mobiles */
+
+@media screen and (width<=480px) {
+  .inputContainer > input {
+    padding-left: 10dvw;
+    font-size: 2.2rem;
+  }
+
+  .searchBarContainer{
+    gap: .2rem;
+    position:unset;
+  }
+
+  .inputContainer img{
+      position: absolute;
+      left: 85% !important;
+      border:2px solid #003912 ;
+      padding: .3rem;
+      border-radius: 10rem;
+      width: 3rem;
+  }
+
+  .inputContainer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .searchInput {
+    border-radius: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: 1px;
+    position: relative;
+  }
+  .searchIconDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left:85%;
+    top: .3rem;
+    border: 1px solid #003912;
+    border-radius: 10rem;
+    padding: 10px;
+  }
+  
+  .searchIconDiv > img {
+    width: 1.5rem;
+  }
+  .searchButtonDiv >button {
+    display: none; 
+  }
+
+  .sortButtonDiv >button {
+    width: 20.834vw; 
+    border-radius: 3rem;
+  }
+  .dropdownMenu{
+    width: 50px;
+    margin-left: 0;
+  }
+}
+
+/* For larger mobiles */
+
+@media screen and (width<=600px) {
+
+}

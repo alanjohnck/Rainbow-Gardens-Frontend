@@ -1,0 +1,8 @@
+.App{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.navlink{
+    text-decoration: none;
+}

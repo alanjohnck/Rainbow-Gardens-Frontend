@@ -1,0 +1,76 @@
+.adminDashboard {
+      font-family: Lufga;
+}
+
+.adminHeaderSection {
+      width: 100%;
+}
+
+.mainAdminContentSection {
+      padding-top: 15px;
+      padding-inline: 42px;
+}
+
+.adminName {
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 62.65px;
+      padding-left: 10px;
+}
+
+.mainAdminContentLeftSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 24px;
+}
+
+.mainAdminContentRightSection {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      gap: 24px;
+}
+
+.mainAdminContentLeftRightDiv {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding-top: 25px;
+      margin-bottom: 252px;
+}
+
+/* media queries start */
+@media (max-width: 481px) {
+      .mainAdminContentLeftRightDiv {
+            flex-direction: column;
+      }
+
+      .adminName {
+            font-size: 36px;
+      }
+}
+
+@media (max-width: 431px) {
+      .mainAdminContentLeftRightDiv {
+            display: flex;
+            flex-direction: column;
+      }
+
+      .adminName {
+            font-size: 30px;
+      }
+}
+
+@media (max-width: 376px) {
+      .adminName {
+            font-size: 26px;
+      }
+}
+
+@media (max-width: 321px) {
+      .adminName {
+            font-size: 22px;
+      }
+}
+/* media queries end */

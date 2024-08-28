@@ -1,0 +1,92 @@
+.thankyou{
+    overflow-y: auto;
+    overflow-x: hidden;    /* to solve overflowing to x-axis during mobile view */
+    background: #003912;
+}
+
+.innerThankYou{
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centerBox{
+    border-radius: 40px;
+    background-color:white;
+    height : 50vh;
+    width: 50%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.vector1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.capa1{
+    position: absolute;
+    bottom: -300px;
+    right: 0;
+    z-index: 1;
+}
+
+.thankYouText{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    font-family: 'Lufga semibold';
+    width: 70%;
+    font-size: medium;
+    text-align: center;
+    z-index: 2;
+}
+
+.thankYouButtons{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    z-index: 2;
+}
+
+.Button{
+    width: 13.939vw;
+    min-height: 7.347vh;
+    background: #063C17;
+    border: none;
+    border-radius: 5vw;
+    color: #ffffff;
+    font-family: 'Lufga Bold';
+    text-wrap: nowrap;
+}
+
+@media screen and (width<=480px) {
+
+    .centerBox{
+        height: 40vh;
+        width: 90%;
+    }
+
+    .thankYouText{
+        text-align: start;
+        width: 50%;
+    }
+
+    .Button {
+        width: 40dvw;
+        min-height: 6dvh;
+        font-size: 1.4rem;
+    }
+
+
+
+
+}
