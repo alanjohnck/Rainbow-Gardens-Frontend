@@ -28,7 +28,7 @@ function Category() {
       setLoading(true);
         // Fetch all products if no plant name is specified
         try {
-          const response = await fetch(`http://localhost:3001/api/getproduct`);
+          const response = await fetch(`${process.env.REACT_APP_BASE_URL}/getproduct`);
           const data = await response.json();
           setPlantsData(data);
         } catch (e) {
@@ -91,9 +91,7 @@ function Category() {
         </div>
       </div>
       <div className="whatsappIconContainer">
-        <NavLink to="https://wa.me/917012351551?text=I'm%20interested%20in%20your%20Plants%20">
-          <img src={whatsappIcon} alt="whatsappIcon" />
-        </NavLink> 
+        <img src={whatsappIcon} alt="whatsappIcon" />
       </div>
 
       <div className="categoryMiddleDiv">

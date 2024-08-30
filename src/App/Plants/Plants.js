@@ -17,7 +17,9 @@ import prosperityImg from "../images/prosperity.jpg";
 import floweringImg from "../images/flowering.jpg";
 import Allplants from "../images/Allplants.jpg"
 
+
 function Plants() {
+  console.log(process.env.REACT_APP_BASE_URL)
   const [loading, setLoading] = useState(true);
   const { plantsCategoryParams } = useParams();
   const [plantName, setPlantName] = useState('');
@@ -50,7 +52,7 @@ function Plants() {
       setLoading(true);
       if (plantsCategoryParams !== 'All') {
         try {
-          const response = await fetch(`http://localhost:3001/api/getproduct?category=${plantsCategoryParams}+Plant`);
+          const response = await fetch(`${process.env.REACT_APP_BASE_URL}getproduct?category=${plantsCategoryParams}+Plant`);
           const data = await response.json();
           setPlantsData(data);
         } catch (e) {
@@ -58,7 +60,7 @@ function Plants() {
         }
       } else {
         try {
-          const response = await fetch(`http://localhost:3001/api/getproduct`);
+          const response = await fetch(`${process.env.REACT_APP_BASE_URL}/getproduct`);
           const data = await response.json();
           setPlantsData(data);
         } catch (e) {
@@ -68,20 +70,6 @@ function Plants() {
       setLoading(false);
     };
 
-    // const getProductByName = async () => {
-    //   setLoading(true);
-    //   if (plantName) {
-    //     try {
-    //       const url = `http://localhost:3001/api/getplantname/${encodeURIComponent(plantName)}`
-    //       const response = await fetch(url);
-    //       const data = await response.json();
-    //       setPlantsData(Array.isArray(data) ? data : []);
-    //     } catch (e) {
-    //       console.log(e);
-    //     }
-    //   }
-    //   setLoading(false);
-    // };
 
     getPlantsByCategory();
 

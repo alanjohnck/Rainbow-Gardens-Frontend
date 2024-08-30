@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Navbar from "../Navbar/Navbar";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
@@ -11,12 +11,22 @@ import expandIcon from "../images/ExpandIcon.svg";
 import { NavLink, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 export default function Home() {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const productState = useSelector((state) => state.product);
+  const [plantsData, setPlantsData] = useState([]);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/getproduct`);
+        const data = await response.json();
+        setPlantsData(data);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+  
+    fetchData();
   }, []);
 
   const handleExpandClick = (plantId) => {
@@ -117,7 +127,7 @@ export default function Home() {
 
             <div className="plantGridBottomDiv">
               <div className="plantGridContainer">
-                {productState.productList.slice(0, 6).map((plant) => (
+                {plantsData.slice(0, 6).map((plant) => (
                   <div className="plantCardContainer">
                     <Card className="plantCard">
                       <Card.Img
