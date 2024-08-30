@@ -3,7 +3,7 @@ import './passwordReset.css';
 import AdminHeader from '../Admin/adminHeader/adminHeader';
 import { useNavigate } from 'react-router-dom';
 
-const API_BASE_URL = 'http://localhost:3001/api'; // Replace with your actual API base URL
+const API_BASE_URL = process.env.REACT_APP_BASE_URL; // Replace with your actual API base URL
 
 const PasswordResetInitial = ({ onConfirm }) => {
   const [email, setEmail] = useState('');

@@ -5,7 +5,7 @@ import axios from "axios";
 export const fetchProducts = createAsyncThunk(
   'fetchProducts',
   async () => {
-    const response = await axios.get('http://localhost:3001/api/getproduct');
+    const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/getproduct`);
     console.log(response);
     return response.data;  // Return only the data from the response
   }
@@ -15,7 +15,7 @@ export const fetchProducts = createAsyncThunk(
 export const fetchProductByPno = createAsyncThunk(
   'fetchProductByPno',
   async (productId) => {
-    const response = await axios.get(`http://localhost:3001/api/getproduct/${productId}`);
+    const response = await axios.get(`${process.env.REACT_APP_BASE_URL}/getproduct/${productId}`);
     console.log(response);
     return response.data;  // Return only the data from the response
   }

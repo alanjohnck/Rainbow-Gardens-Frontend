@@ -4,7 +4,7 @@ import axios from "axios";
 export const addProductToCart=createAsyncThunk(
     'addProductToCart',
     async(data)=>{
-       const response = await axios.post('http://localhost:3001/api/addtocart',data);
+       const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/addtocart`,data);
        console.log(response);
        return response;
     }
