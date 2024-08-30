@@ -173,7 +173,7 @@ export default function ProductAdding() {
               />
               <img src={imagePreview} alt="" />
             </label>
-            <span className="image-uploading-button-specifiers">Main Image</span>
+            <span className="image-uploading-button-specifiers">Main Image <span style = {{color:"red"}}>*</span> </span>
           </div>
 
           <div className="file-access-parent-div">
@@ -187,7 +187,7 @@ export default function ProductAdding() {
               />
               <img src={imagePreview} alt="" />
             </label>
-            <span className="image-uploading-button-specifiers">Image for Card</span>
+            <span className="image-uploading-button-specifiers">Image for Card <span style = {{color:"red"}}>*</span> </span>
           </div>
 
           <div className="file-access-parent-div">
@@ -201,7 +201,7 @@ export default function ProductAdding() {
               />
               <img src={imagePreview} alt="" />
             </label>
-            <span className="image-uploading-button-specifiers">Second Image</span>
+            <span className="image-uploading-button-specifiers">Second Image <span style = {{color:"red"}}>*</span> </span>
           </div>
 
           <div className="file-access-parent-div">
