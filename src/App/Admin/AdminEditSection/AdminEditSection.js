@@ -6,6 +6,7 @@ import { fetchProducts } from '../../Redux/Slice/ProductSlice';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+
 function AdminEditSection() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ function AdminEditSection() {
     const token = localStorage.getItem('authToken');
 
     if (productToDelete && token) {
-      axios.delete(`http://localhost:3001/api/deleteproducts/${productToDelete}`, {
+      axios.delete(`${process.env.REACT_APP_BASE_URL}/deleteproducts/${productToDelete}`, {
         headers: {
           'Authorization': `Bearer ${token}` // Add JWT token in Authorization header
         }

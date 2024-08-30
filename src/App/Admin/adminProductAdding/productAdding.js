@@ -37,7 +37,7 @@ export default function ProductAdding() {
   useEffect(() => {
     if (location.state && location.state.id) {
       const productId = location.state.id;
-      axios.get(`http://localhost:3001/api/getproduct/${productId}`)
+      axios.get(`${process.env.REACT_APP_BASE_URL}/getproduct/${productId}`)
         .then(response => {
           const product = response.data;
           setAdminData({
@@ -100,12 +100,12 @@ export default function ProductAdding() {
         // Edit mode: update the product
         const productId = location.state.id;
         console.log('Updating product:', productId);
-        const response = await axios.put(`http://localhost:3001/api/updateproducts/${productId}`, formData, config);
+        const response = await axios.put(`${process.env.REACT_APP_BASE_URL}/updateproducts/${productId}`, formData, config);
         console.log('Product updated:', response.data);
         alert('Product updated successfully!');
       } else {
         // Add mode: create a new product
-        const response = await axios.post('http://localhost:3001/api/createproduct', formData, config);
+        const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/createproduct`, formData, config);
         console.log('Product created:', response.data);
         alert('Product created successfully!');
       }
