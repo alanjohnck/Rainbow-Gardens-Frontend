@@ -179,7 +179,6 @@ export default function ProductAdding() {
           <div className="file-access-parent-div">
             <label className="file-access-div">
               <input
-                required
                 className="file-selector-input"
                 type="file"
                 name="plantImageForCard"
@@ -187,13 +186,12 @@ export default function ProductAdding() {
               />
               <img src={imagePreview} alt="" />
             </label>
-            <span className="image-uploading-button-specifiers">Image for Card <span style = {{color:"red"}}>*</span> </span>
+            <span className="image-uploading-button-specifiers">Image for Card </span>
           </div>
 
           <div className="file-access-parent-div">
             <label className="file-access-div">
               <input
-                required
                 className="file-selector-input"
                 type="file"
                 name="plantSecondImage"
@@ -201,7 +199,7 @@ export default function ProductAdding() {
               />
               <img src={imagePreview} alt="" />
             </label>
-            <span className="image-uploading-button-specifiers">Second Image <span style = {{color:"red"}}>*</span> </span>
+            <span className="image-uploading-button-specifiers">Second Image  </span>
           </div>
 
           <div className="file-access-parent-div">
