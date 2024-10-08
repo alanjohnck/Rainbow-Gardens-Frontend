@@ -90,9 +90,7 @@ function Category() {
           </div>
         </div>
       </div>
-      <div className="whatsappIconContainer">
-        <img src={whatsappIcon} alt="whatsappIcon" />
-      </div>
+     
 
       <div className="categoryMiddleDiv">
         <SearchBar sendDataToParent={sendDataToParent} onSort={handleSort} />
