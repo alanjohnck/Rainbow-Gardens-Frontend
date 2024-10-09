@@ -5,7 +5,7 @@
   border-top-right-radius: 2.604vw;
   position: relative;
   overflow: hidden;
-  z-index: 10;
+  z-index: 1;
 }
 .footerImg{
   width: 100%;
@@ -16,6 +16,7 @@
   z-index: -1;
   border-top-left-radius: 2.604vw;
   border-top-right-radius: 2.604vw;
+  z-index: -1;
 }
 .footerTopDiv {
   display: flex;
