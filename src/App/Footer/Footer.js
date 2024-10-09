@@ -50,20 +50,16 @@ export default function Footer() {
           <div className="linkContainer">
             <span>Quick Links</span>
             <div className="linkContents">
-              <NavLink to="">
+              <NavLink to="/category"  >
                 <span>Shop with us</span>
               </NavLink>
 
-              <NavLink to="">
+              <NavLink to="/plants/All">
                 <span>All Plants</span>
               </NavLink>
 
               <NavLink to="">
                 <span>About us</span>
-              </NavLink>
-
-              <NavLink to="">
-                <span>Cart</span>
               </NavLink>
             </div>
           </div>
@@ -73,7 +69,7 @@ export default function Footer() {
             <div className="footerContactContents">
               <div className="footerContactContent">
                 <img src={mail} alt="mail" />
-                <span>hello@gmail.com</span>
+                <span>purakkat.rainbowgardens@gmail.com</span>
               </div>
 
               <div className="footerContactContent">
